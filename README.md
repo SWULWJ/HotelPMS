@@ -1,1 +1,6 @@
-# Student-dormitory-management-system
+# README
+
+## 架构说明
+
+1. ​	
+
