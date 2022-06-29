@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta http-equiv="Pragma" content="no-cache">
+		<meta http-equiv="Cache-Control" content="no-cache">
+		<meta http-equiv="Expires" content="0">
+		<title>后台登录</title>
+		<link href="css/login.css" type="text/css" rel="stylesheet">
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/jquery-ui.min.css">
+		<link rel="stylesheet" href="css/bootstrap-datepicker.min.css">
+		<link rel="stylesheet" href="css/superfish.css">
+		<link rel="stylesheet" href="css/slicknav.css">
+		<link rel="stylesheet" href="css/animate.css">
+		<link rel="stylesheet" href="css/jquery.bxslider.css">
+		<link rel="stylesheet" href="css/hover.css">
+		<link rel="stylesheet" href="css/magnific-popup.css">
+		<link rel="stylesheet" href="css/spacing.css">
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/responsive.css">
+	</head>
+	<body>
+		<div class="page-wrapper">
+			
+			<!-- Top Bar Start -->
+			<div class="top-bar">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6 top-contact">
+							<div class="list">
+								<i class="fa fa-envelope"></i> <a href="组长的邮箱@email.com">组长的邮箱@email.com</a>
+							</div>
+							<div class="list">
+								<i class="fa fa-phone"></i> 114514
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Top Bar End -->
+			
+			<!-- Header Start -->
+			<header>
+				<div class="container" style="background-color: white;">
+					<div class="row">
+						<div class="col-md-3 col-sm-3 logo">
+							<a href="index.html"><img src="img/logo.png" alt=""></a>
+						</div>
+						<div class="col-md-9 col-sm-9 nav-wrapper">
+							<!-- Nav Start -->
+							<nav>
+								<ul class="sf-menu" id="menu">
+									<li class="active"><a href="index.html">首页</a></li>
+									<li><a href="login.html">员工登录</a></li>
+								</ul>
+							</nav>
+							<!-- Nav End -->
+						</div>
+					</div>
+				</div>
+			</header>
+			<!-- Header End -->
+			
+			
+			<div class="login">
+				<div class="message">酒店管理系统</div>
+				<div id="darkbannerwrap"></div>
+			
+				<form method="post">
+					<input name="action" value="login" type="hidden">
+					<input name="username" placeholder="用户名" required="" type="text">
+					<hr class="hr15">
+					<input name="password" placeholder="密码" required="" type="password">
+					<hr class="hr15">
+					<input value="登录" style="width:100%;" type="submit">
+					<hr class="hr20">
+					<!-- 帮助 <a onClick="alert('请联系管理员')">忘记密码</a> -->
+				</form>
+			</div>
+		</div>
+	</body>
+</html>
