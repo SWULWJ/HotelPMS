@@ -61,7 +61,7 @@
 						</el-submenu>
 						<el-submenu index="5">
 							<template slot="title">
-								<i class="el-icon-wallet"></i>酒店管理
+								<i class="el-icon-school"></i>酒店管理
 							</template>
 							<el-menu-item-group>
 								<template slot="title">酒店管理</template>
@@ -81,7 +81,7 @@
 								<el-dropdown-item>退出登录</el-dropdown-item>
 							</el-dropdown-menu>
 						</el-dropdown>
-						<span>老子是管理员</span>
+						<span>[[${session.loginUser}]]</span>
 					</el-header>
 					<el-main>
 						<el-table :data="tableData">
