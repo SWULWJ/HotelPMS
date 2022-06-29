@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html dir="ltr" lang="en">
+<html dir="ltr" lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org">
 
 	<head>
 
@@ -14,19 +15,18 @@
 		<title>Home</title>
 
 		<!-- Stylesheets -->
-		<link rel="stylesheet" href="css/bootstrap.min.css">
-		<link rel="stylesheet" href="css/jquery-ui.min.css">
-		<link rel="stylesheet" href="css/bootstrap-datepicker.min.css">
-		<link rel="stylesheet" href="css/superfish.css">
-		<link rel="stylesheet" href="css/slicknav.css">
-		<link rel="stylesheet" href="css/animate.css">
-		<link rel="stylesheet" href="css/jquery.bxslider.css">
-		<link rel="stylesheet" href="css/hover.css">
-		<link rel="stylesheet" href="css/magnific-popup.css">
-		<link rel="stylesheet" href="css/spacing.css">
-		<link rel="stylesheet" href="css/style.css">
-		<link rel="stylesheet" href="css/responsive.css">
-
+		<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+		<link rel="stylesheet" th:href="@{/css/jquery-ui.min.css}">
+		<link rel="stylesheet" th:href="@{/css/bootstrap-datepicker.min.css}">
+		<link rel="stylesheet" th:href="@{/css/superfish.css}">
+		<link rel="stylesheet" th:href="@{/css/slicknav.css}">
+		<link rel="stylesheet" th:href="@{/css/animate.css}">
+		<link rel="stylesheet" th:href="@{/css/jquery.bxslider.css}">
+		<link rel="stylesheet" th:href="@{/css/hover.css}">
+		<link rel="stylesheet" th:href="@{/css/magnific-popup.css}">
+		<link rel="stylesheet" th:href="@{/css/spacing.css}">
+		<link rel="stylesheet" th:href="@{/css/style.css}">
+		<link rel="stylesheet" th:href="@{/css/responsive.css}">
 
 	</head>
 
@@ -44,7 +44,7 @@
 					<div class="row">
 						<div class="col-md-6 top-contact">
 							<div class="list">
-								<i class="fa fa-envelope"></i> <a href="组长的邮箱@email.com">组长的邮箱@email.com</a>
+								<i class="fa fa-envelope"></i> <a th:href="@{#}">组长的邮箱@email.com</a>
 							</div>
 							<div class="list">
 								<i class="fa fa-phone"></i> 114514
@@ -60,14 +60,14 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-md-3 col-sm-3 logo">
-							<a href="index.html"><img src="img/logo.png" alt=""></a>
+							<a th:href="@{/index.html}"><img src="/img/logo.png" alt=""></a>
 						</div>
 						<div class="col-md-9 col-sm-9 nav-wrapper">
 							<!-- Nav Start -->
 							<nav>
 								<ul class="sf-menu" id="menu">
 									<li class="active"><a href="index.html">首页</a></li>
-									<li><a href="login.html">员工登录</a></li>
+									<li><a th:href="@{/login.html}">员工登录</a></li>
 								</ul>
 							</nav>
 							<!-- Nav End -->
@@ -165,7 +165,7 @@
 						<div class="col-md-4 col-sm-6">
 							<div class="single-category">
 								<div class="single-room">
-									<img src="images/standard.jpg" alt="" />
+									<img th:src="@{/images/standard.jpg}" alt="" />
 									<div class="room-overlay">
 										<div class="roomdetails-overlay">
 											<div class="room-details">
@@ -181,7 +181,7 @@
 						<div class="col-md-4 col-sm-6">
 							<div class="single-category">
 								<div class="single-room">
-									<img src="images/BigBed.jpg" alt="" />
+									<img th:src="@{/images/BigBed.jpg}" alt="" />
 									<div class="room-overlay">
 										<div class="roomdetails-overlay">
 											<div class="room-details">
@@ -196,7 +196,7 @@
 						<div class="col-md-4 col-sm-6">
 							<div class="single-category">
 								<div class="single-room">
-									<img src="images/Suite.jpg" alt="" />
+									<img th:src="@{/images/Suite.jpg}" alt="" />
 									<div class="room-overlay">
 										<div class="roomdetails-overlay">
 											<div class="room-details">
@@ -230,7 +230,7 @@
 
 						<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
 							<div class="single-room">
-								<img src="images/standard.jpg" alt="">
+								<img th:src="@{/images/standard.jpg}" alt="">
 								<div class="room-overlay">
 									<div class="roomdetails-overlay">
 										<div class="room-details">
@@ -244,7 +244,7 @@
 						</div>
 						<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
 							<div class="single-room">
-								<img src="images/single.jpg" alt="">
+								<img th:src="@{/images/single.jpg}" alt="">
 								<div class="room-overlay">
 									<div class="roomdetails-overlay">
 										<div class="room-details">
@@ -258,7 +258,7 @@
 						</div>
 						<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
 							<div class="single-room">
-								<img src="images/BigBed.jpg" alt="">
+								<img th:src="@{/images/BigBed.jpg}" alt="">
 								<div class="room-overlay">
 									<div class="roomdetails-overlay">
 										<div class="room-details">
@@ -272,7 +272,7 @@
 						</div>
 						<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
 							<div class="single-room">
-								<img src="images/Suite.jpg" alt="">
+								<img th:src="@{/images/Suite.jpg}" alt="">
 								<div class="room-overlay">
 									<div class="roomdetails-overlay">
 										<div class="room-details">
@@ -286,7 +286,7 @@
 						</div>
 						<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
 							<div class="single-room">
-								<img src="images/DeluxeSuite.jpg" alt="">
+								<img th:src="@{/images/DeluxeSuite.jpg}" alt="">
 								<div class="room-overlay">
 									<div class="roomdetails-overlay">
 										<div class="room-details">
@@ -300,7 +300,7 @@
 						</div>
 						<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
 							<div class="single-room">
-								<img src="images/president.jpg" alt="">
+								<img th:src="@{/images/president.jpg}" alt="">
 								<div class="room-overlay">
 									<div class="roomdetails-overlay">
 										<div class="room-details">
@@ -336,7 +336,7 @@
 						<div class="col-sm-6 col-md-4">
 							<div class="thumbnail">
 								<div class="photo">
-									<img src="images/news1.jpg" alt="">
+									<img th:src="@{/images/news1.jpg}" alt="">
 								</div>
 								<div class="caption">
 									<div class="post-date">
@@ -356,7 +356,7 @@
 						<div class="col-sm-6 col-md-4">
 							<div class="thumbnail">
 								<div class="photo">
-									<img src="images/news2.jpg" alt="">
+									<img th:src="@{/images/news2.jpg}" alt="">
 								</div>
 								<div class="caption">
 									<div class="post-date">
@@ -376,7 +376,7 @@
 						<div class="col-sm-6 col-md-4">
 							<div class="thumbnail">
 								<div class="photo">
-									<img src="images/news3.jpg" alt="">
+									<img th:src="@{/images/news3.jpg}" alt="">
 								</div>
 								<div class="caption">
 									<div class="post-date">
@@ -459,22 +459,22 @@
 
 
 		<!-- Scripts -->
-		<script src="js/jquery-2.2.4.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
-		<script src="js/jquery-ui.min.js"></script>
-		<script src="js/bootstrap-datepicker.min.js"></script>
-		<script src="js/hoverIntent.js"></script>
-		<script src="js/superfish.js"></script>
-		<script src="js/jquery.slicknav.js"></script>
-		<script src="js/owl.carousel.min.js"></script>
-		<script src="js/owl.animate.js"></script>
-		<script src="js/jquery.bxslider.min.js"></script>
-		<script src="js/jquery.mixitup.min.js"></script>
-		<script src="js/jquery.magnific-popup.min.js"></script>
-		<script src="js/waypoints.min.js"></script>
-		<script src="js/jquery.counterup.min.js"></script>
-		<script src="js/modernizr.min.js"></script>
-		<script src="js/custom.js"></script>
+		<script th:src="@{/js/jquery-2.2.4.min.js}"></script>
+		<script th:src="@{/js/bootstrap.min.js}"></script>
+		<script th:src="@{/js/jquery-ui.min.js}"></script>
+		<script th:src="@{/js/bootstrap-datepicker.min.js}"></script>
+		<script th:src="@{/js/hoverIntent.js}"></script>
+		<script th:src="@{/js/superfish.js}"></script>
+		<script th:src="@{/js/jquery.slicknav.js}"></script>
+		<script th:src="@{/js/owl.carousel.min.js}"></script>
+		<script th:src="@{/js/owl.animate.js}"></script>
+		<script th:src="@{/js/jquery.bxslider.min.js}"></script>
+		<script th:src="@{/js/jquery.mixitup.min.js}"></script>
+		<script th:src="@{/js/jquery.magnific-popup.min.js}"></script>
+		<script th:src="@{/js/waypoints.min.js}"></script>
+		<script th:src="@{/js/jquery.counterup.min.js}"></script>
+		<script th:src="@{/js/modernizr.min.js}"></script>
+		<script th:src="@{/js/custom.js}"></script>
 
 	</body>
 
