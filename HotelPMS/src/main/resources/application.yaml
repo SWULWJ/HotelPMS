@@ -51,7 +51,7 @@ spring:
 mybatis:
   type-aliases-package: com.hotelpms.pojo
   mapper-locations: classpath:mybatis/mapper/*.xml
-
+  mapper
 
 
 
