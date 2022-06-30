@@ -18,4 +18,7 @@ public interface UserAccountMapper {
     UserAccount queryUserAccountById(int id);
 
     List<UserAccount> queryAllUserAccount();
+
+    //通过账号
+    UserAccount queryUserAccountByAccount(String account);
 }
