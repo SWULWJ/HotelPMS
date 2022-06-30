@@ -17,6 +17,14 @@
       </list>
     </option>
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://F:/好好学习/实训/Month/Day6/Note.md" root0="FORCE_HIGHLIGHTING" root1="SKIP_INSPECTION" />
   </component>
@@ -44,7 +52,14 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/hotelpms/mapper" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\project\HotelPMS-self\src\main\java\com\hotelpms\mapper" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="HotelPmsApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
@@ -64,7 +79,7 @@
       <option name="presentableId" value="Default" />
       <updated>1656553692948</updated>
       <workItem from="1656553695610" duration="7315000" />
-      <workItem from="1656570504985" duration="1868000" />
+      <workItem from="1656570504985" duration="11721000" />
     </task>
     <servers />
   </component>
