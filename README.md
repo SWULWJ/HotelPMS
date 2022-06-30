@@ -7,7 +7,7 @@
     2. 项目地址：https://github.com/hustcc/canvas-nest.js
 2. 纯色背景装载登陆功能
 3. 标题：西南大学桂圆宾馆管理系统
-4. 参考示例![image-20220626215102750](C:\Users\52980\AppData\Roaming\Typora\typora-user-images\image-20220626215102750.png)
+4. 参考示例：无
 
 ## 功能
 
