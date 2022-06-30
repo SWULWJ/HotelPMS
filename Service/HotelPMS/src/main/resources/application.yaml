@@ -1,0 +1,58 @@
+spring:
+  # 模板
+  thymeleaf:
+    cache: false
+
+  #数据源
+  datasource:
+    # 数据库驱动
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    # 指定数据库连接池
+    type: com.alibaba.druid.pool.DruidDataSource
+    # 数据库地址
+    url: jdbc:mysql://localhost:3306/hotelpms?useSSL=false&useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8&allowPublicKeyRetrieval=true
+    # 数据库用户名
+    username: root
+    # 数据库密码
+    password: trz6353107
+    # 德鲁伊配置
+    druid:
+      # 数据库连接池最大值
+      max-active: 20
+      # 数据库连接池初始值
+      initial-size: 5
+      # 数据库连接池最小空闲值
+      min-idle: 5
+      # 池中空闲连接大于minIdle且连接空闲时间大于该值，则关闭该连接，单位毫秒(5分钟，默认30分钟)
+      min-evictable-idle-time-millis: 300000
+      # 获取连接时最大等待时间，单位毫秒(1分钟)
+      max-wait: 60000
+      # 检测连接是否有效时执行的sql命令
+      validation-query: select 1
+      # 借用连接时执行validationQuery检测连接是否有效，做了这个配置会降低性能
+      test-on-borrow: false
+      # 归还连接时执行validationQuery检测连接是否有效，做了这个配置会降低性能
+      test-on-return: false
+      # 连接空闲时检测，如果连接空闲时间大于timeBetweenEvictionRunsMillis指定的毫秒，执行validationQuery指定的SQL来检测连接是否有效
+      test-while-idle: true
+      # 空闲连接检查、废弃连接清理、空闲连接池大小调整的操作时间间隔，单位是毫秒(1分钟)
+      time-between-eviction-runs-millis: 60000
+
+      # 监控配置
+      #监控统计 防御SQL注入 日志记录
+      filters: stat,wall,log4j
+      # 预缓存配置
+      max-pool-prepared-statement-per-connection-size: 20
+      use-global-data-source-stat: true
+      # 通过connectProperties属性来打开mergeSql功能；慢SQL记录
+      connection-properties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
+
+# Mybatis配置
+mybatis:
+  type-aliases-package: com.hotelpms.pojo
+  mapper-locations: classpath:mybatis/mapper/*.xml
+  mapper
+
+
+
+
