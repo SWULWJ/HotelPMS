@@ -1,0 +1,4 @@
+----	Remove all the tags in mybatis.
+----	[ ! ] Remember to modify the datasources related tags to use this file.
+----	[ Time ] 2022-6-30
+----	[ Author ] HeYin-OS
