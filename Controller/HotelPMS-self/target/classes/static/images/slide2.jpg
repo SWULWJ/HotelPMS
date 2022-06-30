@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+	<!-- Meta Tags -->
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Page not found &#8211; A3 Devs</title>
+<meta name='robots' content='noindex,follow' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="A3 Devs &raquo; Feed" href="http://www.a3devs.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="A3 Devs &raquo; Comments Feed" href="http://www.a3devs.com/comments/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/www.a3devs.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.8.3"}};
+			!function(a,b,c){function d(a){var b,c,d,e,f=String.fromCharCode;if(!k||!k.fillText)return!1;switch(k.clearRect(0,0,j.width,j.height),k.textBaseline="top",k.font="600 32px Arial",a){case"flag":return k.fillText(f(55356,56826,55356,56819),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,56826,8203,55356,56819),0,0),c=j.toDataURL(),b!==c&&(k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447),0,0),c=j.toDataURL(),b!==c);case"emoji4":return k.fillText(f(55358,56794,8205,9794,65039),0,0),d=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55358,56794,8203,9794,65039),0,0),e=j.toDataURL(),d!==e}return!1}function e(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i,j=b.createElement("canvas"),k=j.getContext&&j.getContext("2d");for(i=Array("flag","emoji4"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='contact-form-7-css'  href='http://www.a3devs.com/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=4.9.1' type='text/css' media='all' />
+<link rel='stylesheet' id='wds_frontend-css'  href='http://www.a3devs.com/wp-content/plugins/slider-wd/css/wds_frontend.css?ver=1.1.91' type='text/css' media='all' />
+<link rel='stylesheet' id='wds_effects-css'  href='http://www.a3devs.com/wp-content/plugins/slider-wd/css/wds_effects.css?ver=1.1.91' type='text/css' media='all' />
+<link rel='stylesheet' id='wds_font-awesome-css'  href='http://www.a3devs.com/wp-content/plugins/slider-wd/css/font-awesome/font-awesome.css?ver=4.6.3' type='text/css' media='all' />
+<link rel='stylesheet' id='bootstrap-css'  href='http://www.a3devs.com/wp-content/themes/a3devs/assets/css/bootstrap.min.css?ver=4.8.3' type='text/css' media='all' />
+<link rel='stylesheet' id='font-awesome-css'  href='http://www.a3devs.com/wp-content/themes/a3devs/assets/css/font-awesome.min.css?ver=4.8.3' type='text/css' media='all' />
+<link rel='stylesheet' id='owl-carousel-css'  href='http://www.a3devs.com/wp-content/themes/a3devs/assets/css/owl.carousel.min.css?ver=4.8.3' type='text/css' media='all' />
+<link rel='stylesheet' id='animate-css'  href='http://www.a3devs.com/wp-content/themes/a3devs/assets/css/animate.css?ver=4.8.3' type='text/css' media='all' />
+<link rel='stylesheet' id='lightbox-css'  href='http://www.a3devs.com/wp-content/themes/a3devs/assets/css/lightbox.min.css?ver=4.8.3' type='text/css' media='all' />
+<link rel='stylesheet' id='hover-css'  href='http://www.a3devs.com/wp-content/themes/a3devs/assets/css/hover-min.css?ver=4.8.3' type='text/css' media='all' />
+<link rel='stylesheet' id='normalize-css'  href='http://www.a3devs.com/wp-content/themes/a3devs/assets/css/normalize.css?ver=4.8.3' type='text/css' media='all' />
+<link rel='stylesheet' id='slicknav-css'  href='http://www.a3devs.com/wp-content/themes/a3devs/assets/css/slicknav.min.css?ver=4.8.3' type='text/css' media='all' />
+<link rel='stylesheet' id='spacing-css'  href='http://www.a3devs.com/wp-content/themes/a3devs/assets/css/spacing.css?ver=4.8.3' type='text/css' media='all' />
+<link rel='stylesheet' id='a3-style-css'  href='http://www.a3devs.com/wp-content/themes/a3devs/assets/css/style.css?ver=4.8.3' type='text/css' media='all' />
+<link rel='stylesheet' id='a3-responsive-css'  href='http://www.a3devs.com/wp-content/themes/a3devs/assets/css/responsive.css?ver=4.8.3' type='text/css' media='all' />
+<link rel='stylesheet' id='a3-custom-css'  href='http://www.a3devs.com/wp-content/themes/a3devs/assets/style.css?ver=4.8.3' type='text/css' media='all' />
+<link rel='stylesheet' id='a3-custom-inline-css'  href='http://www.a3devs.com/wp-content/themes/a3devs/inc/lib/_wp_add_inline_style.css?ver=4.8.3' type='text/css' media='all' />
+<link rel='stylesheet' id='tablepress-default-css'  href='http://www.a3devs.com/wp-content/plugins/tablepress/css/default.min.css?ver=1.8.1' type='text/css' media='all' />
+<link rel='stylesheet' id='A2A_SHARE_SAVE-css'  href='http://www.a3devs.com/wp-content/plugins/add-to-any/addtoany.min.css?ver=1.14' type='text/css' media='all' />
+<script type='text/javascript' src='http://www.a3devs.com/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='http://www.a3devs.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<script type='text/javascript' src='http://www.a3devs.com/wp-content/plugins/add-to-any/addtoany.min.js?ver=1.0'></script>
+<script type='text/javascript' src='http://www.a3devs.com/wp-content/plugins/slider-wd/js/jquery.mobile.js?ver=1.1.91'></script>
+<script type='text/javascript' src='http://www.a3devs.com/wp-content/plugins/slider-wd/js/wds_frontend.js?ver=1.1.91'></script>
+<script type='text/javascript' src='http://www.a3devs.com/wp-content/themes/a3devs/assets/js/bootstrap.min.js?ver=4.8.3'></script>
+<script type='text/javascript' src='http://www.a3devs.com/wp-content/themes/a3devs/assets/js/lightbox.min.js?ver=4.8.3'></script>
+<script type='text/javascript' src='http://www.a3devs.com/wp-content/themes/a3devs/assets/js/owl.carousel.min.js?ver=4.8.3'></script>
+<script type='text/javascript' src='http://www.a3devs.com/wp-content/themes/a3devs/assets/js/jquery.filterizr.min.js?ver=4.8.3'></script>
+<script type='text/javascript' src='http://www.a3devs.com/wp-content/themes/a3devs/assets/js/jquery.collapse.js?ver=4.8.3'></script>
+<script type='text/javascript' src='http://www.a3devs.com/wp-content/themes/a3devs/assets/js/jquery.slicknav.min.js?ver=4.8.3'></script>
+<link rel='https://api.w.org/' href='http://www.a3devs.com/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.a3devs.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.a3devs.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.8.3" />
+
+<script type="text/javascript">
+window.a2a_config=window.a2a_config||{};a2a_config.callbacks=[];a2a_config.overlays=[];a2a_config.templates={};
+</script>
+<script type="text/javascript" src="https://static.addtoany.com/menu/page.js" async="async"></script>
+<script type="text/javascript">
+(function(url){
+	if(/(?:Chrome\/26\.0\.1410\.63 Safari\/537\.31|WordfenceTestMonBot)/.test(navigator.userAgent)){ return; }
+	var addEvent = function(evt, handler) {
+		if (window.addEventListener) {
+			document.addEventListener(evt, handler, false);
+		} else if (window.attachEvent) {
+			document.attachEvent('on' + evt, handler);
+		}
+	};
+	var removeEvent = function(evt, handler) {
+		if (window.removeEventListener) {
+			document.removeEventListener(evt, handler, false);
+		} else if (window.detachEvent) {
+			document.detachEvent('on' + evt, handler);
+		}
+	};
+	var evts = 'contextmenu dblclick drag dragend dragenter dragleave dragover dragstart drop keydown keypress keyup mousedown mousemove mouseout mouseover mouseup mousewheel scroll'.split(' ');
+	var logHuman = function() {
+		var wfscr = document.createElement('script');
+		wfscr.type = 'text/javascript';
+		wfscr.async = true;
+		wfscr.src = url + '&r=' + Math.random();
+		(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(wfscr);
+		for (var i = 0; i < evts.length; i++) {
+			removeEvent(evts[i], logHuman);
+		}
+	};
+	for (var i = 0; i < evts.length; i++) {
+		addEvent(evts[i], logHuman);
+	}
+})('//www.a3devs.com/?wordfence_lh=1&hid=51E057039122F6FE94DB9958065AC637');
+</script><link rel="icon" href="http://www.a3devs.com/wp-content/uploads/favicon-e1510149328620.png" sizes="32x32" />
+<link rel="icon" href="http://www.a3devs.com/wp-content/uploads/favicon-e1510149328620.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="http://www.a3devs.com/wp-content/uploads/favicon-e1510149328620.png" />
+<meta name="msapplication-TileImage" content="http://www.a3devs.com/wp-content/uploads/favicon-e1510149328620.png" />
+
+	
+</head>
+
+<body>
+
+	<!--Header-Area-->
+	<div class="header-area">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 col-sm-8 col-xs-12">
+					<div class="header-address">
+						<div class="header-item mr_20 xs_mr_0">
+							<div class="header-icon">
+								<i class="fa fa-phone"></i>
+							</div>
+							<div class="header-text">
+								<p>+8801997521620 , +8801947829981</p>
+							</div>
+						</div>
+						<div class="header-item">
+							<div class="header-icon">
+								<i class="fa fa-envelope-o"></i>
+							</div>
+							<div class="header-text">
+								<p><a href="mailto:info@a3devs.com">info@a3devs.com</a></p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 col-sm-4 col-xs-12">
+					<div class="header-right">
+						<ul>
+							<li><a href="https://www.facebook.com/A3Devs/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+							<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+							<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+							<li><a href="#"><i class="fa fa-instagram"></i></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--Header End-->
+
+	<!--Menu Start-->
+
+	<div id="main-menu" class="menu-area">
+		<div class="container">
+			<div class="row">
+				<div id="logo" class="logo">
+					<a href="http://www.a3devs.com"><img src="http://www.a3devs.com/wp-content/themes/a3devs/assets/img/logo.png" alt=""></a>
+				</div>
+				<div class="menu">
+					<ul id="nav">
+						<li class="active"><a href="http://www.a3devs.com/">Home</a></li>
+						<li><a href="http://www.a3devs.com/about/">About Us</a></li>
+						
+						
+						<!--Mega-Menu-->
+						<li class="mega-dropdown"><a class="icon" href="#">Courses</a>
+							<ul class="width-menu">
+								<li class="mega-menu collam-1">
+
+									<a href="http://www.a3devs.com/course/gis-rs/">
+												<span><img src="http://www.a3devs.com/wp-content/themes/a3devs/assets/img/logo/gis.jpg" alt=""></span>
+												<div class="link-text">
+													<h4>GIS / RS</h4>
+													<p>Geographic Information System</p>
+												</div>
+											</a>
+
+									<a href="http://www.a3devs.com/course/web-design/">
+												<span><img src="http://www.a3devs.com/wp-content/themes/a3devs/assets/img/logo/web-design.jpg" alt=""></span>
+												<div class="link-text">
+													<h4>Web Design</h4>
+													<p>Front End Design</p>
+												</div>
+											</a>
+
+									<a href="http://www.a3devs.com/course/c-programming/">
+												<span><img src="http://www.a3devs.com/wp-content/themes/a3devs/assets/img/logo/c-program.jpg" alt=""></span>
+												<div class="link-text">
+													<h4>C Programming</h4>
+													<p>Basic and Advanced</p>
+												</div>
+											</a>
+
+									<a href="http://www.a3devs.com/course/c-plus-plus-programming/">
+												<span><img src="http://www.a3devs.com/wp-content/themes/a3devs/assets/img/logo/c++.jpg" alt=""></span>
+												<div class="link-text">
+													<h4>C++ Programming</h4>
+													<p>Basic and Advanced</p>
+												</div>
+											</a>
+
+									<a href="http://www.a3devs.com/course/python/">
+												<span><img src="http://www.a3devs.com/wp-content/themes/a3devs/assets/img/logo/python.jpg" alt=""></span>
+												<div class="link-text">
+													<h4>Python</h4>
+													<p>Core Programming</p>
+												</div>
+											</a>
+
+									<a href="http://www.a3devs.com/course/java/">
+												<span><img src="http://www.a3devs.com/wp-content/themes/a3devs/assets/img/logo/java.jpg" alt=""></span>
+												<div class="link-text">
+													<h4>Java</h4>
+													<p>Java Programming (Core)</p>
+												</div>
+											</a>
+
+								</li>
+
+								<li class="mega-menu collam-2">
+
+									<a href="http://www.a3devs.com/course/javafx-gui/">
+												<span><img src="http://www.a3devs.com/wp-content/themes/a3devs/assets/img/logo/java-fx.jpg" alt=""></span>
+												<div class="link-text">
+													<h4>JavaFX (GUI)</h4>
+													<p>JavaFX (GUI) Programming</p>
+												</div>
+											</a>
+
+									<a href="http://www.a3devs.com/course/javascript/">
+												<span><img src="http://www.a3devs.com/wp-content/themes/a3devs/assets/img/logo/js.jpg" alt=""></span>
+												<div class="link-text">
+													<h4>JavaScript</h4>
+													<p>Core Programming</p>
+												</div>
+											</a>
+
+									<a href="http://www.a3devs.com/course/jquery/">
+												<span><img src="http://www.a3devs.com/wp-content/themes/a3devs/assets/img/logo/jquery.jpg" alt=""></span>
+												<div class="link-text">
+													<h4>jQuery</h4>
+													<p>javaScript Framework</p>
+												</div>
+											</a>
+
+									<a href="http://www.a3devs.com/course/angularjs/">
+												<span><img src="http://www.a3devs.com/wp-content/themes/a3devs/assets/img/logo/angularJS.jpg" alt=""></span>
+												<div class="link-text">
+													<h4>AngularJS x</h4>
+													<p>JavaScript Framework</p>
+												</div>
+											</a>
+
+									<a href="http://www.a3devs.com/course/nodejs/">
+												<span><img src="http://www.a3devs.com/wp-content/themes/a3devs/assets/img/logo/node-js.jpg" alt=""></span>
+												<div class="link-text">
+													<h4>Node.js</h4>
+													<p>JavaScript Framework</p>
+												</div>
+											</a>
+
+
+									<a href="http://www.a3devs.com/course/php-mysql/">
+												<span><img src="http://www.a3devs.com/wp-content/themes/a3devs/assets/img/logo/php.jpg" alt=""></span>
+												<div class="link-text">
+													<h4>PHP / MySQL</h4>
+													<p>Web Development</p>
+												</div>
+											</a>
+
+								</li>
+
+								<li class="mega-menu collam-3">
+
+									<a href="http://www.a3devs.com/course/codeigniter/">
+												<span><img src="http://www.a3devs.com/wp-content/themes/a3devs/assets/img/logo/codeigniter.jpg" alt=""></span>
+												<div class="link-text">
+													<h4>Codeigniter</h4>
+													<p>PHP Framework</p>
+												</div>
+											</a>
+									<a href="http://www.a3devs.com/course/laravel/">
+												<span><img src="http://www.a3devs.com/wp-content/themes/a3devs/assets/img/logo/laravel.jpg" alt=""></span>
+												<div class="link-text">
+													<h4>Laravel</h4>
+													<p>PHP Framework</p>
+												</div>
+											</a>
+
+									<a href="http://www.a3devs.com/course/wordpress-theme-development/">
+												<span><img src="http://www.a3devs.com/wp-content/themes/a3devs/assets/img/logo/wordpress.jpg" alt=""></span>
+												<div class="link-text">
+													<h4>WordPress</h4>
+													<p>WordPress Theme Development</p>
+												</div>
+											</a>
+
+									<a href="http://www.a3devs.com/course/android-app-development/">
+												<span><img src="http://www.a3devs.com/wp-content/themes/a3devs/assets/img/logo/android.jpg" alt=""></span>
+												<div class="link-text">
+													<h4>App Development</h4>
+													<p>UI, Android Application, SQLite</p>
+												</div>
+											</a>
+
+									<a href="http://www.a3devs.com/course/seo/">
+												<span><img src="http://www.a3devs.com/wp-content/themes/a3devs/assets/img/logo/seo.jpg" alt=""></span>
+												<div class="link-text">
+													<h4>SEO</h4>
+													<p>Search Engine Optimization</p>
+												</div>
+											</a>
+
+									<a href="http://www.a3devs.com/course/linux/">
+												<span><img src="http://www.a3devs.com/wp-content/themes/a3devs/assets/img/logo/linux.jpg" alt=""></span>
+												<div class="link-text">
+													<h4>Linux</h4>
+													<p>install & use for programming</p>
+												</div>
+											</a>
+								</li>
+							</ul>
+
+						</li>
+
+						<li><a href="http://www.a3devs.com/gallery/">Gallery</a></li>
+						<li><a href="http://www.a3devs.com/feedbacks/">Feedbacks</a></li>
+						<li><a href="http://www.a3devs.com/contact/">Contact Us</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--Menu-End-->
+<div class="all-slider" style="background-image: url(http://www.a3devs.com/wp-content/themes/a3devs/assets/img/banner.jpg)">
+	<div class="bg"></div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="text-table">
+					<div class="all-slider-text">
+						<h3>404 Page</h3>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="opps-Page pt_70 pb_70">
+	<div class="container">
+		<div class="row">
+			<div class="opps-circle p_50">
+				<h2>404</h2>
+				<h3>Error</h3>
+			</div>
+			<div class="opps-text mt_40">
+				<h2>404: Page Not Found</h2>
+				<p>Oops! You trying for an incorrect page. Please try again with another page that is valid.</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--Footer Start-->
+
+	<div class="footer-area pt_70 pb_70">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4 col-sm-6 col-xs-12 xs_mb_30">
+											<div class="widget_text footer-text same-footer"><h3>Find Us On Map</h3><div class="textwidget custom-html-widget"><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3677.0961969720843!2d89.5344117103119!3d22.83593022418257!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x24e8540452590f89!2sA3+Devs!5e0!3m2!1sen!2sbd!4v1510155705224" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen></iframe></div></div>														
+				</div>
+				<div class="col-md-4 col-sm-6 col-xs-12 xs_mb_30">
+											<div class="all-menu"><div class="row"><h3>Important Links</h3>			<div class="textwidget"><div class="col-md-4 col-sm-4 col-xs-4">
+<div class="link-menu same-footer">
+<ul>
+<li><a class="hvr-forward" href="http://www.a3devs.com/">Home</a></li>
+<li><a class="hvr-forward" href="http://www.a3devs.com/about/">About</a></li>
+<li><a class="hvr-forward" href="http://www.a3devs.com/gallery/">Gallery</a></li>
+<li><a class="hvr-forward" href="http://www.a3devs.com/feedbacks/">Student Feedbacks</a></li>
+<li><a class="hvr-forward" href="http://www.a3devs.com/contact/">Contact</a></li>
+</ul>
+</div>
+</div>
+</div>
+		</div></div>									</div>
+
+				<div class="col-md-4 col-sm-12 col-xs-12 sm_mt_30">
+											<div class="time-list"><h3>Office Hours</h3>			<div class="textwidget"><div class="add-time">
+<table>
+<tbody>
+<tr>
+<td>Sun</td>
+<td>8 am &#8211; 10pm</td>
+</tr>
+<tr>
+<td>Mon</td>
+<td>8 am &#8211; 10pm</td>
+</tr>
+<tr>
+<td>Tues</td>
+<td>8 am &#8211; 10pm</td>
+</tr>
+<tr>
+<td>Wednes</td>
+<td>8 am &#8211; 10pm</td>
+</tr>
+<tr>
+<td>Thurs</td>
+<td>8 am &#8211; 10pm</td>
+</tr>
+<tr>
+<td>Fri</td>
+<td>Offday</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+		</div>									</div>
+			</div>
+		</div>
+	</div>
+
+	<!--Footer-Bottom-->
+
+	<div class="footer-bottom  pt_10 pb_10">
+		<div class="container">
+			<div class="row">
+				<div class="copy">
+					<p>Copyright © 2016-2017, A3Devs. All rights reserved.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!--Scroll-Top-->
+	<div class="scroll-top">
+		<div class="gotop"></div>
+	</div>
+	<!--Scroll-Top-->
+
+
+	<script type='text/javascript'>
+/* <![CDATA[ */
+var wpcf7 = {"apiSettings":{"root":"http:\/\/www.a3devs.com\/wp-json\/contact-form-7\/v1","namespace":"contact-form-7\/v1"},"recaptcha":{"messages":{"empty":"Please verify that you are not a robot."}}};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://www.a3devs.com/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=4.9.1'></script>
+<script type='text/javascript' src='http://www.a3devs.com/wp-content/themes/a3devs/assets/js/custom.js?ver=201711'></script>
+<script type='text/javascript' src='http://www.a3devs.com/wp-includes/js/wp-embed.min.js?ver=4.8.3'></script>
+
+</body>
+
+</html>
