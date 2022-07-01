@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org">
+
+	<head>
+
+		<!-- Meta Tags -->
+		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+
+
+		<!-- Title -->
+		<title>Home</title>
+
+		<!-- Stylesheets -->
+		<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+		<link rel="stylesheet" th:href="@{/css/jquery-ui.min.css}">
+		<link rel="stylesheet" th:href="@{/css/bootstrap-datepicker.min.css}">
+		<link rel="stylesheet" th:href="@{/css/superfish.css}">
+		<link rel="stylesheet" th:href="@{/css/slicknav.css}">
+		<link rel="stylesheet" th:href="@{/css/animate.css}">
+		<link rel="stylesheet" th:href="@{/css/jquery.bxslider.css}">
+		<link rel="stylesheet" th:href="@{/css/hover.css}">
+		<link rel="stylesheet" th:href="@{/css/magnific-popup.css}">
+		<link rel="stylesheet" th:href="@{/css/spacing.css}">
+		<link rel="stylesheet" th:href="@{/css/style.css}">
+		<link rel="stylesheet" th:href="@{/css/responsive.css}">
+
+	</head>
+
+	<body>
+
+		<div id="preloader">
+			<div id="status"></div>
+		</div>
+
+		<div class="page-wrapper">
+
+			<!-- Top Bar Start -->
+			<div class="top-bar">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6 top-contact">
+							<div class="list">
+								<i class="fa fa-envelope"></i> <a th:href="@{#}">组长的邮箱@email.com</a>
+							</div>
+							<div class="list">
+								<i class="fa fa-phone"></i> 114514
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Top Bar End -->
+
+			<!-- Header Start -->
+			<header>
+				<div class="container">
+					<div class="row">
+						<div class="col-md-3 col-sm-3 logo">
+							<a th:href="@{/index.html}"><img src="/img/logo.png" alt=""></a>
+						</div>
+						<div class="col-md-9 col-sm-9 nav-wrapper">
+							<!-- Nav Start -->
+							<nav>
+								<ul class="sf-menu" id="menu">
+									<li class="active"><a href="index.html">首页</a></li>
+									<li><a th:href="@{/login.html}">员工登录</a></li>
+								</ul>
+							</nav>
+							<!-- Nav End -->
+						</div>
+					</div>
+				</div>
+			</header>
+			<!-- Header End -->
+
+			<!-- Slider Start -->
+			<section class="main-slider">
+				<div class="slide-single">
+					<div class="overlay"></div>
+					<div class="text">
+						<div class="this-item">
+							<h2>Welcome To Our Hotel</h2>
+						</div>
+						<div class="this-item">
+							<h3>把这里当成家.</h3>
+						</div>
+						<div class="this-item">
+							<p><a href="#">Read More</a></p>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- Slider End -->
+
+			<!-- properties Search End -->
+			<div class="search">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<form action="#">
+								<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+									<div class="single-field">
+										<h4>房间类型:</h4>
+										<div class="select-arrow">
+											<select name="country">
+												<optgroup id="RoomType" label="RoomType">
+													<option value="President" label="请选择房间类型">请选择房间类型</option>
+													<option value="Standard" label="标准间">标准间</option>
+													<option value="Single" label="单人间">单人间</option>
+													<option value="BigBed" label="大床房">大床房</option>
+													<option value="Suite" label="套房">套房</option>
+													<option value="DeluxeSuite" label="豪华套房">豪华套房</option>
+													<option value="President" label="总统套房">总统套房</option>
+												</optgroup>
+											</select>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+									<div class="single-field">
+										<h4>楼层</h4>
+										<div class="select-arrow">
+											<select name="floor">
+												<option value="1">1</option>
+												<option value="2">2</option>
+												<option value="3">3</option>
+												<option value="4">4</option>
+											</select>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+									<div class="single-field">
+										<h4>入住人数:</h4>
+										<div class="select-arrow">
+											<select name="peoples">
+												<option value="1">1</option>
+												<option value="2">2</option>
+												<option value="3">3</option>
+												<option value="4">4</option>
+											</select>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+									<div class="single-field">
+										<h4>Search</h4>
+										<input value="Search" type="submit">
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- properties Search Start -->
+			<!-- Room Category Start -->
+			<div class="room-category">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-4 col-sm-6">
+							<div class="single-category">
+								<div class="single-room">
+									<img th:src="@{/images/standard.jpg}" alt="" />
+									<div class="room-overlay">
+										<div class="roomdetails-overlay">
+											<div class="room-details">
+												<h2>标准间</h2>
+												<a href="#" class="readmore-button">View All</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+						<div class="col-md-4 col-sm-6">
+							<div class="single-category">
+								<div class="single-room">
+									<img th:src="@{/images/BigBed.jpg}" alt="" />
+									<div class="room-overlay">
+										<div class="roomdetails-overlay">
+											<div class="room-details">
+												<h2>大床房</h2>
+												<a href="#" class="readmore-button">View All</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4 col-sm-6">
+							<div class="single-category">
+								<div class="single-room">
+									<img th:src="@{/images/Suite.jpg}" alt="" />
+									<div class="room-overlay">
+										<div class="roomdetails-overlay">
+											<div class="room-details">
+												<h2>套房</h2>
+												<a href="#" class="readmore-button">View All</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+
+
+					</div>
+				</div>
+			</div>
+			<!-- Room Category End -->
+			<!-- Recent Properties Start -->
+			<div class="properties">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<h2>浏览房间</h2>
+							<div class="border-shape"></div>
+							<h3>来看看我们的房间</h3>
+						</div>
+					</div>
+					<div class="row">
+
+
+						<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+							<div class="single-room">
+								<img th:src="@{/images/standard.jpg}" alt="">
+								<div class="room-overlay">
+									<div class="roomdetails-overlay">
+										<div class="room-details">
+											<span class="room-price">¥ 114514</span>
+											<h2>标准间</h2>
+											<a href="#" class="readmore-button">View Details</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+							<div class="single-room">
+								<img th:src="@{/images/single.jpg}" alt="">
+								<div class="room-overlay">
+									<div class="roomdetails-overlay">
+										<div class="room-details">
+											<span class="room-price">¥ 114514</span>
+											<h2>单人间</h2>
+											<a href="#" class="readmore-button">View Details</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+							<div class="single-room">
+								<img th:src="@{/images/BigBed.jpg}" alt="">
+								<div class="room-overlay">
+									<div class="roomdetails-overlay">
+										<div class="room-details">
+											<span class="room-price">¥ 114514</span>
+											<h2>大床房</h2>
+											<a href="#" class="readmore-button">View Details</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+							<div class="single-room">
+								<img th:src="@{/images/Suite.jpg}" alt="">
+								<div class="room-overlay">
+									<div class="roomdetails-overlay">
+										<div class="room-details">
+											<span class="room-price">¥ 114514</span>
+											<h2>套房</h2>
+											<a href="#" class="readmore-button">View Details</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+							<div class="single-room">
+								<img th:src="@{/images/DeluxeSuite.jpg}" alt="">
+								<div class="room-overlay">
+									<div class="roomdetails-overlay">
+										<div class="room-details">
+											<span class="room-price">¥ 114514</span>
+											<h2>豪华套房</h2>
+											<a href="#" class="readmore-button">View Details</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+							<div class="single-room">
+								<img th:src="@{/images/president.jpg}" alt="">
+								<div class="room-overlay">
+									<div class="roomdetails-overlay">
+										<div class="room-details">
+											<span class="room-price">¥ 114514</span>
+											<h2>总统套房</h2>
+											<a href="#" class="readmore-button">View Details</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="allroom-button">
+							<a href="#" class="readmore-button">View All Rooms</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Recent Properties End -->
+			<!-- Blog Start -->
+			<div class="news">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="heading">
+								<h2>Latest News</h2>
+								<div class="border-shape"></div>
+								<h3>来看最新信息</h3>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-6 col-md-4">
+							<div class="thumbnail">
+								<div class="photo">
+									<img th:src="@{/images/news1.jpg}" alt="">
+								</div>
+								<div class="caption">
+									<div class="post-date">
+										<div class="inner">
+											2022-1-1
+										</div>
+									</div>
+									<h3>元旦大促</h3>
+									<h4>田某人</h4>
+									<p>
+										元旦了快来住宿，享受10折优惠
+									</p>
+									<p><a href="#" class="btn btn-primary">Read More</a></p>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-6 col-md-4">
+							<div class="thumbnail">
+								<div class="photo">
+									<img th:src="@{/images/news2.jpg}" alt="">
+								</div>
+								<div class="caption">
+									<div class="post-date">
+										<div class="inner">
+											10 Mar, 2017
+										</div>
+									</div>
+									<h3>五一大促</h3>
+									<h4>包某人</h4>
+									<p>
+										都五一了还不快来玩，最高享受11折优惠
+									</p>
+									<p><a href="#" class="btn btn-primary">Read More</a></p>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-6 col-md-4">
+							<div class="thumbnail">
+								<div class="photo">
+									<img th:src="@{/images/news3.jpg}" alt="">
+								</div>
+								<div class="caption">
+									<div class="post-date">
+										<div class="inner">
+											30 Apr, 2017
+										</div>
+									</div>
+									<h3>六一大促</h3>
+									<h4>不知道是谁了</h4>
+									<p>
+										都六一了还不来是吧
+									</p>
+									<p><a href="#" class="btn btn-primary">Read More</a></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Blog End -->
+
+
+			<!-- Appointment Start -->
+			<div class="appointment-v1">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-8 col-sm-6 col-xs-12">
+							<div class="left">
+								<p>预留广告位</p>
+							</div>
+						</div>
+						<div class="col-md-4 col-sm-6 col-xs-12">
+							<div class="right">
+								<a href="#">广告位招租</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Appointment End -->
+
+
+			<!-- Footer Main Start -->
+			<section class="footer-main">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-6 col-md-3 col-lg-3 footer-col">
+							<h3>关于我们</h3>
+							<div class="row">
+								<div class="col-md-12">
+									<p>
+										这是一个很普通的网页
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-6 col-md-3 col-lg-3 footer-col">
+							<h3>联系我们</h3>
+							<div class="contact-item">
+								<div class="icon"><i class="fa fa-map-marker"></i></div>
+								<div class="text">翻斗大街翻斗花园2号</div>
+							</div>
+							<div class="contact-item">
+								<div class="icon"><i class="fa fa-phone"></i></div>
+								<div class="text">114514</div>
+							</div>
+							<div class="contact-item">
+								<div class="icon"><i class="fa fa-fax"></i></div>
+								<div class="text">114514</div>
+							</div>
+							<div class="contact-item">
+								<div class="icon"><i class="fa fa-envelope-o"></i></div>
+								<div class="text">组长的邮箱@email.com</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+
+
+		<!-- Scripts -->
+		<script th:src="@{/js/jquery-2.2.4.min.js}"></script>
+		<script th:src="@{/js/bootstrap.min.js}"></script>
+		<script th:src="@{/js/jquery-ui.min.js}"></script>
+		<script th:src="@{/js/bootstrap-datepicker.min.js}"></script>
+		<script th:src="@{/js/hoverIntent.js}"></script>
+		<script th:src="@{/js/superfish.js}"></script>
+		<script th:src="@{/js/jquery.slicknav.js}"></script>
+		<script th:src="@{/js/owl.carousel.min.js}"></script>
+		<script th:src="@{/js/owl.animate.js}"></script>
+		<script th:src="@{/js/jquery.bxslider.min.js}"></script>
+		<script th:src="@{/js/jquery.mixitup.min.js}"></script>
+		<script th:src="@{/js/jquery.magnific-popup.min.js}"></script>
+		<script th:src="@{/js/waypoints.min.js}"></script>
+		<script th:src="@{/js/jquery.counterup.min.js}"></script>
+		<script th:src="@{/js/modernizr.min.js}"></script>
+		<script th:src="@{/js/custom.js}"></script>
+
+	</body>
+
+</html>
