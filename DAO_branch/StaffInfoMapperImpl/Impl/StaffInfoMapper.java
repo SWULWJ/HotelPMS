@@ -27,7 +27,11 @@ public interface StaffInfoMapper {
     //通过id查找员工信息
     @Select("SELECT * FROM staff_info WHERE id=#{id}")
     StaffInfo queryStaffInfoById(int id);
-
+    
+    // 通过姓名查询所有重名的员工信息
+    @Select("SELECT * FROM staff_info WHERE name=#{name}")
+    List<StaffInfo> queryStaffInfoByName(String name);
+    
     //查找所有员工信息
     @Select("SELECT * FROM staff_info")
     List<StaffInfo> queryAllStaffInfo();
