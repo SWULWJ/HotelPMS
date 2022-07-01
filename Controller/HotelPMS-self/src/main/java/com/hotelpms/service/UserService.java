@@ -4,6 +4,8 @@ import com.hotelpms.mapper.UserAccountMapper;
 import com.hotelpms.pojo.UserAccount;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.List;
+
 public class UserService {
 
     @Autowired
@@ -22,6 +24,22 @@ public class UserService {
         if (userAccountMapper.queryUserAccountById(id) != null){
             UserAccount userAccount = new UserAccount(id, staffId, account, password);
             userAccountMapper.addUserAccount(userAccount);
+            return true;
+        }
+        return false;
+    }
+
+    public UserAccount readUserById(int id){
+        return userAccountMapper.queryUserAccountById(id);
+    }
+
+    public List<UserAccount> readAllUser(){
+        return userAccountMapper.queryAllUserAccount();
+    }
+
+    public boolean deleteUserById(int id){
+        if(userAccountMapper.queryUserAccountById(id)!=null){
+            userAccountMapper.deleteUserAccountById(id);
             return true;
         }
         return false;

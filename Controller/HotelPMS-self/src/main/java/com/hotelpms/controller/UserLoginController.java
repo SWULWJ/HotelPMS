@@ -14,10 +14,12 @@ public class UserLoginController {
 
     private UserLoginService userLoginService = new UserLoginService();
 
+
     /*@Author: 王海腾
      *@Date: 2022-6-30-14:45
      *@Test: 单元测试已完成
      * */
+
     @RequestMapping("/userLogin")
     public String userLogin(
             @RequestParam("username")String username,
@@ -34,5 +36,6 @@ public class UserLoginController {
             model.addAttribute("msg", "用户名或密码错误");
             return "login";
         }
+
     }
 }
