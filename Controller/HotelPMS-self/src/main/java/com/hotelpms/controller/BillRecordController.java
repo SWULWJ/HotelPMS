@@ -21,9 +21,9 @@ public class BillRecordController {
 
 
 
-    @RequestMapping(value = "/add_bill_record",method = RequestMethod.GET)
+    @RequestMapping(value = "/addBillRecord",method = RequestMethod.GET)
     @ResponseBody
-    public String AddBillRecord(
+    public String addBillRecord(
             @RequestParam("id") int id,
             @RequestParam("bill_number") int bill_num,
             @RequestParam("staff_id") int staff_id,
@@ -40,9 +40,9 @@ public class BillRecordController {
         return "Failed";
     }
 
-    @RequestMapping(value = "/update_bill_record",method = RequestMethod.GET)
+    @RequestMapping(value = "/updateBillRecord",method = RequestMethod.GET)
     @ResponseBody
-    public String UpdateBillRecord(
+    public String updateBillRecord(
             @RequestParam("id") int id,
             @RequestParam("bill_number") int bill_num,
             @RequestParam("staff_id") int staff_id,
@@ -60,9 +60,9 @@ public class BillRecordController {
     }
 
 
-    @RequestMapping(value = "/delete_bill_by_id",method = RequestMethod.GET)
+    @RequestMapping(value = "/deleteBillById",method = RequestMethod.GET)
     @ResponseBody
-    public String DeleteBillById(
+    public String deleteBillById(
             @RequestParam("id") int id,
             Model model,
             HttpSession httpSession
@@ -72,24 +72,24 @@ public class BillRecordController {
         return "Failed";
     }
 
-    @RequestMapping(value = "query_bill_by_id",method = RequestMethod.GET)
+    @RequestMapping(value = "/queryBillById",method = RequestMethod.GET)
     @ResponseBody
-    public BillRecord QueryBillById(
+    public BillRecord queryBillById(
             @RequestParam("id") int id,
             Model model,
             HttpSession httpSession){
         return billRecordService.QueryRecordById(id);
     }
 
-    @RequestMapping(value = "query_all_bill",method = RequestMethod.GET)
+    @RequestMapping(value = "/queryAllBill",method = RequestMethod.GET)
     @ResponseBody
-    public List<BillRecord> QueryAllBill(
+    public List<BillRecord> queryAllBill(
             Model model,
             HttpSession httpSession){
         return billRecordService.QueryAllRecord();
     }
 
-    @RequestMapping(value = "query_bill_by_time",method = RequestMethod.GET)
+    @RequestMapping(value = "/queryBillByTime",method = RequestMethod.GET)
     @ResponseBody
     public List<BillRecord> QueryBillByTime(
             @RequestParam("start") Date start_date,
@@ -99,27 +99,27 @@ public class BillRecordController {
         return billRecordService.QueryRecordByTime(start_date,end_date);
     }
 
-    @RequestMapping(value = "query_bill_by_staff_id",method = RequestMethod.GET)
+    @RequestMapping(value = "/queryBillByStaffId",method = RequestMethod.GET)
     @ResponseBody
-    public List<BillRecord> QueryBillByTime(
+    public List<BillRecord> queryBillByTime(
             @RequestParam("staff_id") int staff_id,
             Model model,
             HttpSession httpSession){
         return billRecordService.QueryRecordByStaffId(staff_id);
     }
 
-    @RequestMapping(value = "query_bill_by_staff_type",method = RequestMethod.GET)
+    @RequestMapping(value = "/queryBillByStaffType",method = RequestMethod.GET)
     @ResponseBody
-    public List<BillRecord> QueryBillByTime(
+    public List<BillRecord> queryBillByTime(
             @RequestParam("type") String type,
             Model model,
             HttpSession httpSession){
         return billRecordService.QueryRecordByType(type);
     }
 
-    @RequestMapping(value = "query_bill_by_staff_amount",method = RequestMethod.GET)
+    @RequestMapping(value = "/queryBillByStaffAmount",method = RequestMethod.GET)
     @ResponseBody
-    public List<BillRecord> QueryBillByTime(
+    public List<BillRecord> queryBillByTime(
             @RequestParam("min") BigDecimal min,
             @RequestParam("max") BigDecimal max,
             Model model,

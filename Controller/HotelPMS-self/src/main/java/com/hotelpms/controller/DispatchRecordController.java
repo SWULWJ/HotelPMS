@@ -18,9 +18,9 @@ public class DispatchRecordController {
 
     private DispatchRecordServiceImpl dispatchRecordService;
 
-    @RequestMapping(value = "add_dispatch_record",method = RequestMethod.GET)
+    @RequestMapping(value = "/addDispatchRecord",method = RequestMethod.GET)
     @ResponseBody
-    public JSONUtility AddDispatchRecord(
+    public JSONUtility addDispatchRecord(
             @RequestParam("id") int id,
             @RequestParam("staff_id") int stuff_id,
             @RequestParam("location") String location,
@@ -36,9 +36,9 @@ public class DispatchRecordController {
         return new JSONUtility("Failed","/");
     }
 
-    @RequestMapping(value = "update_dispatch_record",method = RequestMethod.GET)
+    @RequestMapping(value = "/updateDispatchRecord",method = RequestMethod.GET)
     @ResponseBody
-    public String UpdateDispatchRecord(
+    public String updateDispatchRecord(
             @RequestParam("id") int id,
             @RequestParam("staff_id") int stuff_id,
             @RequestParam("location") String location,
@@ -54,9 +54,9 @@ public class DispatchRecordController {
         return "Failed";
     }
 
-    @RequestMapping(value = "delete_dispatch_record_by_id",method = RequestMethod.GET)
+    @RequestMapping(value = "/deleteDispatchRecordById",method = RequestMethod.GET)
     @ResponseBody
-    public String DeleteDispatchById(
+    public String deleteDispatchById(
             @RequestParam("id") int id,
             Model model,
             HttpSession httpSession
@@ -66,9 +66,9 @@ public class DispatchRecordController {
         return "Failed";
     }
 
-    @RequestMapping(value = "query_dispatch_record_by_id",method = RequestMethod.GET)
+    @RequestMapping(value = "/queryDispatchRecordById",method = RequestMethod.GET)
     @ResponseBody
-    public DispatchRecords QueryDispatchRecordById(
+    public DispatchRecords queryDispatchRecordById(
             @RequestParam("id") int id,
             Model model,
             HttpSession httpSession
@@ -76,18 +76,18 @@ public class DispatchRecordController {
         return dispatchRecordService.queryDispatchRecordById(id);
     }
 
-    @RequestMapping(value = "query_all_dispatch_record",method = RequestMethod.GET)
+    @RequestMapping(value = "/queryAllDispatchRecord",method = RequestMethod.GET)
     @ResponseBody
-    public List<DispatchRecords> QueryDispatchRecordById(
+    public List<DispatchRecords> queryDispatchRecordById(
             Model model,
             HttpSession httpSession
     ){
         return dispatchRecordService.queryAllDispatchRecord();
     }
 
-    @RequestMapping(value = "query_dispatch_record_by_time",method = RequestMethod.GET)
+    @RequestMapping(value = "/queryDispatchRecordByTime",method = RequestMethod.GET)
     @ResponseBody
-    public List<DispatchRecords> QueryDispatchRecordById(
+    public List<DispatchRecords> queryDispatchRecordById(
             @RequestParam("start_time") Date start,
             @RequestParam("end_time") Date end,
             Model model,
@@ -96,9 +96,9 @@ public class DispatchRecordController {
         return dispatchRecordService.queryDispatchRecordByTime(start,end);
     }
 
-    @RequestMapping(value = "query_dispatch_record_by_staff_id",method = RequestMethod.GET)
+    @RequestMapping(value = "/queryDispatchRecordByStaffId",method = RequestMethod.GET)
     @ResponseBody
-    public List<DispatchRecords> QueryDispatchRecordByStuffId(
+    public List<DispatchRecords> queryDispatchRecordByStuffId(
             @RequestParam("staff_id") int staff_id,
             Model model,
             HttpSession httpSession
@@ -106,9 +106,9 @@ public class DispatchRecordController {
         return dispatchRecordService.queryDispatchRecordByStaffId(staff_id);
     }
 
-    @RequestMapping(value = "query_dispatch_record_by_position",method = RequestMethod.GET)
+    @RequestMapping(value = "/queryDispatchRecordByPosition",method = RequestMethod.GET)
     @ResponseBody
-    public List<DispatchRecords> QueryDispatchRecordByStuffId(
+    public List<DispatchRecords> queryDispatchRecordByStuffId(
             @RequestParam("position") String position,
             Model model,
             HttpSession httpSession
@@ -116,9 +116,9 @@ public class DispatchRecordController {
         return dispatchRecordService.queryDispatchRecordByPosition(position);
     }
 
-    @RequestMapping(value = "query_dispatch_record_by_type",method = RequestMethod.GET)
+    @RequestMapping(value = "/queryDispatchRecordByType",method = RequestMethod.GET)
     @ResponseBody
-    public List<DispatchRecords> QueryDispatchRecordByType(
+    public List<DispatchRecords> queryDispatchRecordByType(
             @RequestParam("type") String type,
             Model model,
             HttpSession httpSession
