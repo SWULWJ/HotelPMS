@@ -5,20 +5,19 @@ import com.hotelpms.pojo.StaffInfo;
 import java.util.List;
 
 public class StaffInfoServiceImpl implements StaffInfoService{
-
     @Override
-    public int addStaff(StaffInfo staffInfo) {
-        return 0;
+    public void addStaff(StaffInfo staffInfo) {
+
     }
 
     @Override
-    public int deleteStaffInfoById(int id) {
-        return 0;
+    public void deleteStaffInfoById(int id) {
+
     }
 
     @Override
-    public int updateStaffInfo(StaffInfo staffInfo) {
-        return 0;
+    public void updateStaffInfo(StaffInfo staffInfo) {
+
     }
 
     @Override

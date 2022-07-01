@@ -6,13 +6,13 @@ import java.util.List;
 
 public interface StaffInfoService {
     // 增加一条员工信息
-    int addStaff(StaffInfo staffInfo);
+    void addStaff(StaffInfo staffInfo);
 
     // 通过id删除一条员工信息
-    int deleteStaffInfoById(int id);
+    void deleteStaffInfoById(int id);
 
     // 更新一个员工的所有信息
-    int updateStaffInfo(StaffInfo staffInfo);
+    void updateStaffInfo(StaffInfo staffInfo);
 
     // 通过id查询一条员工信息
     StaffInfo queryStaffInfoById(int id);
