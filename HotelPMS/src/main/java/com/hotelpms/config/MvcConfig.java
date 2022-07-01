@@ -15,6 +15,7 @@ public class MvcConfig implements WebMvcConfigurer {
         registry.addViewController("/index.html").setViewName("index");
         registry.addViewController("/login.html").setViewName("login");
         registry.addViewController("/system.html").setViewName("sys");
+        registry.addViewController("/staffInfo.html").setViewName("concierge");
     }
 
     @Override
@@ -26,9 +27,11 @@ public class MvcConfig implements WebMvcConfigurer {
                         "/login.html",
                         "/userLogin",
                         "/css/**",
+                        "/css2/**",
                         "/fonts/**",
                         "/images/**",
                         "/img/**",
-                        "/js/**");
+                        "/js/**",
+                        "/js2/**");
     }
 }
