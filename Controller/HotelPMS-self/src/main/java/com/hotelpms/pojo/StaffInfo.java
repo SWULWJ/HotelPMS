@@ -14,6 +14,6 @@ public class StaffInfo {
     private String name;
     private String gender;
     private int age;
-    private int position;
+    private String position;
     private String tel;
 }

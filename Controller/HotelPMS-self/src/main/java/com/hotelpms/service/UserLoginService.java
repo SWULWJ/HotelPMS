@@ -2,7 +2,6 @@ package com.hotelpms.service;
 
 import com.hotelpms.mapper.UserAccountMapper;
 import com.hotelpms.pojo.RoomInfo;
-import com.hotelpms.pojo.UserAccount;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;

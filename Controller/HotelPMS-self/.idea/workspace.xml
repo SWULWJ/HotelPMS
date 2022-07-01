@@ -13,6 +13,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -52,12 +53,13 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/hotelpms/mapper" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/hotelpms/service" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\project\HotelPMS-self\src\main\java\com\hotelpms\service" />
       <recent name="D:\project\HotelPMS-self\src\main\java\com\hotelpms\mapper" />
     </key>
   </component>
@@ -79,7 +81,7 @@
       <option name="presentableId" value="Default" />
       <updated>1656553692948</updated>
       <workItem from="1656553695610" duration="7315000" />
-      <workItem from="1656570504985" duration="14488000" />
+      <workItem from="1656570504985" duration="36151000" />
     </task>
     <servers />
   </component>
