@@ -27,12 +27,11 @@ public class UserLoginController {
             Model model,
             HttpSession session) {
 
-        boolean result = userLoginService.login_judge(username,password);
-
-        if(result == true){
+        //放入service
+        if(username.equals("admin") && password.equals("admin")) {
             session.setAttribute("loginUser", username);
             return "redirect:/system.html";
-        }else {
+        } else {
             model.addAttribute("msg", "用户名或密码错误");
             return "login";
         }
