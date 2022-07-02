@@ -1,4 +1,4 @@
-package com.hotelpms.service.impl;
+package com.hotelpms.service.Impl;
 
 import com.hotelpms.pojo.StaffInfo;
 import com.hotelpms.mapper.StaffInfoMapper;
@@ -12,15 +12,12 @@ import java.util.List;
 public class StaffInfoServiceImpl implements StaffInfoService {
 
     @Autowired
-    private StaffInfoMapper staffInfoMapper;
+    StaffInfoMapper staffInfoMapper;
 
     @Override
-    public boolean addStaff(int id, int staffNum, String name,
-                            String gender, int age, String position,
-                            String tel) {
-        if(staffInfoMapper.queryStaffInfoById(id) == null ) {
-            StaffInfo staffInfo = new StaffInfo(id, staffNum, name,
-                    gender, age, position, tel);
+    public boolean addStaff(int id,int staffNum,String name,String gender,int age,String position,String tel) {
+        if(staffInfoMapper.queryStaffInfoById(id).getName()==null ){
+            StaffInfo staffInfo = new StaffInfo(id,staffNum,name,gender,age,position,tel);
             staffInfoMapper.addStaffInfo(staffInfo);
             return true;
         }
@@ -29,7 +26,7 @@ public class StaffInfoServiceImpl implements StaffInfoService {
 
     @Override
     public boolean deleteStaffInfoById(int id) {
-        if(staffInfoMapper.queryStaffInfoById(id) != null) {
+        if(staffInfoMapper.queryStaffInfoById(id).getName()!=null ){
             staffInfoMapper.deleteStaffInfo(id);
             return true;
         }
@@ -37,13 +34,10 @@ public class StaffInfoServiceImpl implements StaffInfoService {
     }
 
     @Override
-    public boolean updateStaffInfo(int id, int staffNum, String name,
-                                   String gender, int age, String position,
-                                   String tel) {
-        if(staffInfoMapper.queryStaffInfoById(id) != null ) {
-            StaffInfo staffInfo = new StaffInfo(id, staffNum, name, gender,
-                    age, position,tel);
-            staffInfoMapper.addStaffInfo(staffInfo);
+    public boolean updateStaffInfo(int id,int staffNum,String name,String gender,int age,String position,String tel) {
+        if(staffInfoMapper.queryStaffInfoById(id).getName()!=null ){
+            StaffInfo staffInfo = new StaffInfo(id,staffNum,name,gender,age,position,tel);
+            staffInfoMapper.updateStaffInfo(staffInfo);
             return true;
         }
         return false;
@@ -62,5 +56,10 @@ public class StaffInfoServiceImpl implements StaffInfoService {
     @Override
     public List<StaffInfo> queryAllStaffInfo() {
         return staffInfoMapper.queryAllStaffInfo();
+    }
+
+    @Override
+    public StaffInfo queryStaffInfoByStaffNumber() {
+        return null;
     }
 }

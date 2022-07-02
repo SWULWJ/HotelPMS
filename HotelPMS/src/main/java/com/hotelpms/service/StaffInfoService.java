@@ -1,7 +1,6 @@
 package com.hotelpms.service;
 
 import com.hotelpms.pojo.StaffInfo;
-import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
@@ -24,6 +23,7 @@ public interface StaffInfoService {
     // 查询所有员工信息
     List<StaffInfo> queryAllStaffInfo();
 
+    //通过员工编号查询员工
     StaffInfo queryStaffInfoByStaffNumber();
 
 }
