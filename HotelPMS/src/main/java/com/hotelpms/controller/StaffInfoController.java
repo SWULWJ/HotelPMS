@@ -1,7 +1,8 @@
 package com.hotelpms.controller;
 
 import com.hotelpms.pojo.StaffInfo;
-import com.hotelpms.service.StaffInfoService;
+import com.hotelpms.service.impl.StaffInfoServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,8 +16,8 @@ import java.util.List;
 @Controller
 public class StaffInfoController {
 
-    private StaffInfoService staffInfoService;
-
+    @Autowired
+    StaffInfoServiceImpl staffInfoService;
 
     /*
      * @Author: 王海腾
