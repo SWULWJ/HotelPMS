@@ -73,4 +73,13 @@ public class StaffInfoMapperUnitTest
 			System.out.println(info);
 		}
 	}
+	
+	//Pass
+	//Test for interface 7
+	@Test
+	public void test7()
+	{
+		StaffInfo staffInfo = staffInfoMapper.queryStaffInfoByStaffNumber(1);
+		System.out.println(staffInfo);
+	}
 }
