@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class UserAccount {
     private int id;
-    private int staffId;
     private String account;
     private String password;
+    private StaffInfo staffInfo;
 }

@@ -3,7 +3,6 @@ package com.hotelpms.pojo;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 //员工信息表
 @Data
 @AllArgsConstructor
