@@ -54,4 +54,7 @@ public interface StaffInfoMapper {
     @Select("SELECT * FROM staff_info")
     List<StaffInfo> queryAllStaffInfo();
 
+    // 通过员工编号查询一条员工信息
+    StaffInfo queryStaffInfoByStaffName(int staffNumber);
+
 }

@@ -1,8 +1,9 @@
-package com.hotelpms.service;
+package com.hotelpms.service.impl;
 
 import com.hotelpms.pojo.RoomType;
+import com.hotelpms.service.RoomTypeService;
 
-public class RoomTypeImpl implements RoomTypeService{
+public class RoomTypeImpl implements RoomTypeService {
     @Override
     public boolean addRoomType(RoomType roomType) {
         return false;
