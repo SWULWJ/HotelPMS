@@ -1,7 +1,8 @@
 package com.hotelpms.controller;
 
 import com.hotelpms.pojo.StaffInfo;
-import com.hotelpms.service.StaffInfoServiceImpl;
+import com.hotelpms.service.StaffInfoService;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -11,9 +12,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.servlet.http.HttpSession;
 import java.util.List;
 
+@Controller
 public class StaffInfoController {
 
-    private StaffInfoServiceImpl staffInfoService;
+    private StaffInfoService staffInfoService;
 
 
     /*
@@ -144,11 +146,10 @@ public class StaffInfoController {
      * 输出：String
      * */
 
-    @RequestMapping(value = "/queryAllStaff",
-            method = RequestMethod.GET)
-    @ResponseBody
-    public List<StaffInfo> queryAllStaff(Model model,
-                                         HttpSession httpSession) {
-        return staffInfoService.queryAllStaffInfo();
+    @RequestMapping("/queryAllStaff")
+    public String queryAllStaff(Model model) {
+        List<StaffInfo> list = staffInfoService.queryAllStaffInfo();
+        model.addAttribute("staffInfoList", list);
+        return "concierge";
     }
 }
