@@ -1,12 +1,17 @@
-package com.hotelpms.service;
+package com.hotelpms.service.impl;
 
 import com.hotelpms.pojo.StaffInfo;
 import com.hotelpms.mapper.StaffInfoMapper;
+import com.hotelpms.service.StaffInfoService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class StaffInfoServiceImpl implements StaffInfoService {
 
+    @Autowired
     private StaffInfoMapper staffInfoMapper;
 
     @Override
