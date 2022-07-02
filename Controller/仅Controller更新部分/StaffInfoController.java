@@ -1,7 +1,7 @@
 package com.hotelpms.controller;
 
 import com.hotelpms.pojo.StaffInfo;
-import com.hotelpms.service.StaffInfoServiceImpl;
+import com.hotelpms.service.Impl.StaffInfoServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;

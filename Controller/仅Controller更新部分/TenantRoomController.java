@@ -1,7 +1,7 @@
 package com.hotelpms.controller;
 
 import com.hotelpms.pojo.TenantRoom;
-import com.hotelpms.service.TenantRoomServiceImpl;
+import com.hotelpms.service.Impl.TenantRoomServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;

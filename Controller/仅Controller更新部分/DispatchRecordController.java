@@ -1,8 +1,7 @@
 package com.hotelpms.controller;
 
 import com.hotelpms.pojo.DispatchRecords;
-import com.hotelpms.pojo.HousingRecords;
-import com.hotelpms.service.DispatchRecordServiceImpl;
+import com.hotelpms.service.Impl.DispatchRecordServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
-import javax.xml.crypto.Data;
 import java.util.Date;
 import java.util.List;
 
