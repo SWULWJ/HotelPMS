@@ -52,6 +52,27 @@ public interface StaffInfoMapper {
     
     //查找所有员工信息
     @Select("SELECT * FROM staff_info")
+    @Results({
+            @Result(column = "id", property = "id"),
+            @Result(column = "staff_number", property = "staffNumber"),
+            @Result(column = "name", property = "name"),
+            @Result(column = "gender", property = "gender"),
+            @Result(column = "age", property = "age"),
+            @Result(column = "position", property = "position"),
+            @Result(column = "tel", property = "tel")
+    })
     List<StaffInfo> queryAllStaffInfo();
-
+    
+    // 通过员工编号查询一条员工信息
+    @Select("SELECT * FROM staff_info WHERE staff_number=#{staffNumber}")
+    @Results({
+            @Result(column = "id", property = "id"),
+            @Result(column = "staff_number", property = "staffNumber"),
+            @Result(column = "name", property = "name"),
+            @Result(column = "gender", property = "gender"),
+            @Result(column = "age", property = "age"),
+            @Result(column = "position", property = "position"),
+            @Result(column = "tel", property = "tel")
+    })
+    StaffInfo queryStaffInfoByStaffNumber(int staffNumber);
 }
