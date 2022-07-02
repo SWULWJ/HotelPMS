@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 //账单表
@@ -16,7 +17,7 @@ public class BillRecord {
     private int staffId;
     private String type;
     private Date time;
-    private int amount;
+    private BigDecimal amount;
     private String details;
     private boolean auditing;
 }

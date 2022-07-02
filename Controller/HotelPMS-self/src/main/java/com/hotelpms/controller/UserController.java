@@ -1,17 +1,20 @@
 package com.hotelpms.controller;
 
 import com.hotelpms.pojo.UserAccount;
-import com.hotelpms.service.UserService;
+import com.hotelpms.service.UserAccountService;
+import com.hotelpms.service.UserAccountServiceImpl;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
 import java.util.List;
 
 public class UserController {
 
-    private UserService userService = new UserService();
+    private UserAccountServiceImpl userService = new UserAccountServiceImpl();
 
     /*
      * @Author: 王海腾
@@ -24,18 +27,18 @@ public class UserController {
      * 输出：String
      * */
 
-    @RequestMapping("/update_user")
-    public String UpdateUser(
+    @RequestMapping(value = "/update_user",method = RequestMethod.GET)
+    @ResponseBody
+    public JSONUtility UpdateUser(
             @RequestParam("id") int id,
             @RequestParam("stuff_id") int si,
             @RequestParam("account") String account,
             @RequestParam("password") String password,
             Model model,
             HttpSession httpSession) {
-        boolean result = userService.updateUser(id,si,account,password);
-        if (result == true)
-            return "Success";
-        return "False";
+        if (userService.updateUser(id,si,account,password))
+            return new JSONUtility("Success","/");
+        return new JSONUtility("Failed","/");
     }
 
     /*
@@ -49,18 +52,18 @@ public class UserController {
      * 输出：String
      * */
 
-    @RequestMapping("/add_user")
-    public String AddUser(
+    @RequestMapping(value = "/add_user",method = RequestMethod.GET)
+    @ResponseBody
+    public JSONUtility AddUser(
             @RequestParam("id") int id,
             @RequestParam("stuff_id") int si,
             @RequestParam("account") String account,
             @RequestParam("password") String password,
             Model model,
             HttpSession httpSession) {
-        boolean result = userService.addUser(id,si,account,password);
-        if (result == true)
-            return "Success";
-        return "False";
+        if (userService.addUser(id,si,account,password))
+            return new JSONUtility("Success","/");
+        return new JSONUtility("Failed","/");
     }
 
     /*
@@ -71,14 +74,14 @@ public class UserController {
      * 输出：String
      * */
 
-    @RequestMapping("/delete_user")
-    public String DeleteUser(@RequestParam("id") int id,
+    @RequestMapping(value = "/delete_user",method = RequestMethod.GET)
+    @ResponseBody
+    public JSONUtility DeleteUser(@RequestParam("id") int id,
                              Model model,
                              HttpSession httpSession){
-        boolean result = userService.deleteUserById(id);
-        if (result==true)
-            return "Success";
-        return "False";
+        if (userService.deleteUserById(id))
+            return new JSONUtility("Success","/");
+        return new JSONUtility("Failed","/");
     }
 
     /*
@@ -89,15 +92,17 @@ public class UserController {
      * 输出：String
      * */
 
-    @RequestMapping("/read_user_by_id")
-    public String ReadUserById(@RequestParam("id") int id,
+    @RequestMapping(value = "/read_user_by_id",method = RequestMethod.GET)
+    @ResponseBody
+    public JSONUtility ReadUserById(@RequestParam("id") int id,
                              Model model,
                              HttpSession httpSession){
         UserAccount userAccount = userService.readUserById(id);
         if (userAccount!=null)
-            return userAccount.toString();
-        return "False";
+            return new JSONUtility(userAccount.toString(),"/");
+        return new JSONUtility("Failed","/");
     }
+
 
     /*
      * @Author: 王海腾
@@ -107,10 +112,11 @@ public class UserController {
      * 输出：String
      * */
 
-    @RequestMapping("/read_all_users")
-    public String ReadAllUsers(){
+    @RequestMapping(value = "/read_all_users",method = RequestMethod.GET)
+    @ResponseBody
+    public JSONUtility ReadAllUsers() {
         List<UserAccount> accounts = userService.readAllUser();
-        return accounts.toString();
+        return new JSONUtility(accounts.toString(), "/");
     }
 }
 
