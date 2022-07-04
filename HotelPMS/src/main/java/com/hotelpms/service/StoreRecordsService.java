@@ -12,6 +12,8 @@ public interface StoreRecordsService {
     StoreRecords queryStoreRecords(int id);
     //查询所有库存
     List<StoreRecords> queryAllStoreRecords();
+    //通过名字查询所有库存
+    StoreRecords queryStoreRecordsByName(String name);
 
     //增
     //增加一个库存记录

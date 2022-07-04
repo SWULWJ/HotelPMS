@@ -20,6 +20,11 @@ public class TenantInfoServiceImpl implements TenantInfoService {
     }
 
     @Override
+    public List<TenantInfo> queryTenantInfoByName(String name){
+        return  tenantInfoMapper.queryTenantInfoByName(name);
+    }
+
+    @Override
     public List<TenantInfo> queryAllTenantInfo() {
         return tenantInfoMapper.queryAllTenantInfo();
     }

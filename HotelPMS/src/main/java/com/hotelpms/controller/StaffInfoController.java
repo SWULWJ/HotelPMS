@@ -5,6 +5,7 @@ import com.hotelpms.service.Impl.StaffInfoServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class StaffInfoController {
@@ -66,10 +67,12 @@ public class StaffInfoController {
 
     @GetMapping(value = "queryStaffByStaffNumber")
     @ResponseBody
-    public StaffInfo queryStaffByStaffNumber(
+    public List<StaffInfo> queryStaffByStaffNumber(
             @RequestParam("stuffNumber") String stuffNumber
     ){
-        return staffInfoService.queryStaffInfoByStaffNumber(Integer.getInteger(stuffNumber));
+        ArrayList<StaffInfo> list = new ArrayList<>();
+        list.add(staffInfoService.queryStaffInfoByStaffNumber(Integer.getInteger(stuffNumber)));
+        return list;
     }
 
 

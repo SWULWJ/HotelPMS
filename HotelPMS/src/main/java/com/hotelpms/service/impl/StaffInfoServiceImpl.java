@@ -63,7 +63,5 @@ public class StaffInfoServiceImpl implements StaffInfoService {
     @Override
     public StaffInfo queryStaffInfoByStaffNumber(int staffNumber){
         return staffInfoMapper.queryStaffInfoByStaffNumber(staffNumber);
-
-
     }
 }

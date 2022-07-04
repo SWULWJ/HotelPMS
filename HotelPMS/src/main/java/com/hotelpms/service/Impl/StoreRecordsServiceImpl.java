@@ -2,8 +2,7 @@ package com.hotelpms.service.Impl;
 
 import com.hotelpms.mapper.StoreRecordsMapper;
 import com.hotelpms.pojo.StoreRecords;
-import com.hotelpms.service.finish.StoreRecordsService;
-import org.apache.catalina.Store;
+import com.hotelpms.service.StoreRecordsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,8 +16,13 @@ public class StoreRecordsServiceImpl implements StoreRecordsService {
     StoreRecordsMapper storeRecordsMapper;
 
     @Override
-    public StoreRecords queryStoreRecordsById(int id) {
+    public StoreRecords queryStoreRecords(int id) {
         return storeRecordsMapper.queryStoreRecordsById(id);
+    }
+
+    @Override
+    public StoreRecords queryStoreRecordsByName(String name) {
+        return storeRecordsMapper.queryStoreRecordsByName(name);
     }
 
     @Override

@@ -2,6 +2,7 @@ package com.hotelpms.service.Impl;
 
 import com.hotelpms.mapper.RoomTypeMapper;
 import com.hotelpms.pojo.RoomType;
+import com.hotelpms.service.RoomTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,7 +10,7 @@ import java.math.BigDecimal;
 import java.util.List;
 
 @Service
-public class RoomTypeServiceImpl implements RoomTypeService{
+public class RoomTypeServiceImpl implements RoomTypeService {
 
     @Autowired
     RoomTypeMapper roomTypeMapper;
@@ -55,6 +56,26 @@ public class RoomTypeServiceImpl implements RoomTypeService{
     @Override
     public RoomType queryRoomTypeByName(String name) {
         return roomTypeMapper.queryRoomTypeByName(name);
+    }
+
+    @Override
+    public List<RoomType> queryRoomTypeByPrice(BigDecimal min_price, BigDecimal max_price) {
+        return null;
+    }
+
+    @Override
+    public List<RoomType> queryRoomTypeByMaxPeople(int max_people) {
+        return null;
+    }
+
+    @Override
+    public List<RoomType> queryRoomTypeByMinTime(String min_time) {
+        return null;
+    }
+
+    @Override
+    public List<RoomType> queryRoomTypeByBedNum(int bed_num) {
+        return null;
     }
 
     @Override
