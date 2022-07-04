@@ -14,18 +14,19 @@ public class StaffInfoServiceImpl implements StaffInfoService{
     StaffInfoMapper staffInfoMapper;
 
     @Override
-    public boolean addStaff(int id,int staffNum,String name,String gender,int age,String position,String tel) {
-        if(staffInfoMapper.queryStaffInfoById(id).getName()==null ){
-            StaffInfo staffInfo = new StaffInfo(id,staffNum,name,gender,age,position,tel);
-            staffInfoMapper.addStaffInfo(staffInfo);
+    public boolean addStaff(int id,int staffNum,String name,String gender,
+                            int age,String position,String tel) {
+        StaffInfo staffInfo = staffInfoMapper.queryStaffInfoByStaffNumber(staffNum);
+        if(staffInfo == null ){
+            staffInfoMapper.addStaffInfo(new StaffInfo(id,staffNum,name, gender,age,position,tel));
             return true;
         }
         return false;
     }
 
     @Override
-    public boolean deleteStaffInfoById(int id) {
-        if(staffInfoMapper.queryStaffInfoById(id).getName()!=null ){
+    public boolean deleteStaffInfo(int id) {
+        if(staffInfoMapper.queryStaffInfoById(id) != null ){
             staffInfoMapper.deleteStaffInfo(id);
             return true;
         }
@@ -33,13 +34,14 @@ public class StaffInfoServiceImpl implements StaffInfoService{
     }
 
     @Override
-    public boolean updateStaffInfo(int id,int staffNum,String name,String gender,int age,String position,String tel) {
-        if(staffInfoMapper.queryStaffInfoById(id).getName()!=null ){
-            StaffInfo staffInfo = new StaffInfo(id,staffNum,name,gender,age,position,tel);
+    public boolean updateStaffInfo(int id,int staffNum,String name,String gender,
+                                   int age,String position,String tel) {
+            StaffInfo staffInfo = new StaffInfo(id,staffNum,name,
+                    gender,age,position,tel);
             staffInfoMapper.updateStaffInfo(staffInfo);
             return true;
-        }
-        return false;
+
+//        return false;
     }
 
     @Override
