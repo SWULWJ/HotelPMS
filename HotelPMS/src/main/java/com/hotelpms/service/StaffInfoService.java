@@ -5,7 +5,11 @@ import com.hotelpms.pojo.StaffInfo;
 import java.util.List;
 
 public interface StaffInfoService {
-    // 增加一条员工信息
+
+    // 查询所有员工信息
+    List<StaffInfo> queryAllStaffInfo();
+
+    // 新增一条员工信息
     boolean addStaff(int id,int sn,String name,String gender,int age,String pos,String tel);
 
     // 通过id删除一条员工信息
@@ -20,10 +24,7 @@ public interface StaffInfoService {
     // 通过姓名查询所有重名的员工信息
     List<StaffInfo> queryStaffInfoByName(String name);
 
-    // 查询所有员工信息
-    List<StaffInfo> queryAllStaffInfo();
-
     //通过员工编号查询员工
-    StaffInfo queryStaffInfoByStaffNumber();
+    StaffInfo queryStaffInfoByStaffNumber(int staffNumber);
 
 }
