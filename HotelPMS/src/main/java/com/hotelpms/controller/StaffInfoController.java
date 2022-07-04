@@ -3,11 +3,13 @@ package com.hotelpms.controller;
 import com.hotelpms.pojo.StaffInfo;
 import com.hotelpms.service.Impl.StaffInfoServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Controller
 public class StaffInfoController {
 
     @Autowired
@@ -17,7 +19,9 @@ public class StaffInfoController {
     @GetMapping(value = "/queryAllStaff")
     @ResponseBody
     public
-    List<StaffInfo> QueryAllStaff(){
+    List<StaffInfo> QueryAllStaff() {
+        List<StaffInfo> list = staffInfoService.queryAllStaffInfo();
+        list.forEach(System.out::println);
         return staffInfoService.queryAllStaffInfo();
     }
 
@@ -56,7 +60,7 @@ public class StaffInfoController {
     }
 
     //通过名字查找员工
-    @GetMapping(value = "queryStuffByName")
+    @GetMapping(value = "/queryStuffByName")
     @ResponseBody
     public List<StaffInfo> QueryStuffByName(
             @RequestParam("/name") String name){
@@ -64,14 +68,13 @@ public class StaffInfoController {
     }
 
     //通过员工编号查找员工
-
-    @GetMapping(value = "queryStaffByStaffNumber")
+    @GetMapping(value = "/queryStaffByStaffNumber")
     @ResponseBody
     public List<StaffInfo> queryStaffByStaffNumber(
             @RequestParam("stuffNumber") String stuffNumber
     ){
-        ArrayList<StaffInfo> list = new ArrayList<>();
-        list.add(staffInfoService.queryStaffInfoByStaffNumber(Integer.getInteger(stuffNumber)));
+        List<StaffInfo> list = new ArrayList<>();
+        list.add(staffInfoService.queryStaffInfoByStaffNumber(Integer.parseInt(stuffNumber)));
         return list;
     }
 
@@ -126,7 +129,7 @@ public class StaffInfoController {
     @GetMapping(value = "/deleteStaff")
     @ResponseBody
     public String deleteStaff(
-            @RequestParam("id") String id){
+            @RequestParam("id") String id) {
         if (staffInfoService.deleteStaffInfoById(Integer.parseInt(id)))
             return "success";
         return "failed";

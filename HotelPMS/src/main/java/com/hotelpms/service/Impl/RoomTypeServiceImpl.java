@@ -39,7 +39,7 @@ public class RoomTypeServiceImpl implements RoomTypeService {
     @Override
     public boolean updateRoomType(int id, String name, BigDecimal price,
                                   int bed_number, int max_people, String min_time) {
-        if (roomTypeMapper.queryRoomTypeById(id) == null){
+        if (roomTypeMapper.queryRoomTypeById(id) != null){
             RoomType roomType = new RoomType(id, name, price,
                     bed_number, max_people, min_time);
             roomTypeMapper.updateRoomType(roomType);

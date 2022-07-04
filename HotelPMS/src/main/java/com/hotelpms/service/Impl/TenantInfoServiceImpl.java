@@ -2,7 +2,7 @@ package com.hotelpms.service.Impl;
 
 import com.hotelpms.mapper.TenantInfoMapper;
 import com.hotelpms.pojo.TenantInfo;
-import com.hotelpms.service.finish.TenantInfoService;
+import com.hotelpms.service.TenantInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

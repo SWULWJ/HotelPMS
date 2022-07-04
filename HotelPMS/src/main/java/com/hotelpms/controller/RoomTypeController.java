@@ -3,11 +3,14 @@ package com.hotelpms.controller;
 import com.hotelpms.pojo.RoomType;
 import com.hotelpms.service.Impl.RoomTypeServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.EnableMBeanExport;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.math.BigDecimal;
 import java.util.List;
 
+@Controller
 public class RoomTypeController {
 
     @Autowired
@@ -60,8 +63,9 @@ public class RoomTypeController {
     @GetMapping(value = "/deleteRoomType")
     @ResponseBody
     public String deleteRoomTypeById(
-            @RequestParam("id") String id
+//            @RequestParam("id") String id
     ){
+        String id = "3";
         if(roomTypeService.deleteRoomTypeById(Integer.parseInt(id)))
             return "success";
         return "failed";

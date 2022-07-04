@@ -11,6 +11,8 @@ public interface TenantInfoService {
     TenantInfo queryTenantInfoById(int id);
     //查询所有住客
     List<TenantInfo> queryAllTenantInfo();
+    //通过名字查找房客
+    List<TenantInfo> queryTenantInfoByName(String name);
 
     //增
     //增加一个住客信息
