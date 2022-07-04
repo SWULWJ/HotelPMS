@@ -26,7 +26,7 @@ public class StaffInfoController {
 //            @RequestParam("position") String pos,
 //            @RequestParam("tel") String tel) {
 //        if (staffInfoService.updateStaffInfo(id, sn, name, gender, age, pos, tel))
-//            return "Success";
+//            return "success";
 //        return "False";
 //    }
 
@@ -42,8 +42,8 @@ public class StaffInfoController {
             @RequestParam("tel") String tel) {
         if (staffInfoService.updateStaffInfo(Integer.parseInt(id), Integer.parseInt(sn),
                 name, gender, Integer.parseInt(age), pos, tel))
-            return "Success";
-        return "Failed";
+            return "success";
+        return "failed";
     }
 
 //    @RequestMapping(value = "/AddStaff",method = RequestMethod.GET)
@@ -57,8 +57,8 @@ public class StaffInfoController {
 //            @RequestParam("position") String pos,
 //            @RequestParam("tel") String tel) {
 //        if (staffInfoService.addStaff(id, sn, name, gender, age, pos, tel))
-//            return "Success";
-//        return "Failed";
+//            return "success";
+//        return "failed";
 //    }
 
     @RequestMapping(value = "/addStaff",method = RequestMethod.GET)
@@ -73,8 +73,8 @@ public class StaffInfoController {
             @RequestParam("tel") String tel) {
         if (staffInfoService.addStaff(Integer.parseInt(id), Integer.parseInt(sn),
                 name, gender, Integer.parseInt(age), pos, tel))
-            return "Success";
-        return "Failed";
+            return "success";
+        return "failed";
     }
 
 //    @RequestMapping(value = "/DeleteStaff",method = RequestMethod.GET)
@@ -82,7 +82,7 @@ public class StaffInfoController {
 //    public String DeleteStaff(
 //            @RequestParam("id") int id){
 //        if (staffInfoService.deleteStaffInfoById(id))
-//            return "Success";
+//            return "success";
 //        return "False";
 //    }
 
@@ -91,8 +91,8 @@ public class StaffInfoController {
     public String DeleteStaff(
             @RequestParam("id") String id){
         if (staffInfoService.deleteStaffInfoById(Integer.parseInt(id)))
-            return "Success";
-        return "Failed";
+            return "success";
+        return "failed";
     }
 
 //    @RequestMapping(value = "/QueryStuffById",method = RequestMethod.GET)

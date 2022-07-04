@@ -27,8 +27,8 @@ public class RoomTypeController {
 //            @RequestParam("minTime") String minTime
 //    ){
 //        if(roomTypeService.addRoomType(id, name, price, bedNumber, maxPeople, minTime))
-//            return "Success";
-//        return "Failed";
+//            return "success";
+//        return "failed";
 //    }
 
     @RequestMapping(value = "/addRoomType",method = RequestMethod.GET)
@@ -44,8 +44,8 @@ public class RoomTypeController {
         if(roomTypeService.addRoomType(Integer.parseInt(id),
                 name, price, Integer.parseInt(bedNumber),
                 Integer.parseInt(maxPeople), minTime))
-            return "Success";
-        return "Failed";
+            return "success";
+        return "failed";
     }
 
 //    @RequestMapping(value = "/updateRoomType",method = RequestMethod.GET)
@@ -59,8 +59,8 @@ public class RoomTypeController {
 //            @RequestParam("minTime") String minTime
 //    ){
 //        if(roomTypeService.updateRoomType(id, name, price, bedNumber, maxPeople, minTime))
-//            return "Success";
-//        return "Failed";
+//            return "success";
+//        return "failed";
 //    }
 
     @RequestMapping(value = "/updateRoomType",method = RequestMethod.GET)
@@ -76,8 +76,8 @@ public class RoomTypeController {
         if(roomTypeService.updateRoomType(Integer.parseInt(id),
                 name, new BigDecimal(price), Integer.parseInt(bedNumber),
                 Integer.parseInt(maxPeople), minTime))
-            return "Success";
-        return "Failed";
+            return "success";
+        return "failed";
     }
 
 //    @RequestMapping(value = "/deleteRoomTypeById",method = RequestMethod.GET)
@@ -86,8 +86,8 @@ public class RoomTypeController {
 //            @RequestParam("id") String id
 //    ){
 //        if(roomTypeService.deleteRoomTypeById(id))
-//            return "Success";
-//        return "Failed";
+//            return "success";
+//        return "failed";
 //    }
 
     @RequestMapping(value = "/deleteRoomTypeById",method = RequestMethod.GET)
@@ -96,8 +96,8 @@ public class RoomTypeController {
             @RequestParam("id") String id
     ){
         if(roomTypeService.deleteRoomTypeById(Integer.parseInt(id)))
-            return "Success";
-        return "Failed";
+            return "success";
+        return "failed";
     }
 
 //    @RequestMapping(value = "/queryRoomTypeById",method = RequestMethod.GET)

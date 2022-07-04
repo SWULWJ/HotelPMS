@@ -30,8 +30,8 @@ public class UserAccountController {
 //            @RequestParam("staffInfo") int staffInfoId) {
 //        StaffInfo staffInfo = staffInfoService.queryStaffInfoById(staffInfoId);
 //        if (userService.updateUser(id,account, password,staffInfo))
-//            return "Success";
-//        return "Failed";
+//            return "success";
+//        return "failed";
 //    }
 
     @RequestMapping(value = "/updateUser",method = RequestMethod.GET)
@@ -43,8 +43,8 @@ public class UserAccountController {
             @RequestParam("staffInfo") String staffInfoId) {
         StaffInfo staffInfo = staffInfoService.queryStaffInfoById(Integer.parseInt(staffInfoId));
         if (userService.updateUser(Integer.parseInt(id),account, password,staffInfo))
-            return "Success";
-        return "Failed";
+            return "success";
+        return "failed";
     }
 
 //    @RequestMapping(value = "/AddUser",method = RequestMethod.GET)
@@ -56,8 +56,8 @@ public class UserAccountController {
 //            @RequestParam("staffInfo") int staffInfoId) {
 //        StaffInfo staffInfo = staffInfoService.queryStaffInfoById(staffInfoId);
 //        if (userService.addUser(id,account, password,staffInfo))
-//            return "Success";
-//        return "Failed";
+//            return "success";
+//        return "failed";
 //    }
 
     @RequestMapping(value = "/addUser",method = RequestMethod.GET)
@@ -69,22 +69,22 @@ public class UserAccountController {
             @RequestParam("staffInfo") String staffInfoId) {
         StaffInfo staffInfo = staffInfoService.queryStaffInfoById(Integer.parseInt(staffInfoId));
         if (userService.addUser(Integer.parseInt(id),account, password,staffInfo))
-            return "Success";
-        return "Failed";
+            return "success";
+        return "failed";
     }
 
 //    @RequestMapping(value = "/DeleteUser",method = RequestMethod.GET)
 //    public String DeleteUser(@RequestParam("id") int id){
 //        if (userService.deleteUserById(id))
-//            return "Success";
-//        return "Failed";
+//            return "success";
+//        return "failed";
 //    }
 
     @RequestMapping(value = "/deleteUser",method = RequestMethod.GET)
     public String DeleteUser(@RequestParam("id") String id){
         if (userService.deleteUserById(Integer.parseInt(id)))
-            return "Success";
-        return "Failed";
+            return "success";
+        return "failed";
     }
 
 //    @RequestMapping(value = "/ReadUserById",method = RequestMethod.GET)
