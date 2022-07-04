@@ -5,7 +5,6 @@ import com.hotelpms.service.Impl.StaffInfoServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class StaffInfoController {
@@ -21,36 +20,18 @@ public class StaffInfoController {
         return staffInfoService.queryAllStaffInfo();
     }
 
-//    //新增员工
-//    @GetMapping(value = "/addStaff")
-//    @ResponseBody
-//    public String addStuff(
-//            @RequestParam("id") int id,
-//            @RequestParam("staffNumber") int sn,
-//            @RequestParam("name") String name,
-//            @RequestParam("gender") String gender,
-//            @RequestParam("age") int age,
-//            @RequestParam("position") String pos,
-//            @RequestParam("tel") String tel) {
-//        if (staffInfoService.addStaff(id, sn, name, gender, age, pos, tel))
-//            return "success";
-//        return "failed";
-//    }
-
     //新增员工
     @GetMapping(value = "/addStaff")
     @ResponseBody
-    public String addStuff(
-            @RequestParam("id") String id,
-            @RequestParam("staffNumber") String sn,
+    public String AddStuff(
+            @RequestParam("id") int id,
+            @RequestParam("staff_number") int sn,
             @RequestParam("name") String name,
             @RequestParam("gender") String gender,
-            @RequestParam("age") String age,
+            @RequestParam("age") int age,
             @RequestParam("position") String pos,
             @RequestParam("tel") String tel) {
-        if (staffInfoService.addStaff(Integer.parseInt(id),
-                Integer.parseInt(sn), name, gender,
-                Integer.parseInt(age), pos, tel))
+        if (staffInfoService.addStaff(id, sn, name, gender, age, pos, tel))
             return "success";
         return "failed";
     }
@@ -63,71 +44,33 @@ public class StaffInfoController {
         return staffInfoService.queryStaffInfoByName(name);
     }
 
-    //通过员工编号查找员工
-
-    @GetMapping(value = "queryStaffByStaffNumber")
-    @ResponseBody
-    public List<StaffInfo> queryStaffByStaffNumber(
-            @RequestParam("stuffNumber") String stuffNumber
-    ){
-        ArrayList<StaffInfo> list = new ArrayList<>();
-        list.add(staffInfoService.queryStaffInfoByStaffNumber(Integer.getInteger(stuffNumber)));
-        return list;
-    }
+    //通过员工编号查找员工（传入string：stuffNumber返回员工对象）url：/queryStaffByStaffNumber
 
 
 
-
-//    //更新员工信息
-//    @GetMapping(value = "/updateStaff")
-//    @ResponseBody
-//    public String updateStuff(
-//            @RequestParam("id") int id,
-//            @RequestParam("staffNumber") int sn,
-//            @RequestParam("name") String name,
-//            @RequestParam("gender") String gender,
-//            @RequestParam("age") int age,
-//            @RequestParam("position") String pos,
-//            @RequestParam("tel") String tel) {
-//        if (staffInfoService.updateStaffInfo(id, sn, name, gender, age, pos, tel))
-//            return "success";
-//        return "failed";
-//    }
 
     //更新员工信息
     @GetMapping(value = "/updateStaff")
     @ResponseBody
-    public String updateStuff(
-            @RequestParam("id") String id,
-            @RequestParam("staffNumber") String sn,
+    public String UpdateStuff(
+            @RequestParam("id") int id,
+            @RequestParam("staff_number") int sn,
             @RequestParam("name") String name,
             @RequestParam("gender") String gender,
-            @RequestParam("age") String age,
+            @RequestParam("age") int age,
             @RequestParam("position") String pos,
             @RequestParam("tel") String tel) {
-        if (staffInfoService.updateStaffInfo(Integer.parseInt(id),
-                Integer.parseInt(sn), name, gender,
-                Integer.parseInt(age), pos, tel))
+        if (staffInfoService.updateStaffInfo(id, sn, name, gender, age, pos, tel))
             return "success";
         return "failed";
     }
 
-//    //通过Id删除员工
-//    @GetMapping(value = "/deleteStaff")
-//    @ResponseBody
-//    public String deleteStaff(
-//            @RequestParam("id") int id){
-//        if (staffInfoService.deleteStaffInfoById(id))
-//            return "success";
-//        return "failed";
-//    }
-
     //通过Id删除员工
     @GetMapping(value = "/deleteStaff")
     @ResponseBody
-    public String deleteStaff(
-            @RequestParam("id") String id){
-        if (staffInfoService.deleteStaffInfoById(Integer.parseInt(id)))
+    public String DeleteStaff(
+            @RequestParam("id") int id){
+        if (staffInfoService.deleteStaffInfoById(id))
             return "success";
         return "failed";
     }
