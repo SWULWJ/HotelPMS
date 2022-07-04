@@ -128,13 +128,13 @@ public class RoomTypeController {
 //        return roomTypeService.queryRoomTypeById(id);
 //    }
 
-    @RequestMapping(value = "/queryRoomTypeById",method = RequestMethod.GET)
-    @ResponseBody
-    public RoomType queryRoomTypeById(
-            @RequestParam("id") String id
-    ){
-        return roomTypeService.queryRoomTypeById(Integer.parseInt(id));
-    }
+//    @RequestMapping(value = "/queryRoomTypeById",method = RequestMethod.GET)
+//    @ResponseBody
+//    public RoomType queryRoomTypeById(
+//            @RequestParam("id") String id
+//    ){
+//        return roomTypeService.queryRoomTypeById(Integer.parseInt(id));
+//    }
 
 //    @RequestMapping(value = "/QueryRoomTypeByPrice",method = RequestMethod.GET)
 //    @ResponseBody
@@ -145,22 +145,22 @@ public class RoomTypeController {
 //        return roomTypeService.queryRoomTypeByPrice(min_price,max_price);
 //    }
 
-    @RequestMapping(value = "/queryRoomTypeByMaxPeople",method = RequestMethod.GET)
-    @ResponseBody
-    public List<RoomType> queryRoomTypeByMaxPeople(
-            @RequestParam("maxPeople") String maxPeople
-    ){
-        return roomTypeService.queryRoomTypeByMaxPeople(
-                Integer.parseInt(maxPeople));
-    }
-
-    @RequestMapping(value = "/queryRoomTypeByMinTime",method = RequestMethod.GET)
-    @ResponseBody
-    public List<RoomType> queryRoomTypeByMinTime(
-            @RequestParam("minTime") String minTime
-    ){
-        return roomTypeService.queryRoomTypeByMinTime(minTime);
-    }
+//    @RequestMapping(value = "/queryRoomTypeByMaxPeople",method = RequestMethod.GET)
+//    @ResponseBody
+//    public List<RoomType> queryRoomTypeByMaxPeople(
+//            @RequestParam("maxPeople") String maxPeople
+//    ){
+//        return roomTypeService.queryRoomTypeByMaxPeople(
+//                Integer.parseInt(maxPeople));
+//    }
+//
+//    @RequestMapping(value = "/queryRoomTypeByMinTime",method = RequestMethod.GET)
+//    @ResponseBody
+//    public List<RoomType> queryRoomTypeByMinTime(
+//            @RequestParam("minTime") String minTime
+//    ){
+//        return roomTypeService.queryRoomTypeByMinTime(minTime);
+//    }
 
 //    @RequestMapping(value = "/queryRoomTypeByBedNum",method = RequestMethod.GET)
 //    @ResponseBody
@@ -170,14 +170,14 @@ public class RoomTypeController {
 //        return roomTypeService.queryRoomTypeByBedNum(bedNumber);
 //    }
 
-    @RequestMapping(value = "/queryRoomTypeByBedNum",method = RequestMethod.GET)
-    @ResponseBody
-    public List<RoomType> queryRoomTypeByBedNum(
-            @RequestParam("bedNumber") String bedNumber
-    ){
-        return roomTypeService.queryRoomTypeByBedNum(
-                Integer.parseInt(bedNumber));
-    }
+//    @RequestMapping(value = "/queryRoomTypeByBedNum",method = RequestMethod.GET)
+//    @ResponseBody
+//    public List<RoomType> queryRoomTypeByBedNum(
+//            @RequestParam("bedNumber") String bedNumber
+//    ){
+//        return roomTypeService.queryRoomTypeByBedNum(
+//                Integer.parseInt(bedNumber));
+//    }
 
 
 }
