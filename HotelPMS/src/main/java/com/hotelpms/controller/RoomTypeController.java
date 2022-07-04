@@ -3,10 +3,7 @@ package com.hotelpms.controller;
 import com.hotelpms.pojo.RoomType;
 import com.hotelpms.service.Impl.RoomTypeServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -16,16 +13,20 @@ public class RoomTypeController {
     @Autowired
     private RoomTypeServiceImpl roomTypeService;
 
+    //
     @RequestMapping(value = "/AddRoomType",method = RequestMethod.GET)
     @ResponseBody
     public String addRoomType(
             @RequestParam("id") int id,
-            @RequestParam("name") int name,
+            @RequestParam("name") String name,
             @RequestParam("price") BigDecimal price,
             @RequestParam("bed_number") int bed_number,
             @RequestParam("max_people") int max_people,
             @RequestParam("min_time") String min_time
     ){
+        id = 999;
+        name = "小瘪三";
+
         if(roomTypeService.addRoomType(id, name, price, bed_number, max_people, min_time))
             return "Success";
         return "Failed";
@@ -35,7 +36,7 @@ public class RoomTypeController {
     @ResponseBody
     public String updateRoomType(
             @RequestParam("id") int id,
-            @RequestParam("name") int name,
+            @RequestParam("name") String name,
             @RequestParam("price") BigDecimal price,
             @RequestParam("bed_number") int bed_number,
             @RequestParam("max_people") int max_people,

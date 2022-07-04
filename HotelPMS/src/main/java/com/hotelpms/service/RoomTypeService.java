@@ -8,7 +8,7 @@ import java.util.List;
 public interface RoomTypeService {
     //增
     //增加一条数据
-    boolean addRoomType(int id, int name, BigDecimal price,int bed_number,int max_people,String min_time);
+    boolean addRoomType(int id, String name, BigDecimal price,int bed_number,int max_people,String min_time);
 
     //删
     //根据ID删除一条信息
@@ -16,7 +16,7 @@ public interface RoomTypeService {
 
     //改
     //修改一条数据
-    boolean updateRoomType(int id, int name, BigDecimal price, int bed_number, int max_people, String min_time);
+    boolean updateRoomType(int id, String name, BigDecimal price, int bed_number, int max_people, String min_time);
 
     //查
     //根据ID查询一条信息
