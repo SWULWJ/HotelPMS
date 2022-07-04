@@ -16,51 +16,97 @@ public class StoreRecordController {
     @Autowired
     private StoreRecordsServiceImpl storeRecordsService;
 
-    @RequestMapping(value = "/AddStoreRecords",method = RequestMethod.GET)
+//    @RequestMapping(value = "/addStoreRecords",method = RequestMethod.GET)
+//    @ResponseBody
+//    public String addStoreRecords(
+//            @RequestParam("id") int id,
+//            @RequestParam("name") String name,
+//            @RequestParam("amount") int amount,
+//            @RequestParam("price") BigDecimal price
+//    ){
+//        if (storeRecordsService.addStoreRecords(id, name, amount, price))
+//            return "success";
+//        return "failed";
+//    }
+
+    @RequestMapping(value = "/addStoreRecords",method = RequestMethod.GET)
     @ResponseBody
     public String addStoreRecords(
-            @RequestParam("id") int id,
+            @RequestParam("id") String id,
             @RequestParam("name") String name,
-            @RequestParam("amount") int amount,
+            @RequestParam("amount") String amount,
             @RequestParam("price") BigDecimal price
     ){
-        if (storeRecordsService.addStoreRecords(id, name, amount, price))
-            return "Success";
-        return "Failed";
+        if (storeRecordsService.addStoreRecords(Integer.parseInt(id), name,
+                Integer.parseInt(amount), price))
+            return "success";
+        return "failed";
     }
 
-    @RequestMapping(value = "/UpdateStoreRecords",method = RequestMethod.GET)
+//    @RequestMapping(value = "/updateStoreRecords",method = RequestMethod.GET)
+//    @ResponseBody
+//    public String updateStoreRecords(
+//            @RequestParam("id") int id,
+//            @RequestParam("name") String name,
+//            @RequestParam("amount") int amount,
+//            @RequestParam("price") BigDecimal price
+//    ){
+//        if (storeRecordsService.updateStoreRecords(id, name, amount, price))
+//            return "success";
+//        return "failed";
+//    }
+
+    @RequestMapping(value = "/updateStoreRecords",method = RequestMethod.GET)
     @ResponseBody
     public String updateStoreRecords(
-            @RequestParam("id") int id,
+            @RequestParam("id") String id,
             @RequestParam("name") String name,
-            @RequestParam("amount") int amount,
+            @RequestParam("amount") String amount,
             @RequestParam("price") BigDecimal price
     ){
-        if (storeRecordsService.updateStoreRecords(id, name, amount, price))
-            return "Success";
-        return "Failed";
+        if (storeRecordsService.updateStoreRecords(Integer.parseInt(id), name,
+                Integer.parseInt(amount), price))
+            return "success";
+        return "failed";
     }
 
-    @RequestMapping(value = "/DeleteStoreRecords",method = RequestMethod.GET)
+//    @RequestMapping(value = "/deleteStoreRecords",method = RequestMethod.GET)
+//    @ResponseBody
+//    public String deleteStoreRecords(
+//            @RequestParam("id") int id
+//    ){
+//        if (storeRecordsService.deleteStoreRecords(id))
+//            return "success";
+//        return "failed";
+//    }
+
+    @RequestMapping(value = "/deleteStoreRecords",method = RequestMethod.GET)
     @ResponseBody
     public String deleteStoreRecords(
-            @RequestParam("id") int id
+            @RequestParam("id") String id
     ){
-        if (storeRecordsService.deleteStoreRecords(id))
-            return "Success";
-        return "Failed";
+        if (storeRecordsService.deleteStoreRecords(Integer.parseInt(id)))
+            return "success";
+        return "failed";
     }
 
-    @RequestMapping(value = "/QueryStoreRecords",method = RequestMethod.GET)
+//    @RequestMapping(value = "/queryStoreRecords",method = RequestMethod.GET)
+//    @ResponseBody
+//    public StoreRecords queryStoreRecords(
+//            @RequestParam("id") int id
+//    ){
+//        return storeRecordsService.queryStoreRecords(id);
+//    }
+
+    @RequestMapping(value = "/queryStoreById",method = RequestMethod.GET)
     @ResponseBody
     public StoreRecords queryStoreRecords(
-            @RequestParam("id") int id
+            @RequestParam("id") String id
     ){
-        return storeRecordsService.queryStoreRecords(id);
+        return storeRecordsService.queryStoreRecords(Integer.parseInt(id));
     }
 
-    @RequestMapping(value = "/QueryStoreRecords",method = RequestMethod.GET)
+    @RequestMapping(value = "/queryAllStoreRecords",method = RequestMethod.GET)
     @ResponseBody
     public List<StoreRecords> queryAllStoreRecords(){
         return storeRecordsService.queryAllStoreRecords();
