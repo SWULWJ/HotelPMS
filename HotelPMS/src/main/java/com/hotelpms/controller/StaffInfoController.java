@@ -44,7 +44,7 @@ public class StaffInfoController {
     }
 
     //通过名字查找员工
-    @GetMapping(value = "/queryStuffByName")
+    @GetMapping(value = "/queryStaffByName")
     @ResponseBody
     public List<StaffInfo> QueryStuffByName(
             @RequestParam("/name") String name){
@@ -55,10 +55,10 @@ public class StaffInfoController {
     @GetMapping(value = "/queryStaffByStaffNumber")
     @ResponseBody
     public List<StaffInfo> queryStaffByStaffNumber(
-            @RequestParam("stuffNumber") String stuffNumber
+            @RequestParam("staffNumber") String staffNumber
     ){
         List<StaffInfo> list = new ArrayList<>();
-        list.add(staffInfoService.queryStaffInfoByStaffNumber(Integer.parseInt(stuffNumber)));
+        list.add(staffInfoService.queryStaffInfoByStaffNumber(Integer.parseInt(staffNumber)));
         return list;
     }
 
