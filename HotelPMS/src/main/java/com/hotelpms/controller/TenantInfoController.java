@@ -3,67 +3,88 @@ package com.hotelpms.controller;
 import com.hotelpms.pojo.TenantInfo;
 import com.hotelpms.service.Impl.TenantInfoServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
+@Controller
 public class TenantInfoController {
 
     @Autowired
     private TenantInfoServiceImpl tenantInfoService;
 
-    @RequestMapping(value = "/AddTenantInfo",method = RequestMethod.GET)
+    // 查询所有旅客信息
+    @GetMapping(value = "/queryAllTenantInfo")
+    @ResponseBody
+    public List<TenantInfo> queryAllTenantInfo() {
+        return tenantInfoService.queryAllTenantInfo();
+    }
+
+    //通过身份证号查询住客信息
+
+
+
+
+    // 添加一条旅客信息
+    @GetMapping(value = "/addTenantInfo")
     @ResponseBody
     public String addTenantInfo(
-            @RequestParam("id") int id,
+            @RequestParam("id") String id,
             @RequestParam("name") String name,
             @RequestParam("gender") String gender,
-            @RequestParam("id_card") String id_card
-    ){
-        if(tenantInfoService.addTenantInfo(id, name, gender, id_card))
-            return "Success";
-        return "Failed";
+            @RequestParam("idCard") String id_card
+    ) {
+        if(tenantInfoService.addTenantInfo(Integer.parseInt(id),
+                name, gender, id_card))
+            return "success";
+        return "failed";
     }
 
-    @RequestMapping(value = "/UpdateTenantInfo",method = RequestMethod.GET)
+    // 更新一条旅客信息
+    @GetMapping(value = "/updateTenantInfo")
     @ResponseBody
     public String updateTenantInfo(
-            @RequestParam("id") int id,
+            @RequestParam("id") String id,
             @RequestParam("name") String name,
             @RequestParam("gender") String gender,
-            @RequestParam("id_card") String id_card
-    ){
-        if(tenantInfoService.updateTenantInfo(id, name, gender, id_card))
-            return "Success";
-        return "Failed";
+            @RequestParam("idCard") String id_card
+    ) {
+        if(tenantInfoService.updateTenantInfo(Integer.parseInt(id),
+                name, gender, id_card))
+            return "success";
+        return "failed";
     }
 
-    @RequestMapping(value = "/DeleteTenantInfo",method = RequestMethod.GET)
+    // 删除一条旅客信息
+    @GetMapping(value = "/deleteTenantInfo")
     @ResponseBody
     public String deleteTenantInfo(
-            @RequestParam("id") int id
-    ){
-        if(tenantInfoService.deleteTenantInfo(id))
-            return "Success";
-        return "Failed";
+            @RequestParam("id") String id
+    ) {
+        if(tenantInfoService.deleteTenantInfo(Integer.parseInt(id)))
+            return "success";
+        return "failed";
     }
 
-    @RequestMapping(value = "/QueryTenantInfoById",method = RequestMethod.GET)
+    // 根据 id 查询一条旅客信息
+    @GetMapping(value = "/queryTenantInfoById")
     @ResponseBody
-    public TenantInfo queryTenantInfoById(
-            @RequestParam("id") int id
-    ){
-        return tenantInfoService.queryTenantInfoById(id);
+    public List<TenantInfo> queryTenantInfoById(
+            @RequestParam("id") String id
+    ) {
+        List<TenantInfo> list = new ArrayList<>();
+        list.add(tenantInfoService.queryTenantInfoById(Integer.parseInt(id)));
+        return list;
     }
 
-    @RequestMapping(value = "/QueryAllTenantInfo",method = RequestMethod.GET)
+    // 根据 name 查询一条旅客信息
+    @GetMapping(value = "/queryTenantInfoByName")
     @ResponseBody
-    public List<TenantInfo> queryAllTenantInfo(
-            @RequestParam("id") int id
-    ){
-        return tenantInfoService.queryAllTenantInfo();
+    public List<TenantInfo> queryTenantInfoByName(
+        @RequestParam("name") String name
+    ) {
+        return tenantInfoService.queryTenantInfoByName(name);
     }
 }

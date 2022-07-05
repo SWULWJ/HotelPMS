@@ -34,7 +34,7 @@ public interface TenantInfoMapper {
             @Result(column = "gender", property = "gender"),
             @Result(column = "id_card", property = "idCard")
     })
-    TenantInfo queryTenantInfoById(int id);
+    TenantInfo queryById(int id);
 
     //通过房客姓名称查找一个房客信息
     @Select("SELECT * FROM tenant_info WHERE name=#{name}")
@@ -44,7 +44,7 @@ public interface TenantInfoMapper {
             @Result(column = "gender", property = "gender"),
             @Result(column = "id_card", property = "idCard")
     })
-    List<TenantInfo> queryTenantInfoByName(String name);
+    List<TenantInfo> queryByName(String name);
 
     //查找所有房客信息
     @Select("SELECT * FROM tenant_info")
@@ -54,6 +54,8 @@ public interface TenantInfoMapper {
             @Result(column = "gender", property = "gender"),
             @Result(column = "id_card", property = "idCard")
     })
-    List<TenantInfo> queryAllTenantInfo();
+    List<TenantInfo> queryAll();
 
+    //通过身份证号查询房客信息
+    List<TenantInfo> queryTenantInfoByIdCard(String idCard);
 }
