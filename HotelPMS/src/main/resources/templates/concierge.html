@@ -223,7 +223,7 @@
 									<div class="card-header">
 										<h4 class="card-title">员工姓名</h4>
 									</div>
-									<div class="card-body" style="display: inline-block;">
+									<div class="card-body">
 										<div class="basic-form">
 											<form>
 												<div class="mb-3">
@@ -239,13 +239,11 @@
 										<h4 class="card-title">编号</h4>
 									</div>
 									<div class="card-body">
-
 										<div class="basic-form">
 											<form>
 												<div class="mb-3">
 													<input class="form-control form-control-lg" v-model="submitStaffInfo.staffNumber" type="text" placeholder="编号" style="width: 100px;">
 												</div>
-
 											</form>
 										</div>
 									</div>
@@ -253,29 +251,41 @@
 
 
 								<div class="card" style="display: inline-block;">
-									<div class="card-body" style="display: inline-block;">
-										<div class="mb-4">
-											<h4 class="card-title">职位</h4>
+									<div class="card-header">
+										<h4 class="card-title">职位</h4>
+									</div>
+									<div class="card-body">
+										<div class="basic-form">
+											<form>
+												<div class="mb-3">
+													<select class="form-control form-control-lg" v-model="submitStaffInfo.position">
+														<option value="前台">前台</option>
+														<option value="清洁">清洁</option>
+														<option value="维修">维修</option>
+														<option value="财务">财务</option>
+														<option value="经理">经理</option>
+													</select>
+												</div>
+											</form>
 										</div>
-										<select v-model="submitStaffInfo.position">
-											<option value="qt">前台</option>
-											<option value="qj">清洁</option>
-											<option value="wx">维修</option>
-											<option value="cw">财务</option>
-											<option value="jl">经理</option>
-										</select>
 									</div>
 								</div>
 
 								<div class="card" style="display: inline-block;">
-									<div class="card-body" style="display: inline-block;">
-										<div class="mb-4">
-											<h4 class="card-title">性别</h4>
+									<div class="card-header">
+										<h4 class="card-title">性别</h4>
+									</div>
+									<div class="card-body">
+										<div class="basic-form">
+											<form>
+												<div class="mb-3">
+													<select class="form-control form-control-lg" v-model="submitStaffInfo.gender">
+														<option value="男">男</option>
+														<option value="女">女</option>
+													</select>
+												</div>
+											</form>
 										</div>
-										<select v-model="submitStaffInfo.gender">
-											<option value="MAN">男</option>
-											<option value="WOMAN">女</option>
-										</select>
 									</div>
 								</div>
 
@@ -284,13 +294,11 @@
 										<h4 class="card-title">年龄</h4>
 									</div>
 									<div class="card-body">
-
 										<div class="basic-form">
 											<form>
 												<div class="mb-3">
 													<input class="form-control form-control-lg" v-model="submitStaffInfo.age" type="text" placeholder="年龄" style="width: 80px;">
 												</div>
-
 											</form>
 										</div>
 									</div>
@@ -301,20 +309,11 @@
 										<h4 class="card-title">联系方式</h4>
 									</div>
 									<div class="card-body">
-										<!-- 							<div class="card-header" >
-                                                                        <h4 class="card-title">联系方式</h4>
-                                                                    </div> -->
 										<div class="basic-form">
 											<form>
 												<div class="mb-3">
 													<input class="form-control form-control-lg" v-model="submitStaffInfo.tel" type="tel" placeholder="联系方式">
 												</div>
-												<!-- <div class="mb-3">
-                                                     <input class="form-control" type="text" placeholder="Default input">
-                                                 </div>
-                                                 <div class="mb-3">
-                                                     <input class="form-control form-control-sm" type="text" placeholder="form-control-sm">
-                                                 </div> -->
 											</form>
 										</div>
 									</div>
@@ -327,7 +326,7 @@
 							<!-- <a href="javascript:void(0);" class="btn btn-primary mt-3"><i class="far fa-file-word me-2"></i>新增员工</a> -->
 							<div style="right: 5%;">
 								<button type="button" class="btn btn-primary" v-on:click="addStaff">新增</button>
-								<button type="button" class="btn btn-primary">查询</button>
+								<button type="button" class="btn btn-primary" v-on:click="searchStaffInfo">查询</button>
 							</div>
 
 						</div>
@@ -345,7 +344,8 @@
 													<input class="form-check-input" type="checkbox" value="" id="checkAll">
 												</div>
 											</th>
-											<th>员工姓名&AMP;编号</th>
+											<th>编号</th>
+											<th>员工姓名</th>
 											<th>职位</th>
 											<th>性别</th>
 											<th>年龄</th>
@@ -353,7 +353,7 @@
 											<th class="bg-none"></th>
 										</tr>
 										</thead>
-										<tbody v-for="(item, index) in getStaffInfo">
+										<tbody v-for="(item, index) in getStaffInfoList">
 										<tr>
 											<td>
 												<div class="form-check style-1">
@@ -361,36 +361,44 @@
 												</div>
 											</td>
 											<td>
-												<div class="concierge-bx">
-													<!-- <img class="me-3 rounded" src="static/picture/pic12.jpg" alt=""> -->
-													<div>
-														<span class="text-primary">{{item.staffNumber}}</span>
-														<h4 class="mt-1"><p class="text-black" >{{item.name}}</p></h4>
-														<!-- <span class="fs-14">Join on January 21th, 2015</span> -->
-													</div>
+												<div>
+													<h4 class="mt-1" v-if="isShow != index"><p class="text-black" >{{item.staffNumber}}</p></h4>
+													<input v-if="isShow === index" type="text" v-model="updateStaffInfo.staffNumber">
+													<!-- <span class="fs-16">Act as a liaison between guests and any department necessary including the kitchen, housekeeping, etc</span> -->
 												</div>
 											</td>
 											<td class="job-desk">
 												<div>
-													<h4 class="mt-1"><p class="text-black" >{{item.position}}</p></h4>
+													<h4 class="mt-1" v-if="isShow != index"><p class="text-black" >{{item.name}}</p></h4>
+													<input v-if="isShow === index" type="text" v-model="updateStaffInfo.name">
 													<!-- <span class="fs-16">Act as a liaison between guests and any department necessary including the kitchen, housekeeping, etc</span> -->
 												</div>
 											</td>
 											<td>
 												<div>
-													<h5 class="font-w600">{{item.gender}}</h5>
+													<h4 class="mt-1" v-if="isShow != index"><p class="text-black" >{{item.position}}</p></h4>
+													<input v-if="isShow === index" type="text" v-model="updateStaffInfo.position">
+													<!-- <span class="fs-16">Act as a liaison between guests and any department necessary including the kitchen, housekeeping, etc</span> -->
+												</div>
+											</td>
+											<td>
+												<div>
+													<h5 class="font-w600" v-if="isShow != index">{{item.gender}}</h5>
+													<input v-if="isShow === index" type="text" v-model="updateStaffInfo.gender">
 													<!-- <span>08:00 AM - 04:00 PM</span> -->
 												</div>
 											</td>
 											<td>
 												<div>
-													<h5 class="font-w600">{{item.age}}</h5>
-
+													<h5 class="font-w600" v-if="isShow != index">{{item.age}}</h5>
+													<input v-if="isShow === index" type="text" v-model="updateStaffInfo.age">
 												</div>
 											</td>
 											<td>
-												<div class="text-nowrap">
-													<span class="text-black font-w500"><i class="fas fa-phone-volume me-2 text-primary"></i> {{item.tel}}</span>
+												<div class="text-nowrap job-desk">
+													<!--													<span class="text-black font-w500"><i class="fas fa-phone-volume me-2 text-primary"></i> {{item.tel}}</span>-->
+													<h5 class="font-w600" v-if="isShow != index"><i class="fas fa-phone-volume me-2 text-primary"></i>{{item.tel}}</h5>
+													<input v-if="isShow === index" type="text" v-model="updateStaffInfo.tel">
 												</div>
 											</td>
 											<!-- <td><span class="text-danger font-w600">INACTIVE</span></td> -->
@@ -404,9 +412,10 @@
 														</svg>
 													</a>
 													<div class="dropdown-menu">
-														<a class="dropdown-item" href="javascript:void(0);">编辑</a>
-														<a class="dropdown-item" href="javascript:void(0);">创建账号</a>
-														<a class="dropdown-item" href="javascript:void(0);">删除</a>
+														<input type="button" class="dropdown-item" v-on:click="editStaff(index)" v-if="isShow != index" value="编辑">
+														<input type="button" class="dropdown-item" v-on:click="createAccount(index)" v-if="isShow != index" value="创建账号">
+														<input type="button" class="dropdown-item" v-on:click="deleteStaff(index)" v-if="isShow != index" value="删除">
+														<input type="button" class="dropdown-item" v-on:click="updateStaff(index)" v-if="isShow === index" value="完成">
 													</div>
 												</div>
 											</td>
@@ -469,37 +478,167 @@
 	var app = new Vue({
 		el: "#staff",
 		data:{
+			isShow: -1,
 			submitStaffInfo:{},
-			getStaffInfo:[]
+			getStaffInfoList:[],
+			updateStaffInfo:{
+				id:0,
+				staffNumber:"",
+				name:"",
+				gender:"",
+				age:"",
+				position:"",
+				tel:""
+			},
 		},
 		created() {
 			this.getAll()
 		},
 		methods:{
-			 getAll() {
+			getAll() {
 				let that = this;
-				axios.get("/QueryAllStaff")
+				axios.get("/queryAllStaff")
 						.then(function(res){
-							that.getStaffInfo = res.data;
+							that.getStaffInfoList = res.data;
 						});
 			},
-			addStaff(){
-				 axios.get("/addStaff",{
-					 params:{
-						 id: 0,
-						 sn: this.submitStaffInfo.staffNumber,
-						 name: this.submitStaffInfo.name,
-						 gender: this.submitStaffInfo.gender,
-						 age: this.submitStaffInfo.age,
-						 pos: this.submitStaffInfo.position,
-						 tel: this.submitStaffInfo.tel,
-					 }
-				 })
-						 .then(function (res){
-							 console.log(res.data);
-						 });
-			}
+			addStaff() {
+				if(this.submitStaffInfo.name == null || this.submitStaffInfo.name === ""){
+					console.log("name");
+					alert("请输入姓名")
+				}else if(this.submitStaffInfo.staffNumber == null || this.submitStaffInfo.staffNumber === ""){
+					console.log("staffNumber");
+					alert("请输入员工编号");
+				}else if(this.submitStaffInfo.position == null || this.submitStaffInfo.position === ""){
+					console.log("position");
+					alert("请输入职位");
+				}else if(this.submitStaffInfo.gender == null || this.submitStaffInfo.gender === ""){
+					console.log("gender");
+					alert("请输入性别");
+				}else if(this.submitStaffInfo.age == null || this.submitStaffInfo.age === ""){
+					console.log("age");
+					alert("请输入年龄");
+				}else if(this.submitStaffInfo.tel == null || this.submitStaffInfo.tel === ""){
+					console.log("tel");
+					alert("请输入联系方式");
+				}else{
+					let that = this;
+					axios.get("/addStaff",{
+						params:{
+							id: "0",
+							staffNumber: this.submitStaffInfo.staffNumber,
+							name: this.submitStaffInfo.name,
+							gender: this.submitStaffInfo.gender,
+							age: this.submitStaffInfo.age,
+							position: this.submitStaffInfo.position,
+							tel: this.submitStaffInfo.tel,
+						}
+					}).then(function (res){
+						if(res.data === "success"){
+							// console.log(res.data);
+							alert("添加成功");
+							that.getAll();
+						}else{
+							alert("添加失败");
+						}
+					});
+				}
+			},
+			searchStaffInfoByName() {
+				let that = this;
+				axios.get("/queryStaffByName",{
+					params: {
+						name: this.submitStaffInfo.name
+					}
+				})
+						.then(function (res){
+							that.getStaffInfoList = res.data;
+						});
+			},
+			searchStaffInfoByNumber() {
+				let that = this;
+				axios.get("/queryStaffByStaffNumber",{
+					params: {
+						staffNumber: this.submitStaffInfo.staffNumber
+					}
+				})
+						.then(function (res){
+							that.getStaffInfoList = res.data;
+						});
+			},
+			searchStaffInfo() {
+				if(this.submitStaffInfo.staffNumber != null ){
 
+					this.searchStaffInfoByNumber();
+				}
+				else if(this.submitStaffInfo.name != null){
+					this.searchStaffInfoByName();
+				}
+				else{
+					alert("输入员工编号或姓名");
+				}
+			},
+			deleteStaff(index){
+				let id = this.getStaffInfoList[index].id;
+				let that = this;
+				console.log(id);
+				axios.get("/deleteStaff",{
+					params: {
+						id: id
+					}
+				}).then(function (res){
+					if(res.data === "success"){
+						// console.log(res.data);
+						alert("删除成功");
+						that.getAll();
+					}else{
+						alert("删除失败");
+					}
+				});
+			},
+			editStaff(index){
+				this.isShow = index;
+				this.updateStaffInfo = this.getStaffInfoList[index];
+			},
+			updateStaff(index){
+				this.isShow = -1;
+				let that = this;
+				axios.get("/updateStaff",{
+					params: {
+						id: this.updateStaffInfo.id,
+						staffNumber: this.updateStaffInfo.staffNumber,
+						name: this.updateStaffInfo.name,
+						gender: this.updateStaffInfo.gender,
+						age: this.updateStaffInfo.age,
+						position: this.updateStaffInfo.position,
+						tel: this.updateStaffInfo.tel
+					}
+				}).then(function (res){
+					if(res.data === "success"){
+						// console.log(res.data);
+						alert("更新成功");
+						that.getAll();
+					}else{
+						alert("更新失败");
+					}
+				});
+			},
+			createAccount(index){
+				let that = this;
+				axios.get("/createAccount",{
+					params:{
+						id: this.getStaffInfoList[index].id
+					}
+				}).then(function (res){
+					if(res.data === "success"){
+						// console.log(res.data);
+						alert("账号创建成功");
+						that.getAll();
+					}else{
+						alert("账号创建失败");
+					}
+				});
+			}
 		}
 	})
 </script>

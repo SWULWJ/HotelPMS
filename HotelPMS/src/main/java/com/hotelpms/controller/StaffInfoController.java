@@ -25,22 +25,6 @@ public class StaffInfoController {
         return staffInfoService.queryAllStaffInfo();
     }
 
-//    //新增员工
-//    @GetMapping(value = "/addStaff")
-//    @ResponseBody
-//    public String addStuff(
-//            @RequestParam("id") int id,
-//            @RequestParam("staffNumber") int sn,
-//            @RequestParam("name") String name,
-//            @RequestParam("gender") String gender,
-//            @RequestParam("age") int age,
-//            @RequestParam("position") String pos,
-//            @RequestParam("tel") String tel) {
-//        if (staffInfoService.addStaff(id, sn, name, gender, age, pos, tel))
-//            return "success";
-//        return "failed";
-//    }
-
     //新增员工
     @GetMapping(value = "/addStaff")
     @ResponseBody
@@ -78,25 +62,6 @@ public class StaffInfoController {
         return list;
     }
 
-
-
-
-//    //更新员工信息
-//    @GetMapping(value = "/updateStaff")
-//    @ResponseBody
-//    public String updateStuff(
-//            @RequestParam("id") int id,
-//            @RequestParam("staffNumber") int sn,
-//            @RequestParam("name") String name,
-//            @RequestParam("gender") String gender,
-//            @RequestParam("age") int age,
-//            @RequestParam("position") String pos,
-//            @RequestParam("tel") String tel) {
-//        if (staffInfoService.updateStaffInfo(id, sn, name, gender, age, pos, tel))
-//            return "success";
-//        return "failed";
-//    }
-
     //更新员工信息
     @GetMapping(value = "/updateStaff")
     @ResponseBody
@@ -115,16 +80,6 @@ public class StaffInfoController {
         return "failed";
     }
 
-//    //通过Id删除员工
-//    @GetMapping(value = "/deleteStaff")
-//    @ResponseBody
-//    public String deleteStaff(
-//            @RequestParam("id") int id){
-//        if (staffInfoService.deleteStaffInfoById(id))
-//            return "success";
-//        return "failed";
-//    }
-
     //通过Id删除员工
     @GetMapping(value = "/deleteStaff")
     @ResponseBody
@@ -134,15 +89,4 @@ public class StaffInfoController {
             return "success";
         return "failed";
     }
-
-//    @RequestMapping(value = "/QueryStuffById",method = RequestMethod.GET)
-//    @ResponseBody
-//    public StaffInfo QueryStuffById(
-//            @RequestParam("id") int id){
-//        return staffInfoService.queryStaffInfoById(id);
-//    }
-
-
-
-
 }

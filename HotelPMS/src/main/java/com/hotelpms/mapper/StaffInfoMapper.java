@@ -20,8 +20,8 @@ public interface StaffInfoMapper {
 
     // 更新员工信息
     @Update("UPDATE staff_info "
-            +"SET name=#{name}, gender=#{gender}, age=#{age}, position=#{position}, tel=#{tel} "
-            +"WHERE staff_number=#{staffNumber}")
+            +"SET staff_number=#{staffNumber}, name=#{name}, gender=#{gender}, age=#{age}, position=#{position}, tel=#{tel} "
+            +"WHERE id=#{id}")
     void updateStaffInfo(StaffInfo staffInfo);
 
     // 通过id查找员工信息

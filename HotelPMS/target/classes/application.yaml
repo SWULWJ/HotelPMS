@@ -46,7 +46,10 @@ spring:
       use-global-data-source-stat: true
       # 通过connectProperties属性来打开mergeSql功能；慢SQL记录
       connection-properties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
-
+      web-stat-filter:
+        enabled: true
+      stat-view-servlet:
+        enabled: true
 ## Mybatis配置
 #mybatis:
 #  type-aliases-package: com.hotelpms.pojo

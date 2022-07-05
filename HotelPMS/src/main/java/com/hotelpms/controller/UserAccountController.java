@@ -5,7 +5,7 @@
 //import com.hotelpms.service.Impl.StaffInfoServiceImpl;
 //import com.hotelpms.service.Impl.UserAccountServiceImpl;
 //import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.ui.Model;
+//imp ort org.springframework.ui.Model;
 //import org.springframework.web.bind.annotation.RequestMapping;
 //import org.springframework.web.bind.annotation.RequestMethod;
 //import org.springframework.web.bind.annotation.RequestParam;
@@ -65,5 +65,3 @@
 //        return userService.readAllUser();
 //    }
 //}
-//
-//
