@@ -23,9 +23,13 @@ public class TenantInfoController {
     }
 
     //通过身份证号查询住客信息
-
-
-
+    @GetMapping(value = "/queryTenantInfoByIdCard")
+    @ResponseBody
+    public List<TenantInfo> queryTenantInfoByIdCard(
+            @RequestParam("idCard") String idCard
+    ){
+        return tenantInfoService.queryTenantInfoByIdCard(idCard);
+    }
 
     // 添加一条旅客信息
     @GetMapping(value = "/addTenantInfo")

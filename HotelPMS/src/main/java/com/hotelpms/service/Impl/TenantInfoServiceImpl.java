@@ -15,6 +15,11 @@ public class TenantInfoServiceImpl implements TenantInfoService {
     TenantInfoMapper tenantInfoMapper;
 
     @Override
+    public List<TenantInfo> queryTenantInfoByIdCard(String idCard){
+        return tenantInfoMapper.queryTenantInfoByIdCard(idCard);
+    }
+
+    @Override
     public TenantInfo queryTenantInfoById(int id) {
         return tenantInfoMapper.queryById(id);
     }
@@ -45,6 +50,7 @@ public class TenantInfoServiceImpl implements TenantInfoService {
     public boolean deleteTenantInfo(int id) {
         if(tenantInfoMapper.queryById(id) != null){
             tenantInfoMapper.deleteTenantInfo(id);
+            return true;
         }
         return false;
     }
@@ -54,6 +60,6 @@ public class TenantInfoServiceImpl implements TenantInfoService {
         TenantInfo tenantInfo = new TenantInfo( id , name ,
                 gender , id_card);
         tenantInfoMapper.updateTenantInfo(tenantInfo);
-        return false;
+        return true;
     }
 }
