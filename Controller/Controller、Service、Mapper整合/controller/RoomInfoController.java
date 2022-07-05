@@ -3,13 +3,16 @@ package com.hotelpms.controller;
 import com.hotelpms.pojo.RoomInfo;
 import com.hotelpms.service.Impl.RoomInfoServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.ArrayList;
 import java.util.List;
 
+@Controller
 public class RoomInfoController {
 
     @Autowired
@@ -31,11 +34,15 @@ public class RoomInfoController {
 //        return "failed";
 //    }
 
+
+    // 增加一条房间信息
+    // 输入: id, roomNum, type, state, building, floor
+    // 输出: success or failed
     @RequestMapping(value = "/addRoomInfo",method = RequestMethod.GET)
     @ResponseBody
     public String addRoomInfo(
             @RequestParam("id") String id,
-            @RequestParam("room_num") String room_num,
+            @RequestParam("roomNum") String room_num,
             @RequestParam("type") String type,
             @RequestParam("state") String state,
             @RequestParam("building") String building,
@@ -64,6 +71,9 @@ public class RoomInfoController {
 //        return "failed";
 //    }
 
+    // 更新一条房间信息
+    // 输入: id, roomNum, type, state, building, floor
+    // 输出: success or failed
     @RequestMapping(value = "/updateRoomInfo",method = RequestMethod.GET)
     @ResponseBody
     public String updateRoomInfo(
@@ -91,6 +101,10 @@ public class RoomInfoController {
 //        return "failed";
 //    }
 
+
+    // 删除一条房间信息
+    // 输入: id
+    // 输出: success or failed
     @RequestMapping(value = "/deleteRoomInfoById",method = RequestMethod.GET)
     @ResponseBody
     public String deleteRoomInfoById(
@@ -109,12 +123,18 @@ public class RoomInfoController {
 //        return roomInfoService.queryRoomInfoById(id);
 //    }
 
-    @RequestMapping(value = "/QueryRoomInfoById",method = RequestMethod.GET)
+
+    // 根据 id 查询一条房间信息
+    // 输入: id
+    // 输出: List<RoomInfo>
+    @RequestMapping(value = "/queryRoomInfoById",method = RequestMethod.GET)
     @ResponseBody
-    public RoomInfo queryRoomInfoById(
+    public List<RoomInfo> queryRoomInfoById(
             @RequestParam("id") String id
     ){
-        return roomInfoService.queryRoomInfoById(Integer.parseInt(id));
+        List<RoomInfo> list = new ArrayList<>();
+        list.add(roomInfoService.queryRoomInfoById(Integer.parseInt(id)));
+        return list;
     }
 
 //    @RequestMapping(value = "/QueryRoomInfoByRoomId",method = RequestMethod.GET)
@@ -125,12 +145,17 @@ public class RoomInfoController {
 //        return roomInfoService.queryRoomInfoByRoomNumber(room_id);
 //    }
 
+    // 根据 roomId 查询一条房间信息
+    // 输入: id
+    // 输出: List<RoomInfo>
     @RequestMapping(value = "/queryRoomInfoByRoomId",method = RequestMethod.GET)
     @ResponseBody
-    public RoomInfo queryRoomInfoByRoomId(
-            @RequestParam("roomId") String room_id
+    public List<RoomInfo> queryRoomInfoByRoomId(
+            @RequestParam("roomNumber") String roomNumber
     ){
-        return roomInfoService.queryRoomInfoByRoomNumber(Integer.parseInt(room_id));
+        List<RoomInfo> list = new ArrayList<>();
+        list.add(roomInfoService.queryRoomInfoByRoomNumber(Integer.parseInt(roomNumber)));
+        return list;
     }
 
 //    @RequestMapping(value = "/queryRoomInfoByType",method = RequestMethod.GET)
@@ -141,6 +166,9 @@ public class RoomInfoController {
 //        return roomInfoService.queryRoomInfoByType(type);
 //    }
 
+    // 根据 type 查询一条房间信息
+    // 输入: type
+    // 输出: List<RoomInfo>
     @RequestMapping(value = "/queryRoomInfoByType",method = RequestMethod.GET)
     @ResponseBody
     public List<RoomInfo> queryRoomInfoByType(
@@ -149,7 +177,10 @@ public class RoomInfoController {
         return roomInfoService.queryRoomInfoByType(Integer.parseInt(type));
     }
 
-    @RequestMapping(value = "/QueryRoomInfoByStatus",method = RequestMethod.GET)
+    // 根据 status 查询一条房间信息
+    // 输入: status
+    // 输出: List<RoomInfo>
+    @RequestMapping(value = "/queryRoomInfoByStatus",method = RequestMethod.GET)
     @ResponseBody
     public List<RoomInfo> queryRoomInfoByStatus(
             @RequestParam("status") String status
@@ -157,7 +188,11 @@ public class RoomInfoController {
         return roomInfoService.queryRoomInfoByStatus(status);
     }
 
-    @RequestMapping(value = "/QueryAllRoomByBuilding",method = RequestMethod.GET)
+
+    // 根据 building 查询一条房间信息
+    // 输入: building
+    // 输出: List<RoomInfo>
+    @RequestMapping(value = "/queryAllRoomByBuilding",method = RequestMethod.GET)
     @ResponseBody
     public List<RoomInfo> queryAllRoomByBuilding(
             @RequestParam("building") String building
@@ -165,7 +200,11 @@ public class RoomInfoController {
         return roomInfoService.queryAllRoomByBuilding(building);
     }
 
-    @RequestMapping(value = "/QueryAllRoomByBuildingAndFloor",method = RequestMethod.GET)
+
+    // 根据 building 和 floor 查询一条房间信息
+    // 输入: building, floor
+    // 输出: List<RoomInfo>
+    @RequestMapping(value = "/queryAllRoomByBuildingAndFloor",method = RequestMethod.GET)
     @ResponseBody
     public List<RoomInfo> queryAllRoomByBuildingAndFloor(
             @RequestParam("building") String building,
@@ -175,7 +214,11 @@ public class RoomInfoController {
         return roomInfoService.queryAllRoomByBuildingAndFloor(building,floor);
     }
 
-    @RequestMapping(value = "/QueryAllRoom",method = RequestMethod.GET)
+
+    // 查询所有房间信息
+    // 输入: 无
+    // 输出: List<RoomInfo>
+    @RequestMapping(value = "/queryAllRoom",method = RequestMethod.GET)
     @ResponseBody
     public List<RoomInfo> queryAllRoom(){
         return roomInfoService.queryAllRoom();

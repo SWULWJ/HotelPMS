@@ -3,6 +3,7 @@ package com.hotelpms.controller;
 import com.hotelpms.pojo.BillRecord;
 import com.hotelpms.service.Impl.BillRecordServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -11,9 +12,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.math.BigDecimal;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+@Controller
 public class BillRecordController {
 
     @Autowired
@@ -37,12 +40,15 @@ public class BillRecordController {
 //        return "failed";
 //    }
 
+    //添加一条账单信息
+    //输入: id,billNumber,staffId,type,time,amount,details,auditing
+    //输出: success or failed
     @RequestMapping(value = "/addBillRecord",method = RequestMethod.GET)
     @ResponseBody
     public String addBillRecord(
             @RequestParam("id") String id,
-            @RequestParam("bill_number") String bill_num,
-            @RequestParam("staff_id") String staff_id,
+            @RequestParam("billNumber") String bill_num,
+            @RequestParam("staffId") String staff_id,
             @RequestParam("type") String type,
             @RequestParam("time")String time,
             @RequestParam("amount") String amount,
@@ -82,6 +88,10 @@ public class BillRecordController {
 //        return "failed";
 //    }
 
+
+    //更新一条账单信息
+    //输入: id,billNumber,staffId,type,time,amount,details,auditing
+    //输出: success or failed
     @RequestMapping(value = "/updateBillRecord",method = RequestMethod.GET)
     @ResponseBody
     public String updateBillRecord(
@@ -120,6 +130,10 @@ public class BillRecordController {
 //        return "failed";
 //    }
 
+
+    //删除一条账单信息
+    //输入: id
+    //输出: success or failed
     @RequestMapping(value = "/deleteBillById",method = RequestMethod.GET)
     @ResponseBody
     public String deleteBillById(
@@ -137,13 +151,23 @@ public class BillRecordController {
 //        return billRecordService.QueryRecordById(id);
 //    }
 
+
+    //根据ID查询一条账单信息
+    //输入: id
+    //输出: List<BillRecord>
     @RequestMapping(value = "/queryBillById",method = RequestMethod.GET)
     @ResponseBody
-    public BillRecord queryBillById(
+    public List<BillRecord> queryBillById(
             @RequestParam("id") String id){
-        return billRecordService.QueryRecordById(Integer.parseInt(id));
+        List<BillRecord> list = new ArrayList<>();
+        list.add(billRecordService.QueryRecordById(Integer.parseInt(id)));
+        return list;
     }
 
+
+    //查询所有账单信息
+    //输入: 无
+    //输出: List<BillRecord>
     @RequestMapping(value = "/queryAllBill",method = RequestMethod.GET)
     @ResponseBody
     public List<BillRecord> queryAllBill(){
@@ -158,6 +182,11 @@ public class BillRecordController {
 //        return billRecordService.QueryRecordByTime(start_date,end_date);
 //    }
 
+
+    //根据时间查询一条账单信息
+    //输入: id
+    //输出: List<BillRecord>
+    //暂未启用
     @RequestMapping(value = "/queryBillByTime",method = RequestMethod.GET)
     @ResponseBody
     public List<BillRecord> QueryBillByTime(
@@ -188,6 +217,9 @@ public class BillRecordController {
 //        return billRecordService.QueryRecordByStaffId(staff_id);
 //    }
 
+    //根据staffId查询账单信息
+    //输入: staffId
+    //输出: List<BillRecord>
     @RequestMapping(value = "/queryBillByStaffId",method = RequestMethod.GET)
     @ResponseBody
     public List<BillRecord> queryBillByStaffId(
@@ -195,7 +227,10 @@ public class BillRecordController {
         return billRecordService.QueryRecordByStaffId(Integer.parseInt(staff_id));
     }
 
-    @RequestMapping(value = "/queryBillByStaffType",method = RequestMethod.GET)
+    //根据Type查询账单信息
+    //输入: Type
+    //输出: List<BillRecord>
+    @RequestMapping(value = "/queryBillByType",method = RequestMethod.GET)
     @ResponseBody
     public List<BillRecord> queryBillByTime(
             @RequestParam("type") String type){
@@ -210,7 +245,10 @@ public class BillRecordController {
 //        return billRecordService.QueryRecordByAmount(min,max);
 //    }
 
-    @RequestMapping(value = "/queryBillByStaffAmount",method = RequestMethod.GET)
+    //根据价格区间查询账单信息
+    //输入: max,min
+    //输出: List<BillRecord>
+    @RequestMapping(value = "/queryBillByAmount",method = RequestMethod.GET)
     @ResponseBody
     public List<BillRecord> queryBillByTime(
             @RequestParam("min") String min,
