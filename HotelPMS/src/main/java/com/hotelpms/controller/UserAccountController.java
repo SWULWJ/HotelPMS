@@ -16,7 +16,7 @@ import java.util.List;
 public class UserAccountController {
 
     @Autowired
-    private UserAccountServiceImpl userService;
+    private UserAccountServiceImpl userAccountService;
     @Autowired
     private StaffInfoServiceImpl staffInfoService;
 
@@ -28,7 +28,7 @@ public class UserAccountController {
             Model model,
             HttpSession session
     ) {
-        if(userService.loginJudge(username,password)) {
+        if(userAccountService.loginJudge(username,password)) {
             session.setAttribute("loginUser", username);
             return "redirect:/system.html";
         }
@@ -54,7 +54,7 @@ public class UserAccountController {
             @RequestParam("password") String password,
             @RequestParam("staffInfo") String staffInfoId) {
         StaffInfo staffInfo = staffInfoService.queryStaffInfoById(Integer.parseInt(staffInfoId));
-        if (userService.updateUser(Integer.parseInt(id),account, password,staffInfo))
+        if (userAccountService.updateUser(Integer.parseInt(id),account, password,staffInfo))
             return "success";
         return "failed";
     }
@@ -67,7 +67,7 @@ public class UserAccountController {
 //            @RequestParam("password") String password,
 //            @RequestParam("staffInfo") int staffInfoId) {
 //        StaffInfo staffInfo = staffInfoService.queryStaffInfoById(staffInfoId);
-//        if (userService.addUser(id,account, password,staffInfo))
+//        if (userAccountService.addUser(id,account, password,staffInfo))
 //            return "success";
 //        return "failed";
 //    }
@@ -80,38 +80,38 @@ public class UserAccountController {
             @RequestParam("password") String password,
             @RequestParam("staffInfo") String staffInfoId) {
         StaffInfo staffInfo = staffInfoService.queryStaffInfoById(Integer.parseInt(staffInfoId));
-        if (userService.addUser(Integer.parseInt(id),account, password,staffInfo))
+        if (userAccountService.addUser(Integer.parseInt(id),account, password,staffInfo))
             return "success";
         return "failed";
     }
 
 //    @RequestMapping(value = "/DeleteUser",method = RequestMethod.GET)
 //    public String DeleteUser(@RequestParam("id") int id){
-//        if (userService.deleteUserById(id))
+//        if (userAccountService.deleteUserById(id))
 //            return "success";
 //        return "failed";
 //    }
 
     @RequestMapping(value = "/deleteUser",method = RequestMethod.GET)
     public String DeleteUser(@RequestParam("id") String id){
-        if (userService.deleteUserById(Integer.parseInt(id)))
+        if (userAccountService.deleteUserById(Integer.parseInt(id)))
             return "success";
         return "failed";
     }
 
 //    @RequestMapping(value = "/ReadUserById",method = RequestMethod.GET)
 //    public UserAccount ReadUserById(@RequestParam("id") int id){
-//        return userService.readUserById(id);
+//        return userAccountService.readUserById(id);
 //    }
 
     @RequestMapping(value = "/readUserById",method = RequestMethod.GET)
     public UserAccount ReadUserById(@RequestParam("id") String id){
-        return userService.readUserById(Integer.parseInt(id));
+        return userAccountService.readUserById(Integer.parseInt(id));
     }
 
     @RequestMapping(value = "/readAllUsers",method = RequestMethod.GET)
     public List<UserAccount> ReadAllUsers() {
-        return userService.readAllUser();
+        return userAccountService.readAllUser();
     }
 
 
