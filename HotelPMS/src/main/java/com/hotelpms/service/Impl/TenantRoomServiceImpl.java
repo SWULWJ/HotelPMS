@@ -1,10 +1,11 @@
 package com.hotelpms.service.Impl;
 
 import com.hotelpms.pojo.TenantRoom;
+import com.hotelpms.service.TenantRoomService;
 
 import java.util.List;
 
-public class TenantRoomServiceImpl implements TenantRoomService{
+public class TenantRoomServiceImpl implements TenantRoomService {
     @Override
     public TenantRoom queryTenantRoomById(int i) {
         return null;

@@ -36,7 +36,7 @@ public interface RoomTypeMapper {
             @Result(column = "max_people", property = "maxPeople"),
             @Result(column = "min_time", property = "minTime")
     })
-    RoomType queryRoomTypeById(int id);
+    RoomType queryById(int id);
 
     //通过房间类型名称查找一个房间类型
     @Select("SELECT * FROM room_type WHERE name=#{name}")
@@ -48,7 +48,7 @@ public interface RoomTypeMapper {
             @Result(column = "max_people", property = "maxPeople"),
             @Result(column = "min_time", property = "minTime")
     })
-    RoomType queryRoomTypeByName(String name);
+    RoomType queryByName(String name);
 
     //查找所有房间类型
     @Select("SELECT * FROM room_type")
@@ -60,5 +60,5 @@ public interface RoomTypeMapper {
             @Result(column = "max_people", property = "maxPeople"),
             @Result(column = "min_time", property = "minTime")
     })
-    List<RoomType> queryAllRoomType();
+    List<RoomType> queryAll();
 }

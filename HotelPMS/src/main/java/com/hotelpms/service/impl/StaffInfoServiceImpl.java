@@ -15,12 +15,16 @@ public class StaffInfoServiceImpl implements StaffInfoService {
     StaffInfoMapper staffInfoMapper;
 
     @Override
+    public List<StaffInfo> queryAllStaffInfo() {
+        return staffInfoMapper.queryAll();
+    }
+
+    @Override
     public boolean addStaff(int id,int staffNum,String name,String gender,
                             int age,String position,String tel) {
-        StaffInfo staffInfo = staffInfoMapper.queryStaffInfoByStaffNumber(staffNum);
+        StaffInfo staffInfo = staffInfoMapper.queryByStaffNumber(staffNum);
         if(staffInfo == null ){
-            staffInfoMapper.addStaffInfo(new StaffInfo(id,staffNum,name,
-                    gender,age,position,tel));
+            staffInfoMapper.addStaffInfo(new StaffInfo(id,staffNum,name, gender,age,position,tel));
             return true;
         }
         return false;
@@ -28,7 +32,7 @@ public class StaffInfoServiceImpl implements StaffInfoService {
 
     @Override
     public boolean deleteStaffInfoById(int id) {
-        if(staffInfoMapper.queryStaffInfoById(id) != null ) {
+        if(staffInfoMapper.queryById(id) != null ){
             staffInfoMapper.deleteStaffInfo(id);
             return true;
         }
@@ -42,25 +46,26 @@ public class StaffInfoServiceImpl implements StaffInfoService {
                     gender,age,position,tel);
             staffInfoMapper.updateStaffInfo(staffInfo);
             return true;
+
+//        return false;
     }
 
     @Override
     public StaffInfo queryStaffInfoById(int id) {
-        return staffInfoMapper.queryStaffInfoById(id);
+        return staffInfoMapper.queryById(id);
     }
 
     @Override
     public List<StaffInfo> queryStaffInfoByName(String name) {
-        return staffInfoMapper.queryStaffInfoByName(name);
+        return staffInfoMapper.queryByName(name);
     }
 
-    @Override
-    public List<StaffInfo> queryAllStaffInfo() {
-        return staffInfoMapper.queryAllStaffInfo();
-    }
+
 
     @Override
-    public StaffInfo queryStaffInfoByStaffNumber(int staffNumber) {
-        return staffInfoMapper.queryStaffInfoByStaffNumber(staffNumber);
+    public StaffInfo queryStaffInfoByStaffNumber(int staffNumber){
+        return staffInfoMapper.queryByStaffNumber(staffNumber);
+
+
     }
 }

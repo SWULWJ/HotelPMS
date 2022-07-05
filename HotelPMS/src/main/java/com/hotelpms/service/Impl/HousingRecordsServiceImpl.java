@@ -1,12 +1,13 @@
 package com.hotelpms.service.Impl;
 
 import com.hotelpms.pojo.HousingRecords;
+import com.hotelpms.service.HousingRecordsService;
 
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
-public class HousingRecordsServiceImpl implements HousingRecordsService{
+public class HousingRecordsServiceImpl implements HousingRecordsService {
     @Override
     public boolean addHosingRecord(int id, int room_id, int tenant_id, Date check_in_time, Date check_out_time, BigDecimal price) {
         return false;

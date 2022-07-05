@@ -1,12 +1,13 @@
 package com.hotelpms.service.Impl;
 
 import com.hotelpms.pojo.BillRecord;
+import com.hotelpms.service.BillRecordService;
 
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
-public class BillRecordServiceImpl implements BillRecordService{
+public class BillRecordServiceImpl implements BillRecordService {
 
     @Override
     public BillRecord QueryRecordById(int i) {

@@ -28,17 +28,17 @@ public class StaffInfoController {
     //新增员工
     @GetMapping(value = "/addStaff")
     @ResponseBody
-    public String addStuff(
+    public String addStaff(
             @RequestParam("id") String id,
-            @RequestParam("staffNumber") String sn,
+            @RequestParam("staffNumber") String staffNumber,
             @RequestParam("name") String name,
             @RequestParam("gender") String gender,
             @RequestParam("age") String age,
-            @RequestParam("position") String pos,
+            @RequestParam("position") String position,
             @RequestParam("tel") String tel) {
         if (staffInfoService.addStaff(Integer.parseInt(id),
-                Integer.parseInt(sn), name, gender,
-                Integer.parseInt(age), pos, tel))
+                Integer.parseInt(staffNumber), name, gender,
+                Integer.parseInt(age), position, tel))
             return "success";
         return "failed";
     }
@@ -46,8 +46,8 @@ public class StaffInfoController {
     //通过名字查找员工
     @GetMapping(value = "/queryStaffByName")
     @ResponseBody
-    public List<StaffInfo> QueryStuffByName(
-            @RequestParam("/name") String name){
+    public List<StaffInfo> queryStaffByName(
+            @RequestParam("name") String name) {
         return staffInfoService.queryStaffInfoByName(name);
     }
 
@@ -65,17 +65,17 @@ public class StaffInfoController {
     //更新员工信息
     @GetMapping(value = "/updateStaff")
     @ResponseBody
-    public String updateStuff(
+    public String updateStaff(
             @RequestParam("id") String id,
-            @RequestParam("staffNumber") String sn,
+            @RequestParam("staffNumber") String staffNumber,
             @RequestParam("name") String name,
             @RequestParam("gender") String gender,
             @RequestParam("age") String age,
-            @RequestParam("position") String pos,
+            @RequestParam("position") String position,
             @RequestParam("tel") String tel) {
         if (staffInfoService.updateStaffInfo(Integer.parseInt(id),
-                Integer.parseInt(sn), name, gender,
-                Integer.parseInt(age), pos, tel))
+                Integer.parseInt(staffNumber), name, gender,
+                Integer.parseInt(age), position, tel))
             return "success";
         return "failed";
     }

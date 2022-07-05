@@ -16,23 +16,23 @@ public class TenantInfoServiceImpl implements TenantInfoService {
 
     @Override
     public TenantInfo queryTenantInfoById(int id) {
-        return tenantInfoMapper.queryTenantInfoById(id);
+        return tenantInfoMapper.queryById(id);
     }
 
     @Override
     public List<TenantInfo> queryTenantInfoByName(String name){
-        return  tenantInfoMapper.queryTenantInfoByName(name);
+        return  tenantInfoMapper.queryByName(name);
     }
 
     @Override
     public List<TenantInfo> queryAllTenantInfo() {
-        return tenantInfoMapper.queryAllTenantInfo();
+        return tenantInfoMapper.queryAll();
     }
 
     @Override
     public boolean addTenantInfo(int id, String name,
                                  String gender, String id_card) {
-        if(tenantInfoMapper.queryTenantInfoById(id) == null){
+        if(tenantInfoMapper.queryById(id) == null){
             TenantInfo tenantInfo = new TenantInfo( id , name ,
                     gender , id_card);
             tenantInfoMapper.addTenantInfo(tenantInfo);
@@ -43,7 +43,7 @@ public class TenantInfoServiceImpl implements TenantInfoService {
 
     @Override
     public boolean deleteTenantInfo(int id) {
-        if(tenantInfoMapper.queryTenantInfoById(id) != null){
+        if(tenantInfoMapper.queryById(id) != null){
             tenantInfoMapper.deleteTenantInfo(id);
         }
         return false;

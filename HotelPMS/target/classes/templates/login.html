@@ -1,34 +1,72 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
 	  xmlns:th="http://www.thymeleaf.org">
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<meta http-equiv="Pragma" content="no-cache">
-		<meta http-equiv="Cache-Control" content="no-cache">
-		<meta http-equiv="Expires" content="0">
-		<title>后台登录</title>
-		<link th:href="@{/css2/login.css}" type="text/css" rel="stylesheet">
-	</head>
-	<body>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="keywords" content="">
+	<meta name="author" content="">
+	<meta name="robots" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="酒店管理系统">
 
-		<div class="login">
-			<div class="message">酒店管理系统</div>
-			<div id="darkbannerwrap"></div>
+	<!-- PAGE TITLE HERE -->
+	<title>酒店管理系统</title>
 
-			<form method="post" th:action="@{/userLogin}">
-				<input name="action" value="login" type="hidden">
-				<p style="color: red" th:text="${msg}" th:if="${not #strings.isEmpty(msg)}"></p>
-				<input name="username" placeholder="用户名" required="" type="text">
-				<hr class="hr15">
-				<input name="password" placeholder="密码" required="" type="password">
-				<hr class="hr15">
-				<input value="登录" style="width:100%;" type="submit">
-				<hr class="hr20">
-				<!-- 帮助 <a onClick="alert('请联系管理员')">忘记密码</a> -->
-			</form>
+	<link th:href="@{/css/style.css}" type="text/css"  rel="stylesheet">
+	<script th:src="@{/js/vue.js}"></script>
 
+</head>
 
+<body class="vh-100">
+<div class="authincation h-100">
+	<div class="container h-100">
+		<div class="row justify-content-center h-100 align-items-center">
+			<div class="col-md-6">
+				<div class="authincation-content">
+					<div class="row no-gutters">
+						<div class="col-xl-12">
+							<div class="auth-form">
+								<div class="text-center mb-3">
+									<a href="index.html"><img src="https://www.17sucai.com/preview/1097306/2021-07-20/xhtml/images/logo-full.png" alt=""></a>
+								</div>
+								<h2 class="text-center mb-4">酒店管理系统</h2>
+								<form method="post" th:action="@{/userLogin}">
+									<p style="color: red" th:text="${msg}" th:if="${not #strings.isEmpty(msg)}"></p>
+									<div class="mb-3">
+										<label class="mb-1"><strong>账号</strong></label>
+										<input type="text" name="username" class="form-control" required>
+									</div>
+									<div class="mb-3">
+										<label class="mb-1"><strong>密码</strong></label>
+										<input type="password" name="password" class="form-control" required>
+									</div>
+									<div class="row d-flex justify-content-between mt-4 mb-2">
+										<div class="mb-3">
+											<a href="javascript:;">忘记密码?</a>
+										</div>
+									</div>
+									<div class="text-center">
+										<button type="submit"  class="btn btn-primary btn-block">登&nbsp;录</button>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
+	</div>
+</div>
 
-	</body>
+<!--**********************************
+    Scripts
+***********************************-->
+<!-- Required vendors -->
+<script th:src="@{/js/global.min.js}"></script>
+<script th:src="@{/js/custom.min.js}"></script>
+<script th:src="@{/js/deznav-init.js}"></script>
+<script th:src="@{/js/styleSwitcher.js}"></script>
+</body>
+
 </html>

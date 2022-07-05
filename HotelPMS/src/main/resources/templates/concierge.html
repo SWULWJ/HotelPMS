@@ -112,19 +112,19 @@
 								<a class="nav-link" href="javascript:void(0);" role="button" data-bs-toggle="dropdown">
 									<img th:src="@{/picture/pic1.jpg}" alt="">
 									<div class="header-info ms-3">
-										<span>John Doe</span>
-										<small>Superadmin</small>
+										<span>刘书源</span>
+										<small>经理</small>
 									</div>
 								</a>
 								<div class="dropdown-menu dropdown-menu-end">
-									<a href="app-profile.html" class="dropdown-item ai-icon">
-										<svg id="icon-user1" xmlns="http://www.w3.org/2000/svg" class="text-primary" width="18" height="18" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-										<span class="ms-2">Profile </span>
-									</a>
-									<a href="email-inbox.html" class="dropdown-item ai-icon">
-										<svg id="icon-inbox" xmlns="http://www.w3.org/2000/svg" class="text-success" width="18" height="18" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-										<span class="ms-2">Inbox </span>
-									</a>
+<!--									<a href="app-profile.html" class="dropdown-item ai-icon">-->
+<!--										<svg id="icon-user1" xmlns="http://www.w3.org/2000/svg" class="text-primary" width="18" height="18" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>-->
+<!--										<span class="ms-2">Profile </span>-->
+<!--									</a>-->
+<!--									<a href="email-inbox.html" class="dropdown-item ai-icon">-->
+<!--										<svg id="icon-inbox" xmlns="http://www.w3.org/2000/svg" class="text-success" width="18" height="18" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>-->
+<!--										<span class="ms-2">Inbox </span>-->
+<!--									</a>-->
 									<a href="javascript:;" class="dropdown-item ai-icon">
 										<svg id="icon-logout" xmlns="http://www.w3.org/2000/svg" class="text-danger" width="18" height="18" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
 										<span class="ms-2">Logout </span>
@@ -176,7 +176,7 @@
 						<span class="nav-text">库存管理</span>
 					</a>
 						<ul aria-expanded="false">
-							<li><a href="ecom-product-list.html">库存管理</a></li>
+							<li><a th:href="@{/storeManage.html}">库存管理</a></li>
 						</ul>
 					</li>
 					<li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
@@ -194,7 +194,7 @@
 					</a>
 						<ul aria-expanded="false">
 							<li><a href="ecom-product-order.html">经营状况</a></li>
-							<li><a href="ecom-product-order.html">房源处理</a></li>
+							<li><a th:href="@{/roomManage.html}">房间管理</a></li>
 						</ul>
 					</li>
 				</ul>
@@ -219,20 +219,6 @@
 						<div class="d-flex mb-4 justify-content-between align-items-center flex-wrap">
 							<div class="card-tabs mt-3 mt-sm-0 " style="display: inline-block;">
 								<!-- 员工信息CRUD -->
-								<div class="card" style="display: inline-block;">
-									<div class="card-header">
-										<h4 class="card-title">员工姓名</h4>
-									</div>
-									<div class="card-body">
-										<div class="basic-form">
-											<form>
-												<div class="mb-3">
-													<input class="form-control form-control-lg" v-model="submitStaffInfo.name" type="text" placeholder="员工姓名" style="width: 150px;">
-												</div>
-											</form>
-										</div>
-									</div>
-								</div>
 
 								<div class="card" style="display: inline-block;">
 									<div class="card-header" >
@@ -243,6 +229,21 @@
 											<form>
 												<div class="mb-3">
 													<input class="form-control form-control-lg" v-model="submitStaffInfo.staffNumber" type="text" placeholder="编号" style="width: 100px;">
+												</div>
+											</form>
+										</div>
+									</div>
+								</div>
+
+								<div class="card" style="display: inline-block;">
+									<div class="card-header">
+										<h4 class="card-title">员工姓名</h4>
+									</div>
+									<div class="card-body">
+										<div class="basic-form">
+											<form>
+												<div class="mb-3">
+													<input class="form-control form-control-lg" v-model="submitStaffInfo.name" type="text" placeholder="员工姓名" style="width: 150px;">
 												</div>
 											</form>
 										</div>
@@ -363,42 +364,51 @@
 											<td>
 												<div>
 													<h4 class="mt-1" v-if="isShow != index"><p class="text-black" >{{item.staffNumber}}</p></h4>
-													<input v-if="isShow === index" type="text" v-model="updateStaffInfo.staffNumber">
+													<input v-if="isShow === index" type="text" v-model="updateStaffInfo.staffNumber" style="width: 80px">
 													<!-- <span class="fs-16">Act as a liaison between guests and any department necessary including the kitchen, housekeeping, etc</span> -->
 												</div>
 											</td>
 											<td class="job-desk">
 												<div>
 													<h4 class="mt-1" v-if="isShow != index"><p class="text-black" >{{item.name}}</p></h4>
-													<input v-if="isShow === index" type="text" v-model="updateStaffInfo.name">
+													<input v-if="isShow === index" type="text" v-model="updateStaffInfo.name" style="width: 150px">
 													<!-- <span class="fs-16">Act as a liaison between guests and any department necessary including the kitchen, housekeeping, etc</span> -->
 												</div>
 											</td>
 											<td>
 												<div>
 													<h4 class="mt-1" v-if="isShow != index"><p class="text-black" >{{item.position}}</p></h4>
-													<input v-if="isShow === index" type="text" v-model="updateStaffInfo.position">
+													<select v-if="isShow === index" v-model="updateStaffInfo.position" style="width: 100px">
+														<option value="前台">前台</option>
+														<option value="清洁">清洁</option>
+														<option value="维修">维修</option>
+														<option value="财务">财务</option>
+														<option value="经理">经理</option>
+													</select>
 													<!-- <span class="fs-16">Act as a liaison between guests and any department necessary including the kitchen, housekeeping, etc</span> -->
 												</div>
 											</td>
 											<td>
 												<div>
 													<h5 class="font-w600" v-if="isShow != index">{{item.gender}}</h5>
-													<input v-if="isShow === index" type="text" v-model="updateStaffInfo.gender">
+													<select v-if="isShow === index" v-model="updateStaffInfo.position" style="width: 50px">
+														<option value="男">男</option>
+														<option value="女">女</option>
+													</select>
 													<!-- <span>08:00 AM - 04:00 PM</span> -->
 												</div>
 											</td>
 											<td>
 												<div>
 													<h5 class="font-w600" v-if="isShow != index">{{item.age}}</h5>
-													<input v-if="isShow === index" type="text" v-model="updateStaffInfo.age">
+													<input v-if="isShow === index" type="text" v-model="updateStaffInfo.age" style="width: 50px">
 												</div>
 											</td>
 											<td>
 												<div class="text-nowrap job-desk">
 													<!--													<span class="text-black font-w500"><i class="fas fa-phone-volume me-2 text-primary"></i> {{item.tel}}</span>-->
 													<h5 class="font-w600" v-if="isShow != index"><i class="fas fa-phone-volume me-2 text-primary"></i>{{item.tel}}</h5>
-													<input v-if="isShow === index" type="text" v-model="updateStaffInfo.tel">
+													<input v-if="isShow === index" type="text" v-model="updateStaffInfo.tel" style="width: 100px">
 												</div>
 											</td>
 											<!-- <td><span class="text-danger font-w600">INACTIVE</span></td> -->
@@ -546,13 +556,18 @@
 			},
 			searchStaffInfoByName() {
 				let that = this;
+				console.log(this.submitStaffInfo.name);
 				axios.get("/queryStaffByName",{
 					params: {
 						name: this.submitStaffInfo.name
 					}
 				})
 						.then(function (res){
-							that.getStaffInfoList = res.data;
+							if(res.data[0] != null){
+								that.getStaffInfoList = res.data;
+							}else{
+								alert("查无此人");
+							}
 						});
 			},
 			searchStaffInfoByNumber() {
@@ -563,15 +578,20 @@
 					}
 				})
 						.then(function (res){
-							that.getStaffInfoList = res.data;
+							console.log(res.data);
+							if(res.data[0] != null){
+								that.getStaffInfoList = res.data;
+							}else{
+								alert("查无此人");
+							}
 						});
 			},
 			searchStaffInfo() {
-				if(this.submitStaffInfo.staffNumber != null ){
+				if(this.submitStaffInfo.staffNumber != null && this.submitStaffInfo.staffNumber !== ""){
 
 					this.searchStaffInfoByNumber();
 				}
-				else if(this.submitStaffInfo.name != null){
+				else if(this.submitStaffInfo.name != null && this.submitStaffInfo.name !== ""){
 					this.searchStaffInfoByName();
 				}
 				else{
