@@ -18,22 +18,22 @@ public class StoreRecordsServiceImpl implements StoreRecordsService {
 
     @Override
     public StoreRecords queryStoreRecordsById(int id) {
-        return storeRecordsMapper.queryStoreRecordsById(id);
+        return storeRecordsMapper.queryById(id);
     }
 
     @Override
     public StoreRecords queryStoreRecordsByName(String name){
-        return storeRecordsMapper.queryStoreRecordsByName(name);
+        return storeRecordsMapper.queryByName(name);
     }
 
     @Override
     public List<StoreRecords> queryAllStoreRecords() {
-        return storeRecordsMapper.queryAllStoreRecords();
+        return storeRecordsMapper.queryAll();
     }
 
     @Override
     public boolean addStoreRecords(int id, String name, int amount, BigDecimal price) {
-        if(storeRecordsMapper.queryStoreRecordsById(id) == null){
+        if(storeRecordsMapper.queryById(id) == null){
             StoreRecords storeRecords = new StoreRecords( id , name , amount , price );
             storeRecordsMapper.addStoreRecords(storeRecords);
             return true;
@@ -43,7 +43,7 @@ public class StoreRecordsServiceImpl implements StoreRecordsService {
 
     @Override
     public boolean deleteStoreRecords(int id) {
-        if(storeRecordsMapper.queryStoreRecordsById(id) != null){
+        if(storeRecordsMapper.queryById(id) != null){
             return true;
         }
         return false;
