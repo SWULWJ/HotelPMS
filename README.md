@@ -4,7 +4,7 @@
 
 #### c：
 
-* URL：/queryStoreById
+* URL：/queryStoreRecordsById
 
 * Input： 
 
@@ -13,10 +13,6 @@
     ```
 
 * Output： `List<StoreRecords>`
-
-#### s：忽略
-
-#### d：忽略
 
 ---
 
@@ -35,11 +31,7 @@
  	String price
  ```
 
-* Output： `List<StoreRecords>`
-
-#### s：草，走，忽略ጿ ኈ ቼ ዽ ጿ
-
-#### d：草，走，忽略ጿ ኈ ቼ ዽ ጿ
+* Output： `"success" or "failed"`
 
 ---
 
@@ -60,10 +52,6 @@
 
 * Output： `"success" or "failed"   `
 
-#### s：草，走，忽略ጿ ኈ ቼ ዽ ጿ
-
-#### d：草，走，忽略ጿ ኈ ቼ ዽ ጿ
-
 ---
 
 ### n：删除一条库存记录
@@ -83,10 +71,6 @@
 
 * Output： `"success" or "failed"   `
 
-#### s：草，走，忽略ጿ ኈ ቼ ዽ ጿ
-
-#### d：草，走，忽略ጿ ኈ ቼ ዽ ጿ
-
 ---
 
 ### n：展示库存列表
@@ -97,11 +81,7 @@
 
 * Input： `null`
 
-* Output： `"success" or "failed"   `
-
-#### s：草，走，忽略ጿ ኈ ቼ ዽ ጿ
-
-#### d：草，走，忽略ጿ ኈ ቼ ዽ ጿ
+* Output： `List<StoreRecords>   `
 
 ---
 
@@ -118,7 +98,3 @@
 ```
 
 * Output： `List<StoreRecords>   `
-
-#### s：草，走，忽略ጿ ኈ ቼ ዽ ጿ
-
-#### d：草，走，忽略ጿ ኈ ቼ ዽ ጿ
