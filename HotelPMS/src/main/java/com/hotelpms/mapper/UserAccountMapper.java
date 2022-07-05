@@ -17,7 +17,10 @@ public interface UserAccountMapper {
 
     //通过id删除账号
     @Delete("DELETE FROM user_account WHERE id=#{id}")
-    void deleteUserAccountById(int id);
+    void deleteUserAccount(int id);
+
+    //通过stuffId删除用户账号
+    void deleteUserAccountByStuffId(int stuffId);
 
     //更新账号
     @Update("UPDATE user_account "
@@ -35,10 +38,10 @@ public interface UserAccountMapper {
                     column = "staff_id",
                     property = "staffInfo",
                     javaType = StaffInfo.class,
-                    one = @One(select = "com.hotelpms.mapper.StaffInfoMapper.queryStaffInfoById")
+                    one = @One(select = "com.hotelpms.mapper.StaffInfoMapper.queryById")
             )
     })
-    UserAccount queryUserAccountById(int id);
+    UserAccount queryById(int id);
 
     //查找所有账号
     @Select("SELECT * FROM user_account")
@@ -50,10 +53,10 @@ public interface UserAccountMapper {
                     column = "staff_id",
                     property = "staffInfo",
                     javaType = StaffInfo.class,
-                    one = @One(select = "com.hotelpms.mapper.StaffInfoMapper.queryStaffInfoById")
+                    one = @One(select = "com.hotelpms.mapper.StaffInfoMapper.queryById")
             )
     })
-    List<UserAccount> queryAllUserAccount();
+    List<UserAccount> queryAll();
 
     //通过账号查找账号信息
     @Select("SELECT * FROM user_account WHERE account=#{account}")
@@ -65,8 +68,8 @@ public interface UserAccountMapper {
                     column = "staff_id",
                     property = "staffInfo",
                     javaType = StaffInfo.class,
-                    one = @One(select = "com.hotelpms.mapper.StaffInfoMapper.queryStaffInfoById")
+                    one = @One(select = "com.hotelpms.mapper.StaffInfoMapper.queryById")
             )
     })
-    UserAccount queryUserAccountByAccount(String account);
+    UserAccount queryByAccount(String account);
 }
