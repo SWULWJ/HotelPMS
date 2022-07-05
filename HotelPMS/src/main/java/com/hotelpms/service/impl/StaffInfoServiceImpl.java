@@ -19,7 +19,8 @@ public class StaffInfoServiceImpl implements StaffInfoService {
                             int age,String position,String tel) {
         StaffInfo staffInfo = staffInfoMapper.queryStaffInfoByStaffNumber(staffNum);
         if(staffInfo == null ){
-            staffInfoMapper.addStaffInfo(new StaffInfo(id,staffNum,name, gender,age,position,tel));
+            staffInfoMapper.addStaffInfo(new StaffInfo(id,staffNum,name,
+                    gender,age,position,tel));
             return true;
         }
         return false;
@@ -27,7 +28,7 @@ public class StaffInfoServiceImpl implements StaffInfoService {
 
     @Override
     public boolean deleteStaffInfoById(int id) {
-        if(staffInfoMapper.queryStaffInfoById(id) != null ){
+        if(staffInfoMapper.queryStaffInfoById(id) != null ) {
             staffInfoMapper.deleteStaffInfo(id);
             return true;
         }
@@ -41,8 +42,6 @@ public class StaffInfoServiceImpl implements StaffInfoService {
                     gender,age,position,tel);
             staffInfoMapper.updateStaffInfo(staffInfo);
             return true;
-
-//        return false;
     }
 
     @Override
@@ -61,7 +60,7 @@ public class StaffInfoServiceImpl implements StaffInfoService {
     }
 
     @Override
-    public StaffInfo queryStaffInfoByStaffNumber(int staffNumber){
+    public StaffInfo queryStaffInfoByStaffNumber(int staffNumber) {
         return staffInfoMapper.queryStaffInfoByStaffNumber(staffNumber);
     }
 }

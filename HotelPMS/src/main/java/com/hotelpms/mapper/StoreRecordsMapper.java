@@ -27,14 +27,14 @@ public interface StoreRecordsMapper {
 
     //通过id查找一条库存记录
     @Select("SELECT * FROM store_records WHERE id=#{id}")
-    StoreRecords queryStoreRecordsById(int id);
+    StoreRecords queryById(int id);
 
     //通过物品名称查找一条库存记录
     @Select("SELECT * FROM store_records WHERE name=#{name}")
-    StoreRecords queryStoreRecordsByName(String name);
+    StoreRecords queryByName(String name);
 
     //查找所有库存记录
     @Select("SELECT * FROM store_records")
-    List<StoreRecords> queryAllStoreRecords();
+    List<StoreRecords> queryAll();
 
 }
