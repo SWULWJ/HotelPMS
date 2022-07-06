@@ -152,11 +152,11 @@
 					</a>
 						<ul aria-expanded="false">
 							<!-- <li><a href="">亮色主题</a></li> -->
-							<li><a href="index-2.html">暗色主题</a></li>
-							<li><a href="guest-list.html">旅客信息</a></li>
+<!--							<li><a href="index-2.html">暗色主题</a></li>-->
+							<li><a th:href="@{/tenantManage.html}">房客信息</a></li>
 							<!-- <li><a href="guest-detail.html">Guest Detail</a></li>
                             <li><a href="concierge.html">Concierge</a></li> -->
-							<li><a href="room-list.html">房间信息</a></li>
+							<li><a th:href="@{/error404.html}">房态信息</a></li>
 							<!-- <li><a href="reviews.html">Reviews</a></li>	 -->
 						</ul>
 
@@ -167,7 +167,7 @@
 					</a>
 						<ul aria-expanded="false">
 							<li><a th:href="@{/staffInfo.html}">员工信息</a></li>
-							<li><a href="app-profile.html">工作派遣</a></li>
+							<li><a th:href="@{/error404.html}">工作派遣</a></li>
 
 						</ul>
 					</li>
@@ -184,7 +184,7 @@
 						<span class="nav-text">财务管理</span>
 					</a>
 						<ul aria-expanded="false">
-							<li><a href="ecom-product-order.html">审计账目</a></li>
+							<li><a th:href="@{/error404.html}">审计账目</a></li>
 
 						</ul>
 					</li>
@@ -193,7 +193,7 @@
 						<span class="nav-text">酒店管理</span>
 					</a>
 						<ul aria-expanded="false">
-							<li><a href="ecom-product-order.html">经营状况</a></li>
+							<li><a th:href="@{/error404.html}">经营状况</a></li>
 							<li><a th:href="@{/roomManage.html}">房间管理</a></li>
 						</ul>
 					</li>
@@ -361,7 +361,7 @@
 													<input class="form-check-input" type="checkbox" value="">
 												</div>
 											</td>
-											<td>
+											<td style="width: 100px">
 												<div>
 													<h4 class="mt-1" v-if="isShow != index"><p class="text-black" >{{item.staffNumber}}</p></h4>
 													<input v-if="isShow === index" type="text" v-model="updateStaffInfo.staffNumber" style="width: 80px">
@@ -408,7 +408,7 @@
 												<div class="text-nowrap job-desk">
 													<!--													<span class="text-black font-w500"><i class="fas fa-phone-volume me-2 text-primary"></i> {{item.tel}}</span>-->
 													<h5 class="font-w600" v-if="isShow != index"><i class="fas fa-phone-volume me-2 text-primary"></i>{{item.tel}}</h5>
-													<input v-if="isShow === index" type="text" v-model="updateStaffInfo.tel" style="width: 100px">
+													<input v-if="isShow === index" type="text" v-model="updateStaffInfo.tel" style="width: 150px">
 												</div>
 											</td>
 											<!-- <td><span class="text-danger font-w600">INACTIVE</span></td> -->
@@ -444,21 +444,18 @@
             Content body end
         ***********************************-->
 
-
-
 		<!--**********************************
             Footer start
         ***********************************-->
 		<div class="footer">
 
 			<div class="copyright">
-				<p>Copyright &copy; 2021.Company name All rights reserved.<a target="_blank" href="https://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></p>
+				<p>Copyright &copy; 2022.Company The Seven All rights reserved.</p>
 			</div>
 		</div>
 		<!--**********************************
             Footer end
         ***********************************-->
-
 	</div>
 </div>
 <!--**********************************
@@ -513,6 +510,10 @@
 						});
 			},
 			addStaff() {
+				let checkStaffNumber = /^[0-9]*$/;
+				let checkAge = /^\d{1,3}$/;
+				let checkTel = /^(13[0-9]|14[01456879]|15[0-35-9]|16[2567]|17[0-8]|18[0-9]|19[0-35-9])\d{8}$/;
+
 				if(this.submitStaffInfo.name == null || this.submitStaffInfo.name === ""){
 					console.log("name");
 					alert("请输入姓名")
@@ -531,7 +532,14 @@
 				}else if(this.submitStaffInfo.tel == null || this.submitStaffInfo.tel === ""){
 					console.log("tel");
 					alert("请输入联系方式");
-				}else{
+				}else if(checkStaffNumber.test(this.submitStaffInfo.staffNumber) === false){
+					alert("请输入正确的员工编号！！");
+				}else if(checkAge.test(this.submitStaffInfo.age) === false){
+					alert("请输入正确的年龄！！");
+				}else if(checkTel.test(this.submitStaffInfo.tel) === false){
+					alert("请输入正确的联系方式！！");
+				}
+				else{
 					let that = this;
 					axios.get("/addStaff",{
 						params:{
@@ -548,6 +556,7 @@
 							// console.log(res.data);
 							alert("添加成功");
 							that.getAll();
+							that.submitStaffInfo = {};
 						}else{
 							alert("添加失败");
 						}
@@ -595,7 +604,8 @@
 					this.searchStaffInfoByName();
 				}
 				else{
-					alert("输入员工编号或姓名");
+					this.getAll();
+					// alert("输入员工编号或姓名");
 				}
 			},
 			deleteStaff(index){
@@ -623,29 +633,45 @@
 			updateStaff(index){
 				this.isShow = -1;
 				let that = this;
-				axios.get("/updateStaff",{
-					params: {
-						id: this.updateStaffInfo.id,
-						staffNumber: this.updateStaffInfo.staffNumber,
-						name: this.updateStaffInfo.name,
-						gender: this.updateStaffInfo.gender,
-						age: this.updateStaffInfo.age,
-						position: this.updateStaffInfo.position,
-						tel: this.updateStaffInfo.tel
-					}
-				}).then(function (res){
-					if(res.data === "success"){
-						// console.log(res.data);
-						alert("更新成功");
-						that.getAll();
-					}else{
-						alert("更新失败");
-					}
-				});
+				let checkStaffNumber = /^[0-9]*$/;
+				let checkAge = /^\d{1,3}$/;
+				let checkTel = /^(13[0-9]|14[01456879]|15[0-35-9]|16[2567]|17[0-8]|18[0-9]|19[0-35-9])\d{8}$/;
+
+				if(checkStaffNumber.test(this.updateStaffInfo.staffNumber) === false){
+					alert("请输入正确的员工编号！！");
+					this.getAll();
+				}else if(checkAge.test(this.updateStaffInfo.age) === false){
+					alert("请输入正确的年龄！！");
+					this.getAll();
+				}else if(checkTel.test(this.updateStaffInfo.tel) === false){
+					alert("请输入正确的联系方式！！");
+					this.getAll();
+				}
+				else {
+					axios.get("/updateStaff", {
+						params: {
+							id: this.updateStaffInfo.id,
+							staffNumber: this.updateStaffInfo.staffNumber,
+							name: this.updateStaffInfo.name,
+							gender: this.updateStaffInfo.gender,
+							age: this.updateStaffInfo.age,
+							position: this.updateStaffInfo.position,
+							tel: this.updateStaffInfo.tel
+						}
+					}).then(function (res) {
+						if (res.data === "success") {
+							// console.log(res.data);
+							alert("更新成功");
+							that.getAll();
+						} else {
+							alert("更新失败");
+						}
+					});
+				}
 			},
 			createAccount(index){
 				let that = this;
-				axios.get("/createAccount",{
+				axios.get("/addUser",{
 					params:{
 						id: this.getStaffInfoList[index].id
 					}

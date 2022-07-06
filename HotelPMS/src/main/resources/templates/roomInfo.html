@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="keywords" content="">
+  <meta name="author" content="">
+  <meta name="robots" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Innap : Hotel Admin Template">
+
+  <!-- PAGE TITLE HERE -->
+  <title>第七小组-酒店管理系统</title>
+
+  <link th:href="@{/css/nice-select.css}" rel="stylesheet">
+  <link th:href="@{/css/jquery.dataTables.min.css}" rel="stylesheet">
+  <!-- Style css -->
+  <link th:href="@{/css/style.css}" rel="stylesheet">
+  <link rel="stylesheet" th:href="@{/css/select2.min.css}">
+
+  <script th:src="@{/js/vue.js}"></script>
+  <script th:src="@{/js/axios.min.js}"></script>
+
+
+</head>
+
+<body>
+<div id="room">
+  <!--*******************
+      Preloader start
+  ********************-->
+  <div id="preloader">
+    <div class="waviy">
+      <span style="--i:1">L</span>
+      <span style="--i:2">o</span>
+      <span style="--i:3">a</span>
+      <span style="--i:4">d</span>
+      <span style="--i:5">i</span>
+      <span style="--i:6">n</span>
+      <span style="--i:7">g</span>
+      <span style="--i:8">.</span>
+      <span style="--i:9">.</span>
+      <span style="--i:10">.</span>
+    </div>
+  </div>
+  <!--*******************
+      Preloader end
+  ********************-->
+
+  <!--**********************************
+      Main wrapper start
+  ***********************************-->
+  <div id="main-wrapper">
+
+    <!--**********************************
+        Nav header start
+    ***********************************-->
+    <div class="nav-header">
+      <a th:href="@{/system.html}" class="brand-logo">
+        <svg class="logo-abbr" width="80" height="80" viewbox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g clip-path="url(#clip0)">
+            <rect class="rect-primary-rect" width="80" height="80" rx="16" fill="#1362FC"></rect>
+            <circle cx="42" cy="19" r="10" fill="white"></circle>
+            <circle cx="75.5" cy="76.5" r="16.5" fill="#12A7FB"></circle>
+            <circle cx="5.5" cy="1.5" r="17.5" fill="#1362FC"></circle>
+            <circle class="rect-primary-rect-1" cx="5.5" cy="1.5" r="16.5" stroke="white" stroke-opacity="0.66" stroke-width="2"></circle>
+            <path d="M33.7656 87.2159C34.9565 76.5246 37.5874 53.6112 38.5845 47.4881V47.4881C39.1698 43.8941 40.2547 47.2322 39.8692 50.8531C38.9933 59.0813 37.1429 74.1221 35.5121 87.4131C33.1225 106.889 33.3507 95.974 33.7635 88.0818" stroke="white" stroke-width="21" stroke-linecap="round" stroke-linejoin="round"></path>
+          </g>
+          <defs>
+            <clippath id="clip0">
+              <rect class="rect-primary-rect" width="80" height="80" rx="16" fill="white"></rect>
+            </clippath>
+          </defs>
+        </svg>
+        <svg class="brand-title" width="123" height="68" viewbox="0 0 123 68" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12.376 11.22C9.996 11.22 8.092 12.92 7.616 15.3C7.14 17.544 8.568 19.38 10.948 19.38C13.192 19.38 15.3 17.544 15.776 15.3C16.252 12.92 14.62 11.22 12.376 11.22ZM3.672 36.312L2.652 42.092C1.768 46.988 5.372 51 10.2 51C11.22 51 11.9 50.864 12.104 49.844C12.308 48.416 10.404 46.92 11.152 42.976L14.416 24.072C14.892 21.284 13.464 21.216 10.676 21.216C8.296 21.216 6.256 21.692 5.78 24.072L3.672 36.312ZM30.8651 21.216C29.1651 21.216 27.6011 21.488 26.1731 22.1C25.6291 21.352 24.3371 21.216 22.5011 21.216C20.2571 21.216 18.0811 21.624 17.6051 24.072L13.4571 48.144C13.0491 50.388 14.8851 51 17.1291 51C20.1211 51 21.6851 50.864 22.1611 48.144L25.4931 28.696C26.1051 26.044 28.6211 24.208 30.5251 24.208C32.3611 24.208 33.2451 25.636 32.6331 29.24L30.3891 42.092C29.5051 46.92 32.9051 51 37.9371 51C38.9571 51 39.5691 50.796 39.7731 49.912C39.9771 49.164 39.7731 49.028 39.5691 48.552C38.8211 47.124 38.3451 45.968 38.8891 42.976L41.1331 30.124C41.8811 25.228 38.7531 21.216 33.7891 21.216H30.8651ZM58.6229 21.216C56.9229 21.216 55.3589 21.488 53.9309 22.1C53.3869 21.352 52.0949 21.216 50.2589 21.216C48.0149 21.216 45.8389 21.624 45.3629 24.072L41.2149 48.144C40.8069 50.388 42.6429 51 44.8869 51C47.8789 51 49.4429 50.864 49.9189 48.144L53.2509 28.696C53.8629 26.044 56.3789 24.208 58.2829 24.208C60.1189 24.208 61.0029 25.636 60.3909 29.24L58.1469 42.092C57.2629 46.92 60.6629 51 65.6949 51C66.7149 51 67.3269 50.796 67.5309 49.912C67.7349 49.164 67.5309 49.028 67.3269 48.552C66.5789 47.124 66.1029 45.968 66.6469 42.976L68.8909 30.124C69.6389 25.228 66.5109 21.216 61.5469 21.216H58.6229ZM77.7702 46.24C76.6822 44.948 76.6822 43.316 76.9542 41.616C77.4302 39.916 77.9742 38.556 80.4222 37.536C81.9862 36.788 83.8902 36.72 85.5902 35.428L85.5222 35.972L84.6382 41.072C84.1622 43.588 83.6182 45.22 82.5982 46.24C81.3062 47.532 79.0622 47.804 77.7702 46.24ZM82.6662 51C88.7862 51 92.5262 46.172 93.4102 40.596L94.2262 35.972L95.2462 29.988C96.1302 25.092 92.7982 21.012 87.8342 21.012H82.3942C79.0622 21.012 75.7302 22.848 73.7582 25.568C72.7382 26.928 71.1742 29.58 72.6022 30.804C73.7582 31.824 76.3422 31.688 77.9062 31.484C79.4702 31.28 80.4222 30.94 80.6942 29.104C81.4422 24.548 86.9502 22.236 86.9502 26.928C86.9502 27.472 86.8822 28.084 86.7462 28.832C85.9982 33.048 79.8782 32.64 76.2062 33.932C72.1942 35.224 69.3382 38.556 68.5902 42.364C68.3862 43.384 68.3862 43.86 68.4542 44.88C69.0662 48.416 71.9902 51 76.0022 51H79.3342H82.6662ZM108.845 21.216C103.949 21.216 99.1206 25.228 98.3726 30.124L94.1566 54.332C93.2726 59.772 91.1646 59.84 90.9606 61.064C90.7566 62.084 91.3006 62.356 92.3206 62.356C97.2846 62.356 102.045 58.616 102.929 53.448L103.473 50.252C104.697 50.728 106.057 51 107.485 51H110.341C115.305 51 119.861 46.988 120.745 42.092L122.853 30.124C123.601 25.228 120.473 21.216 115.509 21.216H112.177H108.845ZM106.193 34.612L107.145 29.24C107.689 26.044 108.437 24.412 110.885 24.412C113.129 24.412 114.897 26.18 114.353 29.24L111.973 42.976C111.361 46.512 110.001 48.008 108.097 48.008C106.261 48.008 104.561 46.376 104.629 43.928L106.193 34.612Z" fill="#383838"></path>
+        </svg>
+      </a>
+      <div class="nav-control">
+        <div class="hamburger">
+          <span class="line"></span><span class="line"></span><span class="line"></span>
+        </div>
+      </div>
+    </div>
+    <!--**********************************
+        Nav header end
+    ***********************************-->
+
+    <!--**********************************
+        Chat box start
+    ***********************************-->
+
+    <!--**********************************
+        Chat box End
+    ***********************************-->
+
+    <!--**********************************
+        Header start
+    ***********************************-->
+    <div class="header">
+      <div class="header-content">
+        <nav class="navbar navbar-expand">
+          <div class="collapse navbar-collapse justify-content-between">
+            <div class="header-left">
+              <div class="dashboard_bar">
+                房型管理
+              </div>
+            </div>
+            <ul class="navbar-nav header-right">
+              <li class="nav-item dropdown header-profile">
+                <a class="nav-link" href="javascript:void(0);" role="button" data-bs-toggle="dropdown">
+                  <img th:src="@{/picture/pic1.jpg}" alt="">
+                  <div class="header-info ms-3">
+                    <span>刘书源</span>
+                    <small>经理</small>
+                  </div>
+                </a>
+                <div class="dropdown-menu dropdown-menu-end">
+                  <!--                                    <a href="app-profile.html" class="dropdown-item ai-icon">-->
+                  <!--                                        <svg id="icon-user1" xmlns="http://www.w3.org/2000/svg" class="text-primary" width="18" height="18" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>-->
+                  <!--                                        <span class="ms-2">Profile </span>-->
+                  <!--                                    </a>-->
+                  <!--                                    <a href="email-inbox.html" class="dropdown-item ai-icon">-->
+                  <!--                                        <svg id="icon-inbox" xmlns="http://www.w3.org/2000/svg" class="text-success" width="18" height="18" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>-->
+                  <!--                                        <span class="ms-2">Inbox </span>-->
+                  <!--                                    </a>-->
+                  <a href="javascript:;" class="dropdown-item ai-icon">
+                    <svg id="icon-logout" xmlns="http://www.w3.org/2000/svg" class="text-danger" width="18" height="18" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+                    <span class="ms-2">Logout </span>
+                  </a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <!--**********************************
+        Header end ti-comment-alt
+    ***********************************-->
+
+    <!--**********************************
+        Sidebar start
+    ***********************************-->
+    <div class="deznav">
+      <div class="deznav-scroll">
+        <ul class="metismenu" id="menu">
+          <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+            <i class="flaticon-025-dashboard"></i>
+            <span class="nav-text">入住管理</span>
+          </a>
+            <ul aria-expanded="false">
+              <!-- <li><a href="">亮色主题</a></li> -->
+              <!--                            <li><a href="index-2.html">暗色主题</a></li>-->
+              <li><a th:href="@{/tenantManage.html}">房客信息</a></li>
+              <!-- <li><a href="guest-detail.html">Guest Detail</a></li>
+              <li><a href="concierge.html">Concierge</a></li> -->
+              <li><a th:href="@{/error404.html}">房态信息</a></li>
+              <!-- <li><a href="reviews.html">Reviews</a></li>	 -->
+            </ul>
+
+          </li>
+          <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+            <i class="flaticon-050-info"></i>
+            <span class="nav-text">员工管理</span>
+          </a>
+            <ul aria-expanded="false">
+              <li><a th:href="@{/staffInfo.html}">员工信息</a></li>
+              <li><a th:href="@{/error404.html}">工作派遣</a></li>
+
+            </ul>
+          </li>
+          <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+            <i class="flaticon-041-graph"></i>
+            <span class="nav-text">库存管理</span>
+          </a>
+            <ul aria-expanded="false">
+              <li><a th:href="@{/storeManage.html}">库存管理</a></li>
+            </ul>
+          </li>
+          <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+            <i class="flaticon-086-star"></i>
+            <span class="nav-text">财务管理</span>
+          </a>
+            <ul aria-expanded="false">
+              <li><a th:href="@{/error404.html}">审计账目</a></li>
+
+            </ul>
+          </li>
+          <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+            <i class="flaticon-045-heart"></i>
+            <span class="nav-text">酒店管理</span>
+          </a>
+            <ul aria-expanded="false">
+              <li><a th:href="@{/error404.html}">经营状况</a></li>
+              <li><a th:href="@{/roomManage.html}">房型管理</a></li>
+            </ul>
+          </li>
+        </ul>
+        <div class="copyright">
+          <p><strong>第七小组-酒店管理系统</strong> © 2022 All Rights Reserved</p>
+          <p class="fs-12">Made with <span class="heart"></span> by The Seven</p>
+        </div>
+      </div>
+    </div>
+    <!--**********************************
+        Sidebar end
+    ***********************************-->
+
+    <!--**********************************
+        Content body start
+    ***********************************-->
+    <div class="content-body">
+      <!-- row -->
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-xl-12">
+            <div class="d-flex mb-4 justify-content-between align-items-center flex-wrap">
+              <div class="card-tabs mt-3 mt-sm-0 " style="display: inline-block;">
+                <!-- 员工信息CRUD -->
+                <div class="card" style="display: inline-block;">
+                  <div class="card-header">
+                    <h4 class="card-title">房间类型</h4>
+                  </div>
+                  <div class="card-body">
+                    <div class="basic-form">
+                      <form>
+                        <div class="mb-3">
+                          <input class="form-control form-control-lg" v-model="submitRoomInfo.name" type="text" placeholder="房间类型" style="width: 150px;">
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card" style="display: inline-block;">
+                  <div class="card-header" >
+                    <h4 class="card-title">床数</h4>
+                  </div>
+                  <div class="card-body">
+                    <div class="basic-form">
+                      <form>
+                        <div class="mb-3">
+                          <input class="form-control form-control-lg" v-model="submitRoomInfo.bedNumber" type="text" placeholder="床数" style="width: 100px;">
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="card" style="display: inline-block;">
+                  <div class="card-header" >
+                    <h4 class="card-title">单价</h4>
+                  </div>
+                  <div class="card-body">
+                    <div class="basic-form">
+                      <form>
+                        <div class="mb-3">
+                          <input class="form-control form-control-lg" v-model="submitRoomInfo.price" type="text" placeholder="单价" style="width: 100px;">
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card" style="display: inline-block;">
+                  <div class="card-header" >
+                    <h4 class="card-title">最大人数</h4>
+                  </div>
+                  <div class="card-body">
+                    <div class="basic-form">
+                      <form>
+                        <div class="mb-3">
+                          <input class="form-control form-control-lg" v-model="submitRoomInfo.maxPeople" type="text" placeholder="最大人数" style="width: 150px;">
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+
+                <!--                                <div class="card" style="display: inline-block;">-->
+                <!--                                    <div class="card-header" >-->
+                <!--                                        <h4 class="card-title">年龄</h4>-->
+                <!--                                    </div>-->
+                <!--                                    <div class="card-body">-->
+                <!--                                        <div class="basic-form">-->
+                <!--                                            <form>-->
+                <!--                                                <div class="mb-3">-->
+                <!--                                                    <input class="form-control form-control-lg" v-model="submitStaffInfo.age" type="text" placeholder="年龄" style="width: 80px;">-->
+                <!--                                                </div>-->
+                <!--                                            </form>-->
+                <!--                                        </div>-->
+                <!--                                    </div>-->
+                <!--                                </div>-->
+
+                <div class="card" style="display: inline-block;">
+                  <div class="card-header" >
+                    <h4 class="card-title">最小入住时间</h4>
+                  </div>
+                  <div class="card-body">
+                    <div class="basic-form">
+                      <form>
+                        <div class="mb-3">
+                          <input class="form-control form-control-lg" v-model="submitRoomInfo.minTime" type="minTime" placeholder="最小入住时间">
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+
+
+              </div>
+
+
+              <!-- <a href="javascript:void(0);" class="btn btn-primary mt-3"><i class="far fa-file-word me-2"></i>新增员工</a> -->
+              <div style="right: 5%;">
+                <button type="button" class="btn btn-primary" v-on:click="addRoom">新增</button>
+                <!--                                <button type="button" class="btn btn-primary" v-on:click="searchRoomInfo">查询</button>-->
+              </div>
+
+            </div>
+
+            <hr />
+
+            <div class="tab-content">
+              <div class="tab-pane active show" id="All">
+                <div class="table-responsive">
+                  <table class="table card-table display mb-4 dataTablesCard table-responsive-lg" id="guestTable-all">
+                    <thead>
+                    <tr>
+                      <th class="bg-none">
+                        <div class="form-check style-1">
+                          <input class="form-check-input" type="checkbox" value="" id="checkAll">
+                        </div>
+                      </th>
+                      <th>房间类型</th>
+                      <th>床数</th>
+                      <th>单价</th>
+                      <th>最大人数</th>
+                      <th>最小入住时间</th>
+                      <!--                                            <th>联系方式</th>-->
+                      <th class="bg-none"></th>
+                    </tr>
+                    </thead>
+                    <tbody v-for="(item, index) in getRoomInfoList">
+                    <tr>
+                      <td>
+                        <div class="form-check style-1">
+                          <input class="form-check-input" type="checkbox" value="">
+                        </div>
+                      </td>
+                      <td>
+                        <div>
+                          <h4 class="mt-1" v-if="isShow != index"><p class="text-black" >{{item.name}}</p></h4>
+                          <input v-if="isShow === index" type="text" v-model="updateRoomInfo.name">
+                          <!-- <span class="fs-16">Act as a liaison between guests and any department necessary including the kitchen, housekeeping, etc</span> -->
+                        </div>
+                      </td>
+                      <td class="job-desk">
+                        <div>
+                          <h4 class="mt-1" v-if="isShow != index"><p class="text-black" >{{item.bedNumber}}</p></h4>
+                          <input v-if="isShow === index" type="text" v-model="updateRoomInfo.bedNumber" style="width: 80px">
+                          <!-- <span class="fs-16">Act as a liaison between guests and any department necessary including the kitchen, housekeeping, etc</span> -->
+                        </div>
+                      </td>
+                      <td>
+                        <div>
+                          <h4 class="mt-1" v-if="isShow != index"><p class="text-black" >{{item.price}}</p></h4>
+                          <input v-if="isShow === index" type="text" v-model="updateRoomInfo.price" style="width: 80px">
+                          <!-- <span class="fs-16">Act as a liaison between guests and any department necessary including the kitchen, housekeeping, etc</span> -->
+                        </div>
+                      </td>
+                      <td>
+                        <div>
+                          <h5 class="font-w600" v-if="isShow != index">{{item.maxPeople}}</h5>
+                          <input v-if="isShow === index" type="text" v-model="updateRoomInfo.maxPeople"  style="width: 80px">
+                          <!-- <span>08:00 AM - 04:00 PM</span> -->
+                        </div>
+                      </td>
+                      <td>
+                        <div>
+                          <h5 class="font-w600" v-if="isShow != index">{{item.minTime}}</h5>
+                          <input v-if="isShow === index" type="text" v-model="updateRoomInfo.minTime"  style="width: 80px">
+                        </div>
+                      </td>
+                      <!--                                            <td>-->
+                      <!--                                                <div class="text-nowrap job-desk">-->
+                      <!--                                                    &lt;!&ndash;													<span class="text-black font-w500"><i class="fas fa-phone-volume me-2 text-primary"></i> {{item.tel}}</span>&ndash;&gt;-->
+                      <!--                                                    <h5 class="font-w600" v-if="isShow != index"><i class="fas fa-phone-volume me-2 text-primary"></i>{{item.tel}}</h5>-->
+                      <!--                                                    <input v-if="isShow === index" type="text" v-model="updateStaffInfo.tel">-->
+                      <!--                                                </div>-->
+                      <!--                                            </td>-->
+                      <!-- <td><span class="text-danger font-w600">INACTIVE</span></td> -->
+                      <td>
+                        <div class="dropdown dropstart">
+                          <a href="javascript:void(0);" class="btn-link" data-bs-toggle="dropdown" aria-expanded="false">
+                            <svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M11 12C11 12.5523 11.4477 13 12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12Z" stroke="#262626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                              <path d="M18 12C18 12.5523 18.4477 13 19 13C19.5523 13 20 12.5523 20 12C20 11.4477 19.5523 11 19 11C18.4477 11 18 11.4477 18 12Z" stroke="#262626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                              <path d="M4 12C4 12.5523 4.44772 13 5 13C5.55228 13 6 12.5523 6 12C6 11.4477 5.55228 11 5 11C4.44772 11 4 11.4477 4 12Z" stroke="#262626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                          </a>
+                          <div class="dropdown-menu">
+                            <input type="button" class="dropdown-item" v-on:click="editRoom(index)" v-if="isShow != index" value="编辑">
+                            <!--                                                        <input type="button" class="dropdown-item" v-on:click="createAccount(index)" v-if="isShow != index" value="创建账号">-->
+                            <input type="button" class="dropdown-item" v-on:click="deleteRoom(index)" v-if="isShow != index" value="删除">
+                            <input type="button" class="dropdown-item" v-on:click="updateRoom(index)" v-if="isShow === index" value="完成">
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--**********************************
+        Content body end
+    ***********************************-->
+
+
+
+    <!--**********************************
+        Footer start
+    ***********************************-->
+    <div class="footer">
+
+      <div class="copyright">
+        <p>Copyright &copy; 2022.Company The Seven All rights reserved.</p>
+      </div>
+    </div>
+    <!--**********************************
+        Footer end
+    ***********************************-->
+
+  </div>
+</div>
+<!--**********************************
+    Main wrapper end
+***********************************-->
+
+<!--**********************************
+    Scripts
+***********************************-->
+<!-- Required vendors -->
+<script th:src="@{/js/global.min.js}"></script>
+<script th:src="@{/js/jquery.nice-select.min.js}"></script>
+
+<!-- Datatable -->
+<script th:src="@{/js/jquery.dataTables.min.js}"></script>
+<script th:src="@{/js/datatables.init.js}"></script>
+
+<script th:src="@{/js/custom.min.js}"></script>
+<script th:src="@{/js/deznav-init.js}"></script>
+<script th:src="@{/js/demo.js}"></script>
+<script th:src="@{/js/styleSwitcher.js}"></script>
+
+<script th:src="@{/js/select2.full.min.js}"></script>
+<script th:src="@{/js/select2-init.js}"></script>
+
+<script type="text/javascript">
+  var app = new Vue({
+    el: "#room",
+    data:{
+      // isShow: -1,
+      // submitStaffInfo:{},
+      // getStaffInfoList:[],
+      // updateStaffInfo:{
+      //     id:0,
+      //     staffNumber:"",
+      //     name:"",
+      //     gender:"",
+      //     age:"",
+      //     position:"",
+      //     tel:""
+      // },
+      isShow: -1,
+      submitRoomInfo:{},
+      getRoomInfoList:[],
+      updateRoomInfo:{
+        id:0,
+        name:"",
+        price:"",
+        bedNumber:"",
+        maxPeople:"",
+        minTime:"",
+
+      },
+    },
+    created() {
+      this.getAll()
+    },
+    methods:{
+      getAll() {
+        let that = this;
+        axios.get("/queryAllRoomType")
+                .then(function(res){
+                  that.getRoomInfoList = res.data;
+                });
+      },
+      addRoom() {
+        let checkBedNumber = /^[0-9]*$/;
+        let checkPrice = /^([0-9][0-9]*)+(\.[0-9]{1,2})?$/;
+        let checkMaxPeople = /^[0-9]*$/;
+
+        if(this.submitRoomInfo.name == null || this.submitRoomInfo.name === ""){
+          console.log("name");
+          alert("请输入房间类型")
+        }else if(this.submitRoomInfo.bedNumber == null || this.submitRoomInfo.bedNumber === ""){
+          console.log("bedNumber");
+          alert("请输入床数");
+        }else if(this.submitRoomInfo.price == null || this.submitRoomInfo.price === ""){
+          console.log("price");
+          alert("请输入单价");
+        }else if(this.submitRoomInfo.maxPeople == null || this.submitRoomInfo.maxPeople === ""){
+          console.log("maxPeople");
+          alert("请输入最大人数");
+        }else if(this.submitRoomInfo.minTime == null || this.submitRoomInfo.minTime === ""){
+          console.log("minTime");
+          alert("请输入最少入住时间");
+        }else if(checkBedNumber.test(this.submitRoomInfo.bedNumber) === false){
+          alert("请输入正确的床数！！");
+        }else if(checkPrice.test(this.submitRoomInfo.price) === false){
+          alert("请输入正确的单价！！");
+        }else if(checkMaxPeople.test(this.submitRoomInfo.maxPeople) === false){
+          alert("请输入正确的最大人数！！");
+        }else{
+          let that = this;
+          axios.get("/addRoomType",{
+            params:{
+              id: "0",
+              name: this.submitRoomInfo.name,
+              price: this.submitRoomInfo.price,
+              bedNumber: this.submitRoomInfo.bedNumber,
+              maxPeople: this.submitRoomInfo.maxPeople,
+              minTime: this.submitRoomInfo.minTime
+
+            }
+          }).then(function (res){
+            if(res.data === "success"){
+              // console.log(res.data);
+              alert("添加成功");
+              that.getAll();
+              that.submitRoomInfo = {};
+            }else{
+              alert("添加失败");
+            }
+          });
+        }
+      },
+
+      // searchRoomInfoByName() {
+      //     let that = this;
+      //     axios.get("/queryAllRoomType",{
+      //         params: {
+      //             name: this.submitRoomInfo.name
+      //         }
+      //     })
+      //         .then(function (res){
+      //             that.getRoomInfoList = res.data;
+      //         });
+      // },
+      // searchStaffInfoByNumber() {
+      //     let that = this;
+      //     axios.get("/queryStaffByStaffNumber",{
+      //         params: {
+      //             staffNumber: this.submitRoomInfo.staffNumber
+      //         }
+      //     })
+      //         .then(function (res){
+      //             that.getRoomInfoList = res.data;
+      //         });
+      // },
+      // searchRoomInfo() {
+      //     if(this.submitRoomInfo.name != null && this.submitRoomInfo.name !== ""){
+      //
+      //         let that = this;
+      //         console.log(this.submitRoomInfo.name);
+      //         axios.get("/queryAllRoomType",{
+      //             params: {
+      //                 name: this.submitRoomInfo.name
+      //             }
+      //         })
+      //             .then(function (res){
+      //                 if(res.data[0] != null){
+      //                     that.getRoomInfoList = res.data;
+      //                 }else{
+      //                     alert("没有此类型的房间！！！");
+      //                 }
+      //             });
+      //
+      //
+      //     }
+      //     else{
+      //         alert("输入房间类型");
+      //     }
+      // },
+      deleteRoom(index){
+        let id = this.getRoomInfoList[index].id;
+        let that = this;
+        console.log(id);
+        axios.get("/deleteRoomType",{
+          params: {
+            id: id
+          }
+        }).then(function (res){
+          if(res.data === "success"){
+            // console.log(res.data);
+            alert("删除成功");
+            that.getAll();
+          }else{
+            alert("删除失败");
+          }
+        });
+      },
+      editRoom(index){
+        this.isShow = index;
+        this.updateRoomInfo = this.getRoomInfoList[index];
+      },
+      updateRoom(index){
+        this.isShow = -1;
+        let that = this;
+        let checkBedNumber = /^[0-9]*$/;
+        let checkPrice = /^([0-9][0-9]*)+(\.[0-9]{1,2})?$/;
+        let checkMaxPeople = /^[0-9]*$/;
+
+        if(checkBedNumber.test(this.updateRoomInfo.bedNumber) === false){
+          alert("请输入正确的床数！！");
+          this.getAll();
+        }else if(checkPrice.test(this.updateRoomInfo.price) === false){
+          alert("请输入正确的单价！！");
+          this.getAll();
+        }else if(checkMaxPeople.test(this.updateRoomInfo.maxPeople) === false){
+          alert("请输入正确的最大人数！！");
+          this.getAll();
+        }
+        else {
+          axios.get("/updateRoomType",{
+            params: {
+              id: this.updateRoomInfo.id,
+              name: this.updateRoomInfo.name,
+              price: this.updateRoomInfo.price,
+              bedNumber: this.updateRoomInfo.bedNumber,
+              maxPeople: this.updateRoomInfo.maxPeople,
+              minTime: this.updateRoomInfo.minTime
+
+            }
+          }).then(function (res){
+            if(res.data === "success"){
+              // console.log(res.data);
+              alert("更新成功");
+              that.getAll();
+            }else{
+              alert("更新失败");
+            }
+          });
+        }
+      },
+
+      // createAccount(index){
+      //     let that = this;
+      //     axios.get("/createAccount",{
+      //         params:{
+      //             id: this.getRoomInfoList[index].id
+      //         }
+      //     }).then(function (res){
+      //         if(res.data === "success"){
+      //             // console.log(res.data);
+      //             alert("账号创建成功");
+      //             that.getAll();
+      //         }else{
+      //             alert("账号创建失败");
+      //         }
+      //     });
+      // }
+    }
+  })
+</script>
+
+</body>
+</html>

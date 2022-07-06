@@ -104,7 +104,7 @@
                     <div class="collapse navbar-collapse justify-content-between">
                         <div class="header-left">
                             <div class="dashboard_bar">
-                                旅客信息
+                                房客信息
                             </div>
                         </div>
                         <ul class="navbar-nav header-right">
@@ -112,19 +112,19 @@
                                 <a class="nav-link" href="javascript:void(0);" role="button" data-bs-toggle="dropdown">
                                     <img th:src="@{/picture/pic1.jpg}" alt="">
                                     <div class="header-info ms-3">
-                                        <span>John Doe</span>
-                                        <small>Superadmin</small>
+                                        <span>刘书源</span>
+                                        <small>经理</small>
                                     </div>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-end">
-                                    <a href="app-profile.html" class="dropdown-item ai-icon">
-                                        <svg id="icon-user1" xmlns="http://www.w3.org/2000/svg" class="text-primary" width="18" height="18" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-                                        <span class="ms-2">Profile </span>
-                                    </a>
-                                    <a href="email-inbox.html" class="dropdown-item ai-icon">
-                                        <svg id="icon-inbox" xmlns="http://www.w3.org/2000/svg" class="text-success" width="18" height="18" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                                        <span class="ms-2">Inbox </span>
-                                    </a>
+<!--                                    <a href="app-profile.html" class="dropdown-item ai-icon">-->
+<!--                                        <svg id="icon-user1" xmlns="http://www.w3.org/2000/svg" class="text-primary" width="18" height="18" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>-->
+<!--                                        <span class="ms-2">Profile </span>-->
+<!--                                    </a>-->
+<!--                                    <a href="email-inbox.html" class="dropdown-item ai-icon">-->
+<!--                                        <svg id="icon-inbox" xmlns="http://www.w3.org/2000/svg" class="text-success" width="18" height="18" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>-->
+<!--                                        <span class="ms-2">Inbox </span>-->
+<!--                                    </a>-->
                                     <a href="javascript:;" class="dropdown-item ai-icon">
                                         <svg id="icon-logout" xmlns="http://www.w3.org/2000/svg" class="text-danger" width="18" height="18" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
                                         <span class="ms-2">Logout </span>
@@ -153,8 +153,8 @@
                         <ul aria-expanded="false">
                             <!-- <li><a href="">亮色主题</a></li> -->
 <!--                            <li><a href="index-2.html">暗色主题</a></li>-->
-                            <li><a th:href="@{/tenantManage.html}">旅客信息</a></li>
-                            <li><a href="room-list.html">房间信息</a></li>
+                            <li><a th:href="@{/tenantManage.html}">房客信息</a></li>
+                            <li><a th:href="@{/error404.html}">房态信息</a></li>
                         </ul>
 
                     </li>
@@ -164,7 +164,7 @@
                     </a>
                         <ul aria-expanded="false">
                             <li><a th:href="@{/staffInfo.html}">员工信息</a></li>
-                            <li><a href="app-profile.html">工作派遣</a></li>
+                            <li><a th:href="@{/error404.html}">工作派遣</a></li>
 
                         </ul>
                     </li>
@@ -181,7 +181,7 @@
                         <span class="nav-text">财务管理</span>
                     </a>
                         <ul aria-expanded="false">
-                            <li><a href="ecom-product-order.html">审计账目</a></li>
+                            <li><a th:href="@{/error404.html}">审计账目</a></li>
 
                         </ul>
                     </li>
@@ -190,8 +190,8 @@
                         <span class="nav-text">酒店管理</span>
                     </a>
                         <ul aria-expanded="false">
-                            <li><a href="ecom-product-order.html">经营状况</a></li>
-                            <li><a th:href="@{/roomManage.html}">房间管理</a></li>
+                            <li><a th:href="@{/error404.html}">经营状况</a></li>
+                            <li><a th:href="@{/roomManage.html}">房型管理</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -219,7 +219,7 @@
 
                                 <div class="card" style="display: inline-block;">
                                     <div class="card-header">
-                                        <h4 class="card-title">旅客姓名</h4>
+                                        <h4 class="card-title">房客姓名</h4>
                                     </div>
                                     <div class="card-body">
                                         <div class="basic-form">
@@ -239,8 +239,8 @@
                                     <div class="card-body">
                                         <div class="basic-form">
                                             <form>
-                                                <div class="mb-3">
-                                                    <select class="form-control form-control-lg" v-model="submitTenantInfo.gender">
+                                                <div class="mb-3" style="width: 100px">
+                                                    <select class="form-control form-control-lg" v-model="submitTenantInfo.gender" style="width: 100px">
                                                         <option value="男">男</option>
                                                         <option value="女">女</option>
                                                     </select>
@@ -258,7 +258,7 @@
                                         <div class="basic-form">
                                             <form>
                                                 <div class="mb-3">
-                                                    <input class="form-control form-control-lg" v-model="submitTenantInfo.idCard" type="text" placeholder="身份证号" style="width: 200px;">
+                                                    <input class="form-control form-control-lg" v-model="submitTenantInfo.idCard" type="text" placeholder="身份证号" style="width: 230px;">
                                                 </div>
                                             </form>
                                         </div>
@@ -311,7 +311,7 @@
                                             <td>
                                                 <div>
                                                     <h5 class="font-w600" v-if="isShow != index">{{item.gender}}</h5>
-                                                    <select v-if="isShow === index" v-model="updateTenantInfo.gender" style="width: 50px">
+                                                    <select v-if="isShow === index" v-model="updateTenantInfo.gender" style="width: 80px">
                                                         <option value="男">男</option>
                                                         <option value="女">女</option>
                                                     </select>
@@ -373,7 +373,7 @@
         <div class="footer">
 
             <div class="copyright">
-                <p>Copyright &copy; 2021.Company name All rights reserved.<a target="_blank" href="https://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></p>
+                <p>Copyright &copy; 2022.Company The Seven All rights reserved.</p>
             </div>
         </div>
         <!--**********************************
@@ -431,12 +431,15 @@
                     });
             },
             addTenant() {
+                let idCard_reg = /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/;
                 if(this.submitTenantInfo.name == null || this.submitTenantInfo.name === ""){
                     alert("请输入房客姓名");
                 }else if(this.submitTenantInfo.gender == null || this.submitTenantInfo.gender === ""){
                     alert("请输入房客性别");
                 }else if(this.submitTenantInfo.idCard == null || this.submitTenantInfo.idCard === ""){
                     alert("请输入房客身份证号");
+                }else if(idCard_reg.test(this.submitTenantInfo.idCard) === false){
+                    alert("身份证号非法");
                 }else{
                     let that = this;
                     axios.get("/addTenantInfo",{
@@ -525,6 +528,12 @@
             },
             updateTenant(index){
                 this.isShow = -1;
+                let idCard_reg = /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/;
+                if(idCard_reg.test(this.updateTenantInfo.idCard) === false){
+                    alert("身份证号非法");
+                    this.getAll();
+                    return;
+                }
                 let that = this;
                 axios.get("/updateTenantInfo",{
                     params: {

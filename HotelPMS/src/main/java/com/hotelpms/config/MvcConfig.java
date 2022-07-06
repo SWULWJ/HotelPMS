@@ -19,6 +19,8 @@ public class MvcConfig implements WebMvcConfigurer {
         registry.addViewController("/roomManage.html").setViewName("roomType");
         registry.addViewController("/storeManage.html").setViewName("store");
         registry.addViewController("/tenantManage.html").setViewName("tenantInfo");
+        registry.addViewController("/checkIn.html").setViewName("roomInfo");
+        registry.addViewController("/error404.html").setViewName("error404");
     }
 
     //拦截器
@@ -32,10 +34,13 @@ public class MvcConfig implements WebMvcConfigurer {
                         "/userLogin",
                         "/css/**",
                         "/css2/**",
+                        "/font/**",
                         "/fonts/**",
                         "/images/**",
+                        "/image/**",
                         "/img/**",
                         "/js/**",
-                        "/js2/**");
+                        "/js2/**",
+                        "/picture/**");
     }
 }

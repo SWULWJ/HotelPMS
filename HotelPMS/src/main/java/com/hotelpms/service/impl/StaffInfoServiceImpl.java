@@ -45,9 +45,7 @@ public class StaffInfoServiceImpl implements StaffInfoService {
             StaffInfo staffInfo = new StaffInfo(id,staffNum,name,
                     gender,age,position,tel);
             staffInfoMapper.updateStaffInfo(staffInfo);
-            return true;
-
-//        return false;
+            return staffInfoMapper.queryById(id).getStaffNumber() == staffNum;
     }
 
     @Override
