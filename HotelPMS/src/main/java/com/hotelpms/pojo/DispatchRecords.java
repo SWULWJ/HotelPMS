@@ -12,7 +12,7 @@ import java.util.Date;
 @NoArgsConstructor
 public class DispatchRecords {
     private int id;
-    private int staffId;
+    private StaffInfo staffInfo;
     private String location;
     private Date startTime;
     private Date endTime;

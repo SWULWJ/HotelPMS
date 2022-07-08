@@ -2,6 +2,7 @@ package com.hotelpms.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
@@ -23,24 +24,32 @@ public class MvcConfig implements WebMvcConfigurer {
         registry.addViewController("/error404.html").setViewName("error404");
     }
 
-    //拦截器
-    @Override
-    public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(new LoginHandlerInterceptor()).
-                addPathPatterns("/**").
-                excludePathPatterns("/index.html",
-                        "/",
-                        "/login.html",
-                        "/userLogin",
-                        "/css/**",
-                        "/css2/**",
-                        "/font/**",
-                        "/fonts/**",
-                        "/images/**",
-                        "/image/**",
-                        "/img/**",
-                        "/js/**",
-                        "/js2/**",
-                        "/picture/**");
-    }
+    //配置静态资源
+//    @Override
+//    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+//        registry.addResourceHandler("/static/**").addResourceLocations("classpath:/static/");
+//        WebMvcConfigurer.super.addResourceHandlers(registry);
+//    }
+
+
+//拦截器
+//    @Override
+//    public void addInterceptors(InterceptorRegistry registry) {
+//        registry.addInterceptor(new LoginHandlerInterceptor()).
+//                addPathPatterns("/**").
+//                excludePathPatterns("/index.html",
+//                        "/",
+//                        "/login.html",
+//                        "/userLogin",
+//                        "/css/**",
+//                        "/css2/**",
+//                        "/font/**",
+//                        "/fonts/**",
+//                        "/images/**",
+//                        "/image/**",
+//                        "/img/**",
+//                        "/js/**",
+//                        "/js2/**",
+//                        "/picture/**");
+//    }
 }

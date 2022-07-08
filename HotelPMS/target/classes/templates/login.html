@@ -31,8 +31,8 @@
 									<a href="index.html"><img src="https://www.17sucai.com/preview/1097306/2021-07-20/xhtml/images/logo-full.png" alt=""></a>
 								</div>
 								<h2 class="text-center mb-4">酒店管理系统</h2>
-								<form method="post" th:action="@{/userLogin}">
-									<p style="color: red" th:text="${msg}" th:if="${not #strings.isEmpty(msg)}"></p>
+								<form method="post" th:action="@{/login}">
+									<p style="color: red" th:text="${session.SPRING_SECURITY_LAST_EXCEPTION}"></p>
 									<div class="mb-3">
 										<label class="mb-1"><strong>账号</strong></label>
 										<input type="text" name="username" class="form-control" required>

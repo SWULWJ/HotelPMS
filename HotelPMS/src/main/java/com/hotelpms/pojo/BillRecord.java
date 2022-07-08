@@ -14,7 +14,7 @@ import java.util.Date;
 public class BillRecord {
     private int id;
     private int billNumber;
-    private int staffId;
+    private StaffInfo staffInfo;
     private String type;
     private Date time;
     private BigDecimal amount;

@@ -35,7 +35,7 @@ public class DispatchRecordServiceImpl implements DispatchRecordService {
     }
 
     @Override
-    public boolean addDispatchRecord(int id, int staff_id , String location, Date start_time, Date end_time, String type, String details){
+    public boolean addDispatchRecord(int id, StaffInfo staffInfo , String location, Date start_time, Date end_time, String type, String details){
         return true;
     }
 

@@ -109,7 +109,7 @@ public interface RoomInfoMapper {
 			+"WHERE id=#{id}")
 	void updateRoomInfo(RoomInfo roomInfo);
 	
-	//根据ID删除房间信息记录
+	//根据Id删除房间信息记录
 	@Delete("DELETE FROM room_info WHERE id=#{id}")
 	void deleteRoomInfo(int id);
 	

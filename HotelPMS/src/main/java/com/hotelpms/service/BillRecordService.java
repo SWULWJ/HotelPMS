@@ -20,6 +20,8 @@ public interface BillRecordService {
     List<BillRecord> QueryRecordByType(String type);
     //根据数额查询
     List<BillRecord> QueryRecordByAmount(BigDecimal min,BigDecimal max);
+    //根据审计信息查询
+    List<BillRecord> QueryRecordByAuditing(boolean Auditing);
     //查询所有账单
     List<BillRecord> QueryAllRecord();
 
@@ -34,6 +36,9 @@ public interface BillRecordService {
     //改
     //更新一条数据
     boolean updateBillRecord(int id, int bill_number, int stuff_id, String type, Date date,BigDecimal amount,String details,boolean auditing);
+
+    //更新审计信息
+    boolean updateAuditing(int id);
 
 
 
