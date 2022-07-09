@@ -41,9 +41,14 @@
 										<label class="mb-1"><strong>密码</strong></label>
 										<input type="password" name="password" class="form-control" required>
 									</div>
+									<div class="mb-3">
+										<label class="mb-1"><strong>验证码</strong></label>
+										<input type="text" name="kaptcha" class="form-control" required>
+										<img th:src="@{/verify.jpg}">
+									</div>
 									<div class="row d-flex justify-content-between mt-4 mb-2">
 										<div class="mb-3">
-											<a href="javascript:;">忘记密码?</a>
+											<a href="javascript:">忘记密码?</a>
 										</div>
 									</div>
 									<div class="text-center">

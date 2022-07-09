@@ -16,6 +16,7 @@ import java.util.List;
 public class PMSUserDetailService implements UserDetailsService {
 
     private final UserMapper userMapper;
+    private User user;
 
     @Autowired
     public PMSUserDetailService(UserMapper userMapper) {
